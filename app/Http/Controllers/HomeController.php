@@ -51,7 +51,14 @@ class HomeController extends Controller
     }
 
     public function item($id){
-        dd($id);
+        $data =  DB::table('data')->pluck('data');
+        if(!empty($data[0])) $res = json_decode ($data[0], 1);
+
+        
+        foreach($res as $k => $v)
+            $cats[] = $k;
+
+        return view('item', compact('res', 'cats'));
     }
 
 }
