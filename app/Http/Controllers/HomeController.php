@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         $res =  DB::table('data')->pluck('data');
         if(!empty($res[0])) $res = json_decode ($res[0], 1);
