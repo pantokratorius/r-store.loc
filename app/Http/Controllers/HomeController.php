@@ -29,12 +29,25 @@ class HomeController extends Controller
             }
         } 
 
-        return view('home', compact('res'));
+        foreach($res as $k=>$v)
+            $cats[] = $k;
+
+
+        return view('home', compact('res', 'cats'));
     }
 
 
     public function category($id){
-        dd($id); 
+        $data =  DB::table('data')->pluck('data');
+        if(!empty($data[0])) $data = json_decode ($data[0], 1);
+
+        $keys = array_keys($data);
+        $res = $data[$keys[$id - 1]];
+        
+        foreach($data as $k => $v)
+            $cats[] = $k;
+
+        return view('category', compact('res', 'cats'));
     }
 
     public function item($id){

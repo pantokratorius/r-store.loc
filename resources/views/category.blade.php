@@ -6,7 +6,7 @@
     $index = 1;
  @endphp
 
- @foreach(end($res) as $key=>$val)
+ @foreach($res as $key=>$val)
     @if($key != 'nacenka' && $key != 'real_name')
 
             <div class="product-card-wrapper in-collection cell-3 cell-4-md cell-6-xs cell-6-mc">
