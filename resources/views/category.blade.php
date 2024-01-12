@@ -14,7 +14,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', $index)}}"
+                    <a href="{{route('item',  [$active + 1,  $index])}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
@@ -28,7 +28,7 @@
                       <div class="price in-card">
 
 
-                        {{$val['price']}}&nbsp;руб
+                        {{$val['price']}}&nbsp;рубve
 
 
                       </div>

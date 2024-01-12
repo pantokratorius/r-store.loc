@@ -5,7 +5,7 @@
 <div class="page-headding-wrapper">
   <h1 class="page-headding">
     
-      iPhone 15 Pro Max, 256 ГБ, "Титановый"
+      {{ $res['real_name'] }}
 
     
   </h1>
@@ -30,8 +30,8 @@
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs" style="cursor: grab;">
         
           <div class="product-slider-controls above-gallery" data-slider-controls="">
-            <button class="product-slider-prev swiper-button-prev swiper-button-disabled is-disabled" data-slider-prev=""></button>
-            <button class="product-slider-next swiper-button-next" data-slider-next=""></button>
+            {{-- <button class="product-slider-prev swiper-button-prev swiper-button-disabled is-disabled" data-slider-prev=""></button> --}}
+            {{-- <button class="product-slider-next swiper-button-next" data-slider-next=""></button> --}}
           </div>
         
 
@@ -145,7 +145,7 @@
     <div class="product-prices on-page" style="">
         <div class="old-price js-product-old-price on-page"></div>
 
-      <div class="price js-product-price on-page">134990.00&nbsp;руб</div>
+      <div class="price js-product-price on-page">{{ $res['price'] }}&nbsp;руб</div>
     </div>
     
     <div class="product-introtext on-page editor"><ul>

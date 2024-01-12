@@ -3,10 +3,12 @@
 @section('content')
 <div class="products-list is-collection row">
  @php
+    $cat = 1;
     $index = 1;
  @endphp
 
- @foreach(end($res) as $key=>$val)
+@foreach($res as $k=>$v)
+ @foreach($v as $key=>$val)
     @if($key != 'nacenka' && $key != 'real_name')
 
             <div class="product-card-wrapper in-collection cell-3 cell-4-md cell-6-xs cell-6-mc">
@@ -14,7 +16,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', $index)}}"
+                    <a href="{{route('item', [$cat,  $index])}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
@@ -60,21 +62,20 @@
 
                 </div>
               </div>
-
-
-
-
-
-
-
             </div>
             @php
-            $index++; 
-        @endphp
+                $index++; 
+            @endphp
             
  @endif             
+ 
+ @endforeach
+    @php
+      $cat++; 
+      $index = 1;
+    @endphp
 
-@endforeach
-
+ @endforeach
+ 
           </div>
 @endsection

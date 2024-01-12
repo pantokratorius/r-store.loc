@@ -17,16 +17,9 @@
     href="https://static.insales-cdn.com/assets/1/7083/949163/1675718101/jquery.fancybox.min.css">-->
 
 
-
-
-
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,latin" rel="stylesheet">
 
-
-
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
 
   <link href="https://static.insales-cdn.com/assets/1/7083/949163/1675718101/theme.css" rel="stylesheet"
     type="text/css">
@@ -36,11 +29,7 @@
 
 <body class="fhg-body">
 
-
   <div class="body-wrapper">
-
-
-
 
     <div class="top-panel-wrapper">
       <div class="container">
@@ -89,8 +78,6 @@
               <button type="button" class="top-panel-open-search button js-open-search-panel shown-sm"></button>
             </div>
 
-
-
             <div class="shopcart-widget-wrapper is-top-panel cell-  hidden shown-sm">
 
               <div class="shopcart-widget is-top-panel ">
@@ -108,9 +95,6 @@
                 </a>
 
               </div>
-
-
-
 
             </div>
           </div>
@@ -223,19 +207,7 @@
         </div>
 
         <div class="main-menu-wrapper hidden-sm">
-
-
-
-
-
-
-
-
-
           <ul class="main-menu menu level-1 insales-menu--loaded" data-menu-id="main-menu">
-
-
-
 
             <li class="main-menu-item menu-item level-1">
               <div class="main-menu-item-controls menu-item-controls level-1">
@@ -248,10 +220,6 @@
               </div>
             </li>
 
-
-
-
-
             <li class="main-menu-item menu-item level-1">
               <div class="main-menu-item-controls menu-item-controls level-1">
 
@@ -262,11 +230,6 @@
                 </a>
               </div>
             </li>
-
-
-
-
-
             <li class="main-menu-item menu-item level-1">
               <div class="main-menu-item-controls menu-item-controls level-1">
 
@@ -277,11 +240,6 @@
                 </a>
               </div>
             </li>
-
-
-
-
-
             <li class="main-menu-item menu-item level-1">
               <div class="main-menu-item-controls menu-item-controls level-1">
 
@@ -292,11 +250,6 @@
                 </a>
               </div>
             </li>
-
-
-
-
-
             <li class="main-menu-item menu-item level-1">
               <div class="main-menu-item-controls menu-item-controls level-1">
 
@@ -308,18 +261,7 @@
               </div>
             </li>
 
-
           </ul>
-
-
-
-
-
-
-
-
-
-
 
 
           <form class="search-widget in-header " action="/search" method="get">
@@ -339,24 +281,9 @@
         </div>
       </header>
 
-
-
-
-
     </div>
 
     <div class="content-wrapper container fhg-content">
-
-
-
-
-
-
-
-
-
-
-
 
       <div class="row collection-wrapper">
         <div class="collection cell-9 cell-8-md cell-12-sm">
@@ -372,42 +299,19 @@
 
                 </a>
               </li>
-
-
-
-
-
-
-
-
-
-
               <li class="breadcrumb-item">
-                <span class="breadcrumb-page">iPhone</span>
+                <span class="breadcrumb-page">{{ $bread }}</span>
               </li>
-
-
-
-
-
-
-
-
 
             </ul>
 
           </div>
 
-
-
-
-
-
           <div class="page-headding-wrapper">
             <h1 class="page-headding">
 
 
-              iPhone
+              {{ $bread }}
 
 
 
@@ -425,25 +329,6 @@
 
           </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <div class="toolbar collection-toolbar at-top">
             <div class="toolbar-inner is-between">
 
@@ -456,14 +341,8 @@
 
               </div>
 
-
               <div class="collection-order-wrapper flex-end">
-
-
-
-
                 <form class="collection-order " action="/collection/iphone" method="get">
-
 
                   <label class="collection-order-row is-order  ">
                     <span class="collection-order-label order-sort">
@@ -478,59 +357,14 @@
                     </select>
 
                   </label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </form>
-
-
-
-
-
-
 
               </div>
 
             </div>
           </div>
 
-
-
-
-
-
-
           @yield('content')
-
-         
-
-
-
-
-
 
           <div class="toolbar collection-toolbar at-bottom">
             <div class="toolbar-inner">
@@ -542,12 +376,6 @@
 
             </div>
           </div>
-
-
-
-
-
-
 
 
           <div class="collection-description is-seo editor">
@@ -575,19 +403,6 @@
 
             <div class="sidebar-block-content">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
               <ul class="sidebar-menu menu level-1 is-vertical is-collapse insales-menu--loaded"
                 data-menu-id="sidebar-menu">
 
@@ -596,7 +411,8 @@
                         <li class="sidebar-menu-item menu-item level-1 has-submenu">
                           <div class="sidebar-menu-item-controls menu-item-controls level-1">
 
-                            <a href="{{route('category', $k + 1 ) }}" class="sidebar-menu-link menu-link level-1" data-menu-link="airpods"
+                            <a href="{{route('category', $k + 1 ) }}" class="sidebar-menu-link menu-link level-1 
+                            @isset($active) @if($active && $active == $k)  active  @endif  @endisset " data-menu-link="airpods"
                               data-menu-link-source="collection">
                                     {{ $v }}
                             </a>
@@ -608,59 +424,17 @@
 
 
               </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
 
           </div>
 
 
           <div class="sidebar-block">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <form class="filter sidebar-filter " action="/collection/iphone" method="get" data-filter="sidebar-filter">
 
               <div class="filter-heading">
                 Фильтры
               </div>
-
-
-
-
-
-
-
-
-
               <div class="filter-section is-collapse" data-filter-section="false">
 
                 <div class="filter-section-control">
@@ -3291,6 +3065,13 @@
   .menu:not(.insales-menu--loaded) .menu-icon {
     display: none;
   }
+
+  .sidebar-menu .active {
+    color: #924848;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
 </style>
 
 
