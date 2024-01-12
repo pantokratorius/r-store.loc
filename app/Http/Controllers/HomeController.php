@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class HomeController extends Controller
 {
     public function __invoke()
-    { dd('aaaaaaaaaaaa');
+    {
         $data =  DB::table('data')->pluck('data');
         if(!empty($data[0])) $data = json_decode ($data[0], 1);
         $nacenka = DB::table('nacenka')->pluck('data'); 
