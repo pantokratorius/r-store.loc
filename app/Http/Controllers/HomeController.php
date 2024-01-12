@@ -19,7 +19,7 @@ class HomeController extends Controller
         if(!empty($nacenka[0])) $nacenka = json_decode ($nacenka[0], 1);
 
         foreach($nacenka as $k=>$v){
-            if($data[$k]){
+            if(isset($data[$k])){
                 $data[$k]['nacenka'] = $v;
             }else {
                 foreach($data as $key => $val){
