@@ -12,7 +12,7 @@
 
   <!-- icons-->
   <link rel="icon" type="image/png" sizes="16x16"
-        href="rstore_images/favicon1.png">
+        href="{{ asset('favicon1.png') }}">
 <!--  <link rel="stylesheet" type="text/css"
     href="https://static.insales-cdn.com/assets/1/7083/949163/1675718101/jquery.fancybox.min.css">-->
 
@@ -21,9 +21,9 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link href="https://static.insales-cdn.com/assets/1/7083/949163/1675718101/theme.css" rel="stylesheet"
-    type="text/css">
-
+  {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
+    type="text/css"> --}}
+@vite(['resources/css/app.css'])
   <link rel="stylesheet" href="https://code.jivo.ru/css/5b75eed/widget.css" class="jv-css">
 </head>
 
@@ -411,7 +411,7 @@
                         <li class="sidebar-menu-item menu-item level-1 has-submenu">
                           <div class="sidebar-menu-item-controls menu-item-controls level-1">
 
-                            <a href="{{route('category', $k + 1 ) }}" class="sidebar-menu-link menu-link level-1 
+                            <a href="{{route('category', $k + 1 ) }}" class="sidebar-menu-link menu-link level-1
                             @isset($active) @if($active && $active == $k)  active  @endif  @endisset " data-menu-link="airpods"
                               data-menu-link-source="collection">
                                     {{ $v }}
@@ -3022,7 +3022,7 @@
       opacity: 0.6;
       background: #fff;
 
-   
+
 
       .spin {
         position: absolute;
