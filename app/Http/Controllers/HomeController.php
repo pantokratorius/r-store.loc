@@ -46,6 +46,8 @@ class HomeController extends Controller
             }
         }
 
+        $cart = session()->get('cart', []);
+// dd($cart);
             
         return view('home', compact('res', 'cats', 'bread'));
     }
@@ -108,6 +110,30 @@ class HomeController extends Controller
         return view('item', compact('res', 'cats', 'bread', 'active'));
     }
 
+
+
+
+
+    public function selectItem($category_id, $item_id) {
+        $data =  DB::table('data')->pluck('data');
+        if(!empty($data[0])) $data = json_decode ($data[0], 1);
+        $keys = array_keys($data);
+
+        $group = $data[$keys[$category_id - 1]];
+
+        foreach($group as $k=>$v){
+            if(is_array($v))
+                $mass[] = $v;
+        }
+
+
+        $res = $mass[$item_id - 1]; 
+
+        $res['real_name'] = EmojiRemover::filter( $res['real_name'] );
+        $res['price'] = Str::replace('.',' ', $res['price']);
+        
+        return $res;
+    }
 
     
     

@@ -45,8 +45,7 @@
                       <!-- Если больше 1 модификации -->
 
                       <div class="buy text-right-xl more-info">
-                        <button class="button button-buy is-primary" type="submit" data-item-add="">
-                        </button>
+                        <a href="{{route('addcart', [$cat,  $index], 'addcart')}}" onclick="location('')" class="button button-buy is-primary" type="submit" data-item-add=""></a>
                       </div><!-- /.buy -->
 
                       <!-- product.quantity == 0 -->
