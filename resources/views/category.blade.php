@@ -2,9 +2,7 @@
 
 @section('content')
 <div class="products-list is-collection row">
- @php
-    $index = 1;
- @endphp
+
 
  @foreach($res as $key=>$val)
     @if($key != 'nacenka' && $key != 'real_name')
@@ -14,7 +12,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item',  [$active + 1,  $index])}}"
+                    <a href="{{route('item', [$res['real_name'],  Str::replace(' ', '-', trim($val['real_name']))])}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
@@ -28,7 +26,7 @@
                       <div class="price in-card">
 
 
-                        {{$val['price']}}&nbsp;рубve
+                        {{-- {{ dd($val) }}&nbsp;рубve --}}
 
 
                       </div>
@@ -54,7 +52,7 @@
                   </div>
 
                   <a href="/product/iphone-15-pro-max-256-gb-titanovyy-1-sim-esim" class="product-link">
-                       {{$val['real_name']}} 
+                       {{$val['real_name']}}
                   </a>
 
 
@@ -68,11 +66,8 @@
 
 
             </div>
-            @php
-            $index++; 
-        @endphp
-            
- @endif             
+
+ @endif
 
 @endforeach
 

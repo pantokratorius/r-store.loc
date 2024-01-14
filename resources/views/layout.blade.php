@@ -411,7 +411,7 @@
                         <li class="sidebar-menu-item menu-item level-1 has-submenu">
                           <div class="sidebar-menu-item-controls menu-item-controls level-1">
 
-                            <a href="{{route('category', $k + 1 ) }}" class="sidebar-menu-link menu-link level-1
+                            <a href="{{route('category', Str::replace('/', '-', $k) ) }}" class="sidebar-menu-link menu-link level-1
                             @isset($active) @if($active && $active == $k)  active  @endif  @endisset " data-menu-link="airpods"
                               data-menu-link-source="collection">
                                     {{ $v }}

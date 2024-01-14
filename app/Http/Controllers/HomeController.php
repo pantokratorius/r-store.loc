@@ -12,9 +12,8 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $data =  DB::table('data')->pluck('data');
-        if(!empty($data[0])) $data = json_decode ($data[0], 1);
-        $nacenka = DB::table('nacenka')->pluck('data'); 
+        $data =  $this->getAllData();
+        $nacenka = DB::table('nacenka')->pluck('data');
 
         if(!empty($nacenka[0])) $nacenka = json_decode ($nacenka[0], 1);
 
@@ -30,15 +29,16 @@ class HomeController extends Controller
                     }
                 }
             }
-        } 
+        }
 
         foreach($data as $k=>$v)
-            $cats[] = EmojiRemover::filter($v['real_name']);
+            $cats[EmojiRemover::filter($k)] = EmojiRemover::filter($v['real_name']);
 
-        $bread = end($cats);    
+        $bread = end($cats);
 
         foreach($data as $k=>$v){
             foreach($v as $key=>$val){
+                $k = EmojiRemover::filter($k);
                 $res[$k][$key] = $val;
                 if(is_array($res[$k][$key])){
                     $res[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
@@ -47,95 +47,110 @@ class HomeController extends Controller
         }
 
         $cart = session()->get('cart', []);
-// dd($cart);
-            
+// dd($res);
+
         return view('home', compact('res', 'cats', 'bread'));
     }
 
 
-    public function category($id){
+    public function category($category){
+        $category = Str::replace('-', '/', $category);
 
-        $id--;
-
-        $data =  DB::table('data')->pluck('data');
-        if(!empty($data[0])) $data = json_decode ($data[0], 1);
-
-        $keys = array_keys($data);
-        $dat = $data[$keys[$id]];
-        
-        foreach($data as $k => $v)
-            $cats[] = EmojiRemover::filter($v['real_name']);
-
-        $bread =  $cats[$id];    
-
-        foreach($dat as $key=>$val){
-            $res[$key] = $val;
-            if(is_array($res[$key])){
-                $res[$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
+        $data =  $this->getAllData();
+         foreach($data as $k=>$v){
+            foreach($v as $key=>$val){
+                $k = EmojiRemover::filter($k);
+                $res[$k][$key] = $val;
+                if(is_array($res[$k][$key])){
+                    $res[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
+                }
             }
         }
 
-        $active = $id;
+        $dat = $res[$category];
+
+        foreach($data as $k => $v)
+            $cats[EmojiRemover::filter($k)] = EmojiRemover::filter($v['real_name']);
+        $bread =  $cats[$category];
+
+        $res = $dat;
+        $dat['real_name'] = EmojiRemover::filter( Str::replace(['/', ' '], ['-', ''], $dat['real_name']));
+
+        $res = $dat; //dd($res);
+        $active = $category;
 
         return view('category', compact('res', 'cats', 'bread', 'active'));
     }
 
-    public function item($category_id, $item_id){
-        
-        $data =  DB::table('data')->pluck('data');
-        if(!empty($data[0])) $data = json_decode ($data[0], 1);
-        $keys = array_keys($data);
+    public function item($category, $item){
 
-        $group = $data[$keys[$category_id - 1]];
+        $category = Str::replace('-', '/', $category);
+        $item = Str::replace('-', '', $item);
+
+        $data =  $this->getAllData();
+        foreach($data as $k=>$v){
+            foreach($v as $key=>$val){
+                $k = EmojiRemover::filter($k);
+                $res[$k][$key] = $val;
+                if(is_array($res[$k][$key])){
+                    $res[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
+                }
+            }
+        }
+
+        $group = $res[$category];
 
         foreach($group as $k=>$v){
             if(is_array($v))
-                $mass[] = $v;
-        }
+            $mass[EmojiRemover::filter($k)] = $v;
+    }
 
 
-        $res = $mass[$item_id - 1]; 
+    $result = $mass[$item];
+    $result['price'] = Str::replace('.',' ', $result['price']);
 
-        $res['real_name'] = EmojiRemover::filter( $res['real_name'] );
-        $res['price'] = Str::replace('.',' ', $res['price']);
+$res = $result;
 
         foreach($data as $k => $v)
-            $cats[] = EmojiRemover::filter($v['real_name']);
+            $cats[EmojiRemover::filter($k)] = EmojiRemover::filter($v['real_name']);
+        $bread =  $cats[$category];
 
-        $bread =  $cats[$category_id - 1];        
-
-        $active = $category_id - 1;
+        $active = $category;
 
 
         return view('item', compact('res', 'cats', 'bread', 'active'));
     }
 
 
-
-
-
-    public function selectItem($category_id, $item_id) {
+    public function getAllData(){
         $data =  DB::table('data')->pluck('data');
         if(!empty($data[0])) $data = json_decode ($data[0], 1);
-        $keys = array_keys($data);
 
-        $group = $data[$keys[$category_id - 1]];
-
-        foreach($group as $k=>$v){
-            if(is_array($v))
-                $mass[] = $v;
-        }
-
-
-        $res = $mass[$item_id - 1]; 
-
-        $res['real_name'] = EmojiRemover::filter( $res['real_name'] );
-        $res['price'] = Str::replace('.',' ', $res['price']);
-        
-        return $res;
+        return $data;
     }
 
-    
-    
+
+    // public function selectItem($category_id, $item_id) {
+    //     $data =  $this->getAllData();
+    //     $keys = array_keys($data);
+
+    //     $group = $data[$keys[$category_id - 1]];
+
+    //     foreach($group as $k=>$v){
+    //         if(is_array($v))
+    //             $mass[] = $v;
+    //     }
+
+
+    //     $res = $mass[$item_id - 1];
+
+    //     $res['real_name'] = EmojiRemover::filter( $res['real_name'] );
+    //     $res['price'] = Str::replace('.',' ', $res['price']);
+
+    //     return $res;
+    // }
+
+
+
 
 }

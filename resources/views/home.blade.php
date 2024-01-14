@@ -16,7 +16,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', [$cat,  $index])}}"
+                    <a href="{{route('item', [Str::replace('/', '-', $k),  Str::replace(' ', '-', trim($val['real_name']))])}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
@@ -55,7 +55,7 @@
                   </div>
 
                   <a href="/product/iphone-15-pro-max-256-gb-titanovyy-1-sim-esim" class="product-link">
-                       {{$val['real_name']}} 
+                       {{$val['real_name']}}
                   </a>
 
 
@@ -63,18 +63,18 @@
               </div>
             </div>
             @php
-                $index++; 
+                $index++;
             @endphp
-            
- @endif             
- 
+
+ @endif
+
  @endforeach
     @php
-      $cat++; 
+      $cat++;
       $index = 1;
     @endphp
 
  @endforeach
- 
+
           </div>
 @endsection
