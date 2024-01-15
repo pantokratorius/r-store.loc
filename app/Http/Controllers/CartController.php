@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Arispati\EmojiRemover\EmojiRemover;
+use Illuminate\Support\Str;
+use App\Services\DataService;
 
 class CartController extends Controller
 {
@@ -11,7 +13,7 @@ class CartController extends Controller
 
 
     public function index()
-    {
+    {   
         $products = DB::table('data')->pluck('data');
         return view('products', compact('products'));
     }
@@ -20,9 +22,24 @@ class CartController extends Controller
     {
         return view('cart');
     }
-    public function addProducttoCart($category_id, $item_id)
+
+    
+    public function addProducttoCart($category, $item, DataService $dataservice)
     {
-        $id = $category_id . '-' . $item_id;
+        $category = Str::replace('-', '/', $category);
+        $item = Str::replace('-', '', $item);
+
+        $id = $category . '%%' . $item;
+
+        $data =  $dataservice->getAllData();
+     
+
+        $group = $data[$category];
+
+ 
+        
+        $result = $group[$item];
+        
 
         $cart = session()->get('cart', []);
         if(isset($cart[$id])) {
@@ -30,6 +47,7 @@ class CartController extends Controller
         } else {
             $cart[$id] = [
                 "quantity" => 1,
+                "price" => $result['price']
             ];
         }
         session()->put('cart', $cart);

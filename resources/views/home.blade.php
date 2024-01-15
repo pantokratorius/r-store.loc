@@ -2,10 +2,7 @@
 
 @section('content')
 <div class="products-list is-collection row">
- @php
-    $cat = 1;
-    $index = 1;
- @endphp
+ 
 
 @foreach($res as $k=>$v)
  @foreach($v as $key=>$val)
@@ -45,7 +42,7 @@
                       <!-- Если больше 1 модификации -->
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [$cat,  $index], 'addcart')}}" onclick="location('')" class="button button-buy is-primary" type="submit" data-item-add=""></a>
+                        <a href="{{route('addcart', [Str::replace('/', '-', $k),   Str::replace(' ', '-', trim($val['real_name']))], 'addcart')}}" onclick="location('')" class="button button-buy is-primary" type="submit" data-item-add=""></a>
                       </div><!-- /.buy -->
 
                       <!-- product.quantity == 0 -->
@@ -62,17 +59,10 @@
                 </div>
               </div>
             </div>
-            @php
-                $index++;
-            @endphp
-
  @endif
 
  @endforeach
-    @php
-      $cat++;
-      $index = 1;
-    @endphp
+
 
  @endforeach
 

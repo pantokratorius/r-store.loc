@@ -28,7 +28,9 @@
 </head>
 
 <body class="fhg-body">
-
+        {{-- @if (Session::has('success'))
+        <div class="alert alert-info">{{ Session::get('success') }}</div>
+      @endif --}}
   <div class="body-wrapper">
 
     <div class="top-panel-wrapper">
@@ -83,14 +85,14 @@
               <div class="shopcart-widget is-top-panel ">
                 <a href="/cart_items " title="Корзина" class="shopcart-widget-link ">
                   <span class="shopcart-widget-icon">
-                    <span class="shopcart-widget-count js-shopcart-widget-count is-top-panel">0</span>
+                    <span class="shopcart-widget-count js-shopcart-widget-count is-top-panel">{{ $cart_count }}</span>
                   </span>
                   <span class="shopcart-widget-data">
                     <span class="shopcart-widget-caption">
                       Корзина
                     </span>
 
-                    <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md">0.00&nbsp;руб</span>
+                    <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md">{{ $cart_price }}&nbsp;руб</span>
                   </span>
                 </a>
 
@@ -150,14 +152,14 @@
                     <div class="shopcart-widget in-header">
                       <a href="/cart_items " title="Корзина" class="shopcart-widget-link ">
                         <span class="shopcart-widget-icon">
-                          <span class="shopcart-widget-count js-shopcart-widget-count">0</span>
+                          <span class="shopcart-widget-count js-shopcart-widget-count">{{ $cart_count }}</span>
                         </span>
                         <span class="shopcart-widget-data">
                           <span class="shopcart-widget-caption">
                             Корзина:
                           </span>
 
-                          <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-sm">0.00&nbsp;руб</span>
+                          <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-sm">{{ App\Services\DataService::formatNumber( $cart_price ) }}&nbsp;руб</span>
                         </span>
                       </a>
 

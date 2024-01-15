@@ -26,7 +26,7 @@
                       <div class="price in-card">
 
 
-                        {{-- {{ dd($val) }}&nbsp;рубve --}}
+                        {{ $val['price'] }}&nbsp;руб
 
 
                       </div>
