@@ -92,7 +92,7 @@
                       Корзина
                     </span>
 
-                    <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md">{{ $cart_price }}&nbsp;руб</span>
+                    <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md">{{ App\Services\DataService::formatNumber( $cart_price )}}&nbsp;руб</span>
                   </span>
                 </a>
 
