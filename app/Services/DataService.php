@@ -32,7 +32,7 @@ class DataService {
             foreach ($new_data[$k] as $key => $val) { 
                 $key = EmojiRemover::filter($key); 
                 if($key != 'real_name'){
-                    $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( number_format($val['price']  + $nacenk / 1000, 3) );
+                    $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  str_replace('.','',$val['price'])  + $nacenk );
                     $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
                 }
                 else $transfer[$k][$key] = EmojiRemover::filter( $val);
@@ -41,7 +41,7 @@ class DataService {
                 foreach ($new_data[$k] as $key => $val) {
                 $key = EmojiRemover::filter($key);
                     if($key != 'real_name'){
-                    $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( number_format($val['price'] / 1000, 3) );    //save([$res[$k],  $val ]);
+                    $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
                     $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
                     }
                 else $transfer[$k][$key] = EmojiRemover::filter( $val);
