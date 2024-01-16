@@ -178,14 +178,6 @@
 
 
 
-<div class="counter js-variant-counter" data-quantity="" style="" data-quantity-change-init="true">
-
-  <button type="button" data-quantity-change="-1" class="counter-button is-count-down "></button>
-
-  <input type="text" value="1" name="quantity" class="counter-input ">
-
-  <button type="button" data-quantity-change="1" class="counter-button is-count-up "></button>
-</div>
 
 
 
@@ -194,12 +186,13 @@
 
 
 
-    <button class="product-button button is-primary  js-variant-shown" type="submit" data-item-add="" style="display: block;">
 
-      <span class="button-text">
+    {{-- <button class="product-button button is-primary  js-variant-shown" type="submit" data-item-add="" style="display: block;"> --}}
+
+      <a href="{{route('addcart', [Str::replace('/', '-', $active ),   Str::replace(' ', '-', trim($res['real_name'])) ], 'addcart' ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
         В корзину
-      </span>
-    </button>
+      </a>
+    {{-- </button> --}}
 
     <div class="product-order-variant variant-hidden js-variant-hidden" style="display: none;">
       <p class="notice notice-info">
@@ -223,7 +216,7 @@
 
   
 </form>
-
+@vite(['resources/js/item-script.js'])
   </div>
 </div>
 @endsection

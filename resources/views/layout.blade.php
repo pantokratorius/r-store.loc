@@ -20,6 +20,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,latin" rel="stylesheet">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
@@ -28,9 +29,9 @@
 </head>
 
 <body class="fhg-body">
-        {{-- @if (Session::has('success'))
-        <div class="alert alert-info">{{ Session::get('success') }}</div>
-      @endif --}}
+        @if (Session::has('success'))
+        <div class="ajs-message ajs-success ajs-visible">{{ Session::get('success') }}</div>
+      @endif
   <div class="body-wrapper">
 
     <div class="top-panel-wrapper">
@@ -83,7 +84,7 @@
             <div class="shopcart-widget-wrapper is-top-panel cell-  hidden shown-sm">
 
               <div class="shopcart-widget is-top-panel ">
-                <a href="/cart_items " title="Корзина" class="shopcart-widget-link ">
+                <a href="{{ route('cart') }}" title="Корзина" class="shopcart-widget-link ">
                   <span class="shopcart-widget-icon">
                     <span class="shopcart-widget-count js-shopcart-widget-count is-top-panel">{{ $cart_count }}</span>
                   </span>
@@ -92,7 +93,7 @@
                       Корзина
                     </span>
 
-                    <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md">{{ App\Services\DataService::formatNumber( $cart_price )}}&nbsp;руб</span>
+                    <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md">{{  $cart_price }}&nbsp;руб</span>
                   </span>
                 </a>
 
@@ -150,7 +151,7 @@
 
                   <div class="shopcart-widget-wrapper  hidden-sm">
                     <div class="shopcart-widget in-header">
-                      <a href="/cart_items " title="Корзина" class="shopcart-widget-link ">
+                      <a href="{{ route('cart') }}" title="Корзина" class="shopcart-widget-link ">
                         <span class="shopcart-widget-icon">
                           <span class="shopcart-widget-count js-shopcart-widget-count">{{ $cart_count }}</span>
                         </span>
@@ -159,7 +160,7 @@
                             Корзина:
                           </span>
 
-                          <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-sm">{{ App\Services\DataService::formatNumber( $cart_price ) }}&nbsp;руб</span>
+                          <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-sm">{{  $cart_price  }}&nbsp;руб</span>
                         </span>
                       </a>
 
@@ -302,7 +303,7 @@
                 </a>
               </li>
               <li class="breadcrumb-item">
-                <span class="breadcrumb-page">{{ $bread }}</span>
+                <span class="breadcrumb-page">@isset($bread){{ $bread }}@endisset</span>
               </li>
 
             </ul>
@@ -313,7 +314,7 @@
             <h1 class="page-headding">
 
 
-              {{ $bread }}
+              @isset($bread) {{ $bread }} @endisset
 
 
 
@@ -407,14 +408,14 @@
 
               <ul class="sidebar-menu menu level-1 is-vertical is-collapse insales-menu--loaded"
                 data-menu-id="sidebar-menu">
-
+@isset($cats)
                   @foreach($cats as $k=>$v)
 
                         <li class="sidebar-menu-item menu-item level-1 has-submenu">
                           <div class="sidebar-menu-item-controls menu-item-controls level-1">
 
                             <a href="{{route('category', Str::replace('/', '-', $k) ) }}" class="sidebar-menu-link menu-link level-1
-                            @isset($active) @if($active && $active == $k)  active  @endif  @endisset " data-menu-link="airpods"
+                            @isset($active) @if($active == $k)  active  @endif  @endisset " data-menu-link="airpods"
                               data-menu-link-source="collection">
                                     {{ $v }}
                             </a>
@@ -423,8 +424,7 @@
                         </li>
 
                   @endforeach
-
-
+@endisset
               </ul>
             </div>
 
@@ -2910,10 +2910,13 @@
       max-height: 100%;
       padding: 15px;
       margin-top: 10px;
+      float: right;
+      border-radius: 5px
     }
 
     .ajs-message.ajs-success {
-      background: rgba(91, 189, 114, 0.95);
+      background: rgba(150, 150, 150, 0.9);
+      color: #222222;
     }
 
     .ajs-message.ajs-error {

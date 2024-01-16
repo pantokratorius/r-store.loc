@@ -8,5 +8,10 @@
     "file": "assets/app-ecWDpuvf.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/item-script.js": {
+    "file": "assets/item-script-iITpTFhk.js",
+    "isEntry": true,
+    "src": "resources/js/item-script.js"
   }
 }

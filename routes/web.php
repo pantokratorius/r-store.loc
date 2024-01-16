@@ -19,4 +19,5 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('category/{id}', [HomeController::class, 'category'])->name('category');
 Route::get('category/{id}/item/{id2}', [HomeController::class, 'item'])->name('item');
 
+Route::get('cart', CartController::class)->name('cart');
 Route::get('category/{id}/item/{id2}/addcart', [CartController::class, 'addProducttoCart'])->name('addcart');

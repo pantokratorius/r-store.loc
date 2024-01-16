@@ -1,0 +1,1 @@
+$(".is-count-up").click(function(){$(".counter-input").val(Number($(".counter-input").val())+1)});$(".is-count-down").click(function(){Number($(".counter-input").val())>1&&$(".counter-input").val(Number($(".counter-input").val())-1)});

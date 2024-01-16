@@ -12,10 +12,9 @@ class CartController extends Controller
     
 
 
-    public function index()
+    public function __invoke()
     {   
-        $products = DB::table('data')->pluck('data');
-        return view('products', compact('products'));
+        return view('cart');
     }
   
     public function productCart()
@@ -24,7 +23,7 @@ class CartController extends Controller
     }
 
     
-    public function addProducttoCart($category, $item, DataService $dataservice)
+    public function addProducttoCart($category, $item,  DataService $dataservice)
     {
         $category = Str::replace('-', '/', $category);
         $item = Str::replace('-', '', $item);
@@ -39,7 +38,6 @@ class CartController extends Controller
  
         
         $result = $group[$item];
-        
 
         $cart = session()->get('cart', []);
         if(isset($cart[$id])) {
@@ -47,11 +45,12 @@ class CartController extends Controller
         } else {
             $cart[$id] = [
                 "quantity" => 1,
-                "price" => $result['price']
+                "price" => str_replace(' ', '', $result['price']),
+                "name" => str_replace(' ', '', trim($result['real_name']))
             ];
         }
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product has been added to cart!');
+        return redirect()->back()->with('success', 'Товар добавлен в корзину!');
     }
     
     public function updateCart(Request $request)

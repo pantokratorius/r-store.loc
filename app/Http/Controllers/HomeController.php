@@ -13,7 +13,9 @@ use App\Services\DataService;
 class HomeController extends Controller
 {
     public function __invoke(DataService $dataService)
-    {
+    {   
+        //session()->flush();
+    //    dd( session()->get('cart') );
         $transfer = $dataService->getAllData();
 
         // dd($transfer);

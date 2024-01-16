@@ -42,7 +42,7 @@
                       <!-- Если больше 1 модификации -->
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [Str::replace('/', '-', $k),   Str::replace(' ', '-', trim($val['real_name']))], 'addcart')}}" onclick="location('')" class="button button-buy is-primary" type="submit" data-item-add=""></a>
+                        <a href="{{route('addcart', [Str::replace('/', '-', $k),   Str::replace(' ', '-', trim($val['real_name']))], 'addcart')}}"  class="button button-buy is-primary" type="submit" data-item-add=""></a>
                       </div><!-- /.buy -->
 
                       <!-- product.quantity == 0 -->

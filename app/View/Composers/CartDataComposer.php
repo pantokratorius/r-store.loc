@@ -2,6 +2,7 @@
 
 namespace App\View\Composers;
 
+use App\Services\DataService;
 use Illuminate\View\View;
 
 
@@ -9,14 +10,16 @@ class CartDataComposer
 {
     public function compose(View $view)
     {
-        $cart_price = 0;
+       $cart_count = 0;  $cart_price = 0;
        $cart = session()->get('cart', []);
-       $cart_count = count($cart);
+       
        
        if($cart){
-        foreach($cart as $k=>$v){ 
-                $cart_price += (int)str_replace('.','', $v['price']);
+            foreach($cart as $k=>$v){ 
+                $cart_price += $v['price'] *  $v['quantity'];
+                $cart_count += $v['quantity'];
             }
+            if($cart_price > 0) $cart_price = DataService::formatNumber($cart_price);
         }
         // dd($cart_price  );
         $view->with('cart', $cart)
