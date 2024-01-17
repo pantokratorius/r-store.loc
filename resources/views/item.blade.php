@@ -189,7 +189,7 @@
 
     {{-- <button class="product-button button is-primary  js-variant-shown" type="submit" data-item-add="" style="display: block;"> --}}
 
-      <a href="{{route('addcart', [Str::replace('/', '-', $active ),   Str::replace(' ', '-', trim($res['real_name'])) ], 'addcart' ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
+      <a href="{{route('addcart', [str_replace('/', '-', $active ),   str_replace(' ', '-', trim($res['real_name'])) ] ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
         В корзину
       </a>
     {{-- </button> --}}

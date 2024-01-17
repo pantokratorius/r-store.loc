@@ -21,3 +21,4 @@ Route::get('category/{id}/item/{id2}', [HomeController::class, 'item'])->name('i
 
 Route::get('cart', CartController::class)->name('cart');
 Route::get('category/{id}/item/{id2}/addcart', [CartController::class, 'addProducttoCart'])->name('addcart');
+Route::get('category-name/{category_name}/delete', [CartController::class, 'deleteProductCart'])->name('deletecart');

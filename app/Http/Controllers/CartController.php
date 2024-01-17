@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Arispati\EmojiRemover\EmojiRemover;
-use Illuminate\Support\Str;
 use App\Services\DataService;
 
 class CartController extends Controller
@@ -12,9 +11,12 @@ class CartController extends Controller
     
 
 
-    public function __invoke()
+    public function __invoke(DataService $dataservice)
     {   
-        return view('cart');
+        $cart = $dataservice->getCartData();
+    //    dd($cart);
+
+        return view('cart', compact('cart') );
     }
   
     public function productCart()
@@ -23,12 +25,12 @@ class CartController extends Controller
     }
 
     
-    public function addProducttoCart($category, $item,  DataService $dataservice)
+    public function addProducttoCart($raw_category, $raw_item,  DataService $dataservice)
     {
-        $category = Str::replace('-', '/', $category);
-        $item = Str::replace('-', '', $item);
+        $category = str_replace('-', '/', $raw_category);
+        $item = str_replace('-', '', $raw_item);
 
-        $id = $category . '%%' . $item;
+        $id = $category . '$$' . $item;
 
         $data =  $dataservice->getAllData();
      
@@ -46,33 +48,35 @@ class CartController extends Controller
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
-                "name" => str_replace(' ', '', trim($result['real_name']))
+                "name" =>  trim( $result['real_name']) 
             ];
         }
+
+        // dd($raw_item);
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Товар добавлен в корзину!');
     }
     
-    public function updateCart(Request $request)
+    public function updateCart($category_name)
     {
-        if($request->id && $request->quantity){
-            $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
-            session()->put('cart', $cart);
-            session()->flash('success', 'Product added to cart.');
-        }
+       dd($category_name);
     }
   
-    public function deleteProduct(Request $request)
+    public function deleteProductCart( $category_name, DataService $dataservice)
     {
-        if($request->id) {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Product successfully deleted.');
+
+        $cart = session()->get('cart');
+
+        if(isset($cart[$category_name])){
+            unset($cart[$category_name]);
+            session()->put('cart', $cart);
         }
+        
+        $cart = $dataservice->getCartData();
+
+
+      
+        return view('cart', compact('cart') );
     }
 }
 

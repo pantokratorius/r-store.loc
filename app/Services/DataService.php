@@ -52,6 +52,29 @@ class DataService {
 
         return $transfer;
     }
+
+
+    public function getCartData(){
+        $temp = session()->get('cart');
+        $cart = [];
+
+        if(!empty($temp))
+            foreach($temp as $k=>$v){
+
+                $cart[$k]['totalprice'] = $this->formatNumber( $v['price'] * $v['quantity'] ); 
+                foreach($v as $key=>$val){
+                    if($key == 'price')
+                        $cart[$k]['price'] = $this->formatNumber( $val );
+                    elseif($key == 'name' && stripos($k, 'iphone') !==false )
+                        $cart[$k][$key] = 'Iphone '. $val; 
+                    else {
+                        $cart[$k][$key] =  $val; 
+                    
+                    }
+                }
+            }
+        return $cart;
+    }
   
 
     public static function formatNumber($number){

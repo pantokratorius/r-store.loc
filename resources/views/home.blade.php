@@ -13,7 +13,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', [Str::replace('/', '-', $k),  Str::replace(' ', '-', trim($val['real_name']))])}}"
+                    <a href="{{route('item', [str_replace('/', '-', $k),  str_replace(' ', '-', trim($val['real_name']))])}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
@@ -42,7 +42,7 @@
                       <!-- Если больше 1 модификации -->
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [Str::replace('/', '-', $k),   Str::replace(' ', '-', trim($val['real_name']))], 'addcart')}}"  class="button button-buy is-primary" type="submit" data-item-add=""></a>
+                        <a href="{{route('addcart', [str_replace('/', '-', $k),   str_replace(' ', '-', trim($val['real_name']))])}}"  class="button button-buy is-primary" type="submit" data-item-add=""></a>
                       </div><!-- /.buy -->
 
                       <!-- product.quantity == 0 -->
