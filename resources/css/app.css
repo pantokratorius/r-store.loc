@@ -246,7 +246,7 @@ textarea {
   /* 2 */
   box-shadow: none;
   /* 3 */
-  -webkit-appearance: none;
+  appearance: none;
   /* 3 */ }
 
 /**
@@ -280,7 +280,7 @@ button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+  appearance: button;
   /* 2 */ }
 
 /**
@@ -302,7 +302,7 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText; }
+  outline: 1px dotted; }
 
 /**
  * Correct the padding in Firefox.
@@ -378,7 +378,7 @@ textarea {
  */
 /* line 384, _normalize.scss */
 [type="search"] {
-  -webkit-appearance: textfield;
+  appearance: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */ }
@@ -389,7 +389,7 @@ textarea {
 /* line 393, _normalize.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+  appearance: none; }
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -397,7 +397,7 @@ textarea {
  */
 /* line 403, _normalize.scss */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
+  appearance: button;
   /* 1 */
   font: inherit;
   /* 2 */ }
@@ -568,7 +568,7 @@ input[type=checkbox]:disabled, input[type=radio]:disabled {
 
 /* line 1, core.min.css */
 input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
-  -webkit-appearance: listbox; }
+  appearance: listbox; }
 
 /* line 1, core.min.css */
 textarea {
@@ -583,7 +583,7 @@ textarea {
 
 /* line 1, core.min.css */
 .form input[type=search], input[type=search] {
-  -webkit-appearance: none; }
+  appearance: none; }
 
 /* line 1, core.min.css */
 [hidden] {
@@ -6241,7 +6241,6 @@ button, input, select, textarea {
 
 /* line 178, _components.scss */
 .pagination-void {
-  vertical-align: middle;
   display: block;
   text-align: center;
   margin: 0 0.25rem; }
@@ -6501,7 +6500,7 @@ button, input, select, textarea {
   color: #3b3b3b;
   text-align: center;
   box-shadow: none;
-  -webkit-appearance: none;
+  appearance: none;
   border-radius: 0; }
   /* line 440, _components.scss */
   .counter-input:focus {
@@ -6881,10 +6880,10 @@ select {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAQAAABn7dZ6AAAAVUlEQVQI12NgwA1Ky0obUfheJZfBjGr5kpcltTDhMteSL+VhUE6VTumb0jKwavuSzyUxSNorDEvfleaXW5V+Kk1Cs6nMrPRDyZeyDCyOqJYvNmUgDABtXBsVW8rhNAAAAABJRU5ErkJggg==") !important;
     background-repeat: no-repeat;
     background-position: center; }
-  @supports (-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none) {
+  @supports (appearance: none) or (-moz-appearance: none) or (appearance: none) {
     /* line 769, _components.scss */
     select {
-      -webkit-appearance: none;
+      appearance: none;
       -moz-appearance: none;
       appearance: none;
       padding-right: 1.25rem;
@@ -7974,7 +7973,7 @@ body {
 
 /* line 527, _layout.scss */
 .m-input--checkbox input[type="checkbox"] {
-  -webkit-appearance: checkbox;
+  appearance: checkbox;
   position: absolute;
   opacity: 0;
   z-index: 0;
@@ -12011,7 +12010,7 @@ body {
     background-color: #fff;
     color: #1c1c1c;
     resize: vertical;
-    -webkit-appearance: none;
+    appearance: none;
     -moz-appearance: none;
     appearance: none
 }
@@ -12167,7 +12166,7 @@ body {
 }
 
 .co-input--code input::-webkit-outer-spin-button,.co-input--code input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0
 }
 
@@ -22880,7 +22879,7 @@ a:not([class]):focus,.picker-input--active:not([class]),a:not([class]):hover,.li
     background-color: #fff;
     color: #1c1c1c;
     resize: vertical;
-    -webkit-appearance: none;
+    appearance: none;
     -moz-appearance: none;
     appearance: none
 }
@@ -23036,7 +23035,7 @@ a:not([class]):focus,.picker-input--active:not([class]),a:not([class]):hover,.li
 }
 
 .co-input--code input::-webkit-outer-spin-button,.co-input--code input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0
 }
 
