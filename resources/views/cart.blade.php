@@ -46,7 +46,7 @@
   <div class="item-prices is-total-price js-item-total-price">{{ $v['totalprice']  }}&nbsp;руб</div>
 
   <div class="item-delete">
-    <a href="{{ route('deletecart', $k ) }}" type="submit" class="button is-item-delete is-transparent">
+    <a href="{{ route('deletecart', str_replace('/', '-', $k) ) }}" type="submit" class="button is-item-delete is-transparent">
 
     </a>
     </div>

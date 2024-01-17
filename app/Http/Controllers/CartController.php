@@ -80,6 +80,7 @@ class CartController extends Controller
 
     public function deleteProductCart( $category_name, DataService $dataservice)
     {
+        $category_name = str_replace('-','/', $category_name);
 
         $cart = session()->get('cart');
 
