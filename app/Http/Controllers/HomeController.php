@@ -13,7 +13,7 @@ use App\Services\DataService;
 class HomeController extends Controller
 {
     public function __invoke(DataService $dataService)
-    {   
+    {
         //session()->flush();
     //    dd( session()->get('cart') );
         $transfer = $dataService->getAllData();
@@ -29,7 +29,7 @@ class HomeController extends Controller
 
 
         $cart = session()->get('cart', []);
-        //    dd($cart); 
+        //    dd($cart);
         return view('home', compact('res', 'cats', 'bread'));
     }
 
@@ -79,9 +79,10 @@ class HomeController extends Controller
 
 
         $result = $mass[$item];
-        $result['price'] = $result['price'];
 
         $res = $result;
+
+        dd($res);
 
         foreach ($data as $k => $v)
             $cats[EmojiRemover::filter($k)] = EmojiRemover::filter($v['real_name']);

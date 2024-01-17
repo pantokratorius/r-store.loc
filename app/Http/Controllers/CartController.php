@@ -8,23 +8,23 @@ use App\Services\DataService;
 
 class CartController extends Controller
 {
-    
+
 
 
     public function __invoke(DataService $dataservice)
-    {   
+    {
         $cart = $dataservice->getCartData();
     //    dd($cart);
 
         return view('cart', compact('cart') );
     }
-  
+
     public function productCart()
     {
         return view('cart');
     }
 
-    
+
     public function addProducttoCart($raw_category, $raw_item,  DataService $dataservice)
     {
         $category = str_replace('-', '/', $raw_category);
@@ -33,12 +33,12 @@ class CartController extends Controller
         $id = $category . '$$' . $item;
 
         $data =  $dataservice->getAllData();
-     
+
 
         $group = $data[$category];
 
- 
-        
+
+
         $result = $group[$item];
 
         $cart = session()->get('cart', []);
@@ -48,7 +48,7 @@ class CartController extends Controller
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
-                "name" =>  trim( $result['real_name']) 
+                "name" =>  trim( $result['real_name'])
             ];
         }
 
@@ -57,15 +57,17 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Товар добавлен в корзину!');
     }
 
-      
+
     public function updateCart($category_name, $up_down, DataService $dataservice)
     {
+
+        $category_name = str_replace('-','/', $category_name);
         $cart = session()->get('cart');
 
         if(isset($cart[$category_name])){
             if($up_down == 'up')
                 $cart[$category_name]['quantity'] += 1;
-            elseif($up_down == 'down' && $cart[$category_name]['quantity'] > 1){ 
+            elseif($up_down == 'down' && $cart[$category_name]['quantity'] > 1){
                 $cart[$category_name]['quantity'] -= 1;
             }
             session()->put('cart', $cart);
@@ -75,7 +77,7 @@ class CartController extends Controller
 
         return view('cart', compact('cart') );
     }
-  
+
     public function deleteProductCart( $category_name, DataService $dataservice)
     {
 
@@ -85,11 +87,11 @@ class CartController extends Controller
             unset($cart[$category_name]);
             session()->put('cart', $cart);
         }
-        
+
         $cart = $dataservice->getCartData();
 
 
-      
+
         return view('cart', compact('cart') );
     }
 }
