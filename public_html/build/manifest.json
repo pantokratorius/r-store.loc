@@ -5,8 +5,13 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-ecWDpuvf.js",
+    "file": "assets/app-kqTVcujE.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/jquery.js": {
+    "file": "assets/jquery-ZeGdKyn-.js",
+    "isEntry": true,
+    "src": "resources/js/jquery.js"
   }
 }

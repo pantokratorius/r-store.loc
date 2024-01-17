@@ -7,24 +7,18 @@
   <title>iPhone – купить в интернет-магазине по лучшей цене</title>
   <meta name="description" content="iPhone">
   <meta name="robots" content="index,follow">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- icons-->
-  <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('favicon1.png') }}">
-<!--  <link rel="stylesheet" type="text/css"
-    href="https://static.insales-cdn.com/assets/1/7083/949163/1675718101/jquery.fancybox.min.css">-->
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon1.png') }}">
 
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,latin" rel="stylesheet">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
-@vite(['resources/css/app.css'])
+@vite(['resources/css/app.css',  'resources/js/jquery.js'])
 </head>
 
 <body class="fhg-body">
@@ -313,23 +307,23 @@
               <h1 class="page-headding">
 
 
-                 {{ $bread }} 
+                 {{ $bread }}
 
 
 
               </h1>
             </div><!-- /.page_headding -->
-            
-            
+
+
             <div class="collection-mix-description">
-              
-              
+
+
               <div class="collection-description at-top editor">
                 <p><span style="font-family: helvetica; font-size: 14pt;">Выберите модель:</span></p>
               </div>
-              
+
             </div>
-            
+
 
           <div class="toolbar collection-toolbar at-top">
             <div class="toolbar-inner is-between">
@@ -2710,7 +2704,7 @@
       float: right;
       border-radius: 5px;
       position: absolute;
-      
+
     }
 
     .ajs-message.ajs-success {

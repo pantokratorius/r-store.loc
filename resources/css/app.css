@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -13,7 +14,7 @@ html {
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
 /* Sections
@@ -505,7 +506,7 @@ blockquote, figure {
 /* line 1, core.min.css */
 a:not([href]):not([tabindex]) {
   color: inherit;
-  text-decoration: none; 
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6451,7 +6452,7 @@ button, input, select, textarea {
   .is-count-down {
     border: 1px solid #f7f7f7;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0; 
+    border-bottom-right-radius: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6464,7 +6465,7 @@ button, input, select, textarea {
   .is-count-up {
     border: 1px solid #f7f7f7;
     border-top-left-radius: 0;
-    border-bottom-left-radius: 0; 
+    border-bottom-left-radius: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11895,7 +11896,7 @@ body {
   font-size: 16px; }
 
 
-  
+
   .co-title {
     margin: 0 0 1rem
 }

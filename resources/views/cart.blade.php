@@ -22,7 +22,9 @@
 <div class="item-content">
   <div class="item-caption">
     <p class="item-title">
-      {{ $v['name'] }}
+        <a href="{{ route('item', [$links[$k]['cat'], $links[$k]['item'] ]) }}">
+         {{ $v['name'] }}
+        </a>
     </p>
 
   </div>

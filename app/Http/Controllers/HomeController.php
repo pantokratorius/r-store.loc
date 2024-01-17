@@ -82,8 +82,6 @@ class HomeController extends Controller
 
         $res = $result;
 
-        dd($res);
-
         foreach ($data as $k => $v)
             $cats[EmojiRemover::filter($k)] = EmojiRemover::filter($v['real_name']);
         $bread =  $cats[$category];

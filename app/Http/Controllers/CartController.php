@@ -14,9 +14,14 @@ class CartController extends Controller
     public function __invoke(DataService $dataservice)
     {
         $cart = $dataservice->getCartData();
-    //    dd($cart);
+        foreach($cart as $k=>$v){
+             list($cat, $item) = explode('$$', $k);
+             $links[$k]['cat'] = str_replace('/', '-', $cat);
+             $links[$k]['item'] = str_replace('/', '-', $item);
+        }
+// dd($link);
 
-        return view('cart', compact('cart') );
+        return view('cart', compact('cart', 'links') );
     }
 
     public function productCart()
