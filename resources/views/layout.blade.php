@@ -25,7 +25,6 @@
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
 @vite(['resources/css/app.css'])
-  <link rel="stylesheet" href="https://code.jivo.ru/css/5b75eed/widget.css" class="jv-css">
 </head>
 
 <body class="fhg-body">
