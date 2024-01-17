@@ -1,1 +1,0 @@
-$(".is-count-up").click(function(){const t=Number($(this).closest(".item-content").find(".counter-input").val());$(this).closest(".item-content").find(".counter-input").val(t+1)});$(".is-count-down").click(function(){const t=Number($(this).closest(".item-content").find(".counter-input").val());t>1&&$(this).closest(".item-content").find(".counter-input").val(t-1)});
