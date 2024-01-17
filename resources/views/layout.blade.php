@@ -2711,7 +2711,7 @@
       float: right;
       border-radius: 5px;
       position: absolute;
-      right: 10px;
+      
     }
 
     .ajs-message.ajs-success {

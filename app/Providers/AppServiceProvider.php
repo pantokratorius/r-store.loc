@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        view()->composer('layout', CartDataComposer::class );
+        view()->composer(['layout', 'cart'], CartDataComposer::class );
     }
     
 }

@@ -22,8 +22,7 @@ class CartDataComposer
             if($cart_price > 0) $cart_price = DataService::formatNumber($cart_price);
         }
         // dd($cart_price  );
-        $view->with('cart', $cart)
-        ->with('cart_count', $cart_count)
+        $view->with('cart_count', $cart_count)
         ->with('cart_price', $cart_price);
     }
 }

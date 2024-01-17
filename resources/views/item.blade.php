@@ -216,7 +216,7 @@
 
   
 </form>
-@vite(['resources/js/item-script.js'])
+
   </div>
 </div>
 @endsection

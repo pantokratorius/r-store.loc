@@ -57,7 +57,6 @@ class DataService {
     public function getCartData(){
         $temp = session()->get('cart');
         $cart = [];
-
         if(!empty($temp))
             foreach($temp as $k=>$v){
 
@@ -69,7 +68,6 @@ class DataService {
                         $cart[$k][$key] = 'Iphone '. $val; 
                     else {
                         $cart[$k][$key] =  $val; 
-                    
                     }
                 }
             }
