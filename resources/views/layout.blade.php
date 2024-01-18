@@ -11,7 +11,7 @@
 
   <!-- icons-->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon1.png') }}">
-  <script src="{{route(asset('js/jquery.js'))}}"></script>
+  <script src="{{asset('js/jquery.js')}}"></script>
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
