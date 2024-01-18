@@ -17,5 +17,8 @@ export default defineConfig({
             // refresh: true,
         }),
     ],
-
+    server: {
+        https: false,
+        host: 'http://127.0.0.1:8000/',
+    },
 });
