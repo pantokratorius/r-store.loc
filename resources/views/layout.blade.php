@@ -18,7 +18,7 @@
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
-@vite(['resources/css/app.scss',  'resources/js/app.js'])
+@vite(['resources/css/app.css',  'resources/js/app.js'])
 </head>
 
 <body class="fhg-body">
@@ -521,7 +521,7 @@
 
             <div class="insales-copyright cell-4  cell-10-xs cell-10-sm text-right ">
               <a href="https://www.rusprofile.ru/ip/323237500108825" class="insales-copyright-link" target="_blank">
-                
+
               </a>
             </div>
           </div>

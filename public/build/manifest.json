@@ -1,8 +1,8 @@
 {
-  "resources/css/app.scss": {
-    "file": "assets/app-JK3Cxb5e.css",
+  "resources/css/app.css": {
+    "file": "assets/app-Y1X9NNWV.css",
     "isEntry": true,
-    "src": "resources/css/app.scss"
+    "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
     "file": "assets/app-ecWDpuvf.js",
