@@ -135,8 +135,6 @@ textarea {
     line-height: 1.15;
     margin: 0;
     box-shadow: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none
 }
 
@@ -155,8 +153,6 @@ button,
 html [type=button],
 [type=reset],
 [type=submit] {
-    -webkit-appearance: button;
-    -moz-appearance: button;
     appearance: button
 }
 
@@ -211,22 +207,16 @@ textarea {
 }
 
 [type=search] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
     appearance: textfield;
     outline-offset: -2px
 }
 
 [type=search]::-webkit-search-cancel-button,
 [type=search]::-webkit-search-decoration {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none
 }
 
 ::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
     appearance: button;
     font: inherit
 }
@@ -409,8 +399,6 @@ input[type=date],
 input[type=datetime-local],
 input[type=month],
 input[type=time] {
-    -webkit-appearance: listbox;
-    -moz-appearance: listbox;
     appearance: listbox
 }
 
@@ -428,8 +416,6 @@ legend {
 
 .form input[type=search],
 input[type=search] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none
 }
 
@@ -6510,8 +6496,6 @@ textarea {
     color: #3b3b3b;
     text-align: center;
     box-shadow: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 0
 }
@@ -7119,10 +7103,8 @@ select::-ms-expand {
     background-position: center
 }
 
-@supports (appearance: none) or (-moz-appearance: none) or (appearance: none) {
+@supports  (appearance: none) {
     select {
-        -moz-appearance: none;
-        -webkit-appearance: none;
         appearance: none;
         padding-right: 1.25rem;
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAQAAABn7dZ6AAAAVUlEQVQI12NgwA1Ky0obUfheJZfBjGr5kpcltTDhMteSL+VhUE6VTumb0jKwavuSzyUxSNorDEvfleaXW5V+Kk1Cs6nMrPRDyZeyDCyOqJYvNmUgDABtXBsVW8rhNAAAAABJRU5ErkJggg==) !important;
@@ -12729,9 +12711,7 @@ body {
     font-size: 16px
 }
 
-.co-input--code input[type=number] {
-    -moz-appearance: textfield
-}
+
 
 .co-social_login-button_group #subscribe_whats_app {
     background-image: url(/served_assets/shop/order/whats_app-8816586e6ab9abd5ecc8e035bc6db8fbc9d2a2f6a9009d4a446d59b302b7747d.png)
@@ -12899,8 +12879,6 @@ body {
     background-color: #fff;
     color: #1c1c1c;
     resize: vertical;
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none
 }
 
@@ -13062,15 +13040,11 @@ body {
 
 .co-input--code input::-webkit-outer-spin-button,
 .co-input--code input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     margin: 0
 }
 
 .co-input--code input[type=number] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
     appearance: textfield
 }
 
@@ -14925,7 +14899,6 @@ a:not([class]):hover,
 [class^=socicon-],
 [class*=" socicon-"] {
     font-family: socicon !important;
-    speak: none;
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
@@ -20715,12 +20688,9 @@ a:not([class]):hover,
     padding: 0;
     margin: 0;
     border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background-color: transparent;
     text-align: left;
-    vertical-align: middle
 }
 
 .filter-section-toggle:active,
@@ -21310,8 +21280,6 @@ button.swiper-pagination-bullet {
     padding: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none
 }
 
@@ -21450,10 +21418,6 @@ button.swiper-pagination-bullet {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent)
 }
 
-.swiper-container-coverflow .swiper-wrapper,
-.swiper-container-flip .swiper-wrapper {
-    -ms-perspective: 1200px
-}
 
 .swiper-container-cube,
 .swiper-container-flip {
@@ -21574,7 +21538,6 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar {
     border-radius: 10px;
     position: relative;
-    -ms-touch-action: none;
     background: #0000001a
 }
 
