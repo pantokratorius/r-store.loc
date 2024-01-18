@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html class=" FB_FW_ext KeyGen">
+<html>
 <head>
   <!-- meta -->
-  <meta charset="UTF-8">
-  <meta name="keywords" content="iPhone">
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="iPhone" />
   <title>iPhone – купить в интернет-магазине по лучшей цене</title>
-  <meta name="description" content="iPhone">
-  <meta name="robots" content="index,follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iPhone" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- icons-->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon1.png') }}">
   <script src="{{asset('assets/js/jquery.js')}}"></script>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
