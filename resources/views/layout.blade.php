@@ -18,7 +18,7 @@
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
-@vite(['resources/css/app.scss',  'resources/js/app.js'])
+@vite(['resources/css/app.scss' => 'public_html/public/build',  'resources/js/app.js'])
 </head>
 
 <body class="fhg-body">
