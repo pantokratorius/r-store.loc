@@ -535,7 +535,15 @@
   </div>
 
 
-
+  @if (Session::has('success'))
+  <script>
+      $(function(){
+        setTimeout(()=>{
+          $('.ajs-success').slideUp()
+        }, 2000)
+      })
+  </script>
+@endif
 
 </body>
 
