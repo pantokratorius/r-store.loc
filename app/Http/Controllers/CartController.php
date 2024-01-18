@@ -19,7 +19,7 @@ class CartController extends Controller
              $links[$k]['cat'] = str_replace('/', '-', $cat);
              $links[$k]['item'] = str_replace('/', '-', $item);
         }
-// dd($link);
+
 
         return view('cart', compact('cart', 'links') );
     }
@@ -68,6 +68,12 @@ class CartController extends Controller
 
         $category_name = str_replace('-','/', $category_name);
         $cart = session()->get('cart');
+        foreach($cart as $k=>$v){
+            list($cat, $item) = explode('$$', $k);
+            $links[$k]['cat'] = str_replace('/', '-', $cat);
+            $links[$k]['item'] = str_replace('/', '-', $item);
+       }
+
 
         if(isset($cart[$category_name])){
             if($up_down == 'up')
@@ -80,7 +86,7 @@ class CartController extends Controller
 
         $cart = $dataservice->getCartData();
 
-        return view('cart', compact('cart') );
+        return view('cart', compact('cart', 'links') );
     }
 
     public function deleteProductCart( $category_name, DataService $dataservice)
@@ -88,6 +94,11 @@ class CartController extends Controller
         $category_name = str_replace('-','/', $category_name);
 
         $cart = session()->get('cart');
+        foreach($cart as $k=>$v){
+            list($cat, $item) = explode('$$', $k);
+            $links[$k]['cat'] = str_replace('/', '-', $cat);
+            $links[$k]['item'] = str_replace('/', '-', $item);
+       }
 
         if(isset($cart[$category_name])){
             unset($cart[$category_name]);
@@ -98,7 +109,7 @@ class CartController extends Controller
 
 
 
-        return view('cart', compact('cart') );
+        return view('cart', compact('cart', 'links') );
     }
 }
 

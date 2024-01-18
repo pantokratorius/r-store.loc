@@ -35,11 +35,11 @@
 
 <div class="counter js-variant-counter" data-quantity="" data-quantity-change-init="true">
 
-<a href="{{ route('updatecart', [ str_replace('/', '-', $k), 'down']) }}" data-quantity="{{$v['quantity']}}" class="counter-button is-count-down " onclick="if($(this).data('quantity') == 1) return false"></a>
+<a href="{{ route('updatecart', [ str_replace('/', '-', $k), 'down']) }}" data-quantity="{{$v['quantity']}}" class="counter-button is-count-down " onclick="if($(this).data('quantity') == 1) return false">-</a>
 
 <input type="text" value="{{ $v['quantity'] }}" name="cart[quantity][663628205]" class="counter-input ">
 
-<a href="{{ route('updatecart', [str_replace('/', '-', $k), 'up']) }}" data-quantity-change="1" class="counter-button is-count-up "></a>
+<a href="{{ route('updatecart', [str_replace('/', '-', $k), 'up']) }}"  class="counter-button is-count-up ">+</a>
 </div>
 
 
