@@ -9,12 +9,12 @@ export default defineConfig({
                 'resources/js/jquery.js',
                 'resources/js/app.js',
             ],
-            refresh: [
-                'resources/routes/**',
-                'routes/**',
-                'resources/views/**',
-            ],
-            // refresh: true,
+            // refresh: [
+            //     'resources/routes/**',
+            //     'routes/**',
+            //     'resources/views/**',
+            // ],
+            refresh: true,
         }),
     ],
 
