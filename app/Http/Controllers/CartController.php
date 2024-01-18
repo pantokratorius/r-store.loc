@@ -14,6 +14,7 @@ class CartController extends Controller
     public function __invoke(DataService $dataservice)
     {
         $cart = $dataservice->getCartData();
+        $links = [];
         foreach($cart as $k=>$v){
              list($cat, $item) = explode('$$', $k);
              $links[$k]['cat'] = str_replace('/', '-', $cat);
@@ -68,6 +69,7 @@ class CartController extends Controller
 
         $category_name = str_replace('-','/', $category_name);
         $cart = session()->get('cart');
+        $links = [];
         foreach($cart as $k=>$v){
             list($cat, $item) = explode('$$', $k);
             $links[$k]['cat'] = str_replace('/', '-', $cat);
@@ -94,6 +96,7 @@ class CartController extends Controller
         $category_name = str_replace('-','/', $category_name);
 
         $cart = session()->get('cart');
+        $links = [];
         foreach($cart as $k=>$v){
             list($cat, $item) = explode('$$', $k);
             $links[$k]['cat'] = str_replace('/', '-', $cat);

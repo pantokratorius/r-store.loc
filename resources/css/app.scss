@@ -1,8 +1,3 @@
-
-
-
-
-
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -6427,9 +6422,7 @@ button, input, select, textarea {
     align-items: center;
   }
     /* line 458, _mixins.scss */
-    // .is-count-down:before {
-    //   font-family: "FontAwesome";
-    //   content: "-"; }
+    
   /* line 401, _components.scss */
   .is-count-up {
     border: 1px solid #f7f7f7;
@@ -6440,9 +6433,7 @@ button, input, select, textarea {
     align-items: center;
   }
     /* line 467, _mixins.scss */
-    // .is-count-up:before {
-    //   font-family: "Plus";
-    //   content: "+"; }
+    
   /* line 409, _components.scss */
   .counter-button:hover, .counter-button:focus {
     color: #969696;
