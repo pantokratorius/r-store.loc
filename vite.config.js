@@ -19,6 +19,6 @@ export default defineConfig({
     ],
     server: {
         https: false,
-        host: 'http://127.0.0.1:8000/',
+        host: 'http://ntgrain.ru',
     },
 });
