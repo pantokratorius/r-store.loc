@@ -22976,7 +22976,7 @@ a:not([class]):focus,.picker-input--active:not([class]),a:not([class]):hover,.li
 }
 
 .co-input--code input[type=number] {
-    -moz-appearance: textfield
+    appearance: textfield
 }
 
 .co-input-select {
@@ -34228,8 +34228,6 @@ a:not([class]):focus,.picker-input--active:not([class]),a:not([class]):hover,.li
       padding: 0;
       margin: 0;
       border: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       appearance: none;
       background-color: transparent;
       text-align: left;
@@ -34880,8 +34878,6 @@ a:not([class]):focus,.picker-input--active:not([class]),a:not([class]):hover,.li
       padding: 0;
       -webkit-box-shadow: none;
       box-shadow: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       appearance: none;
     }
 
