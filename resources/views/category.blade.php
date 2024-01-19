@@ -52,7 +52,7 @@
                   </div>
 
                   <a href="{{route('item', [$res['real_name'],  str_replace(' ', '-', trim($val['real_name']))])}}" class="product-link">
-                       {{$val['real_name']}}
+                       {{$val['real_item_name']}}
                   </a>
 
 

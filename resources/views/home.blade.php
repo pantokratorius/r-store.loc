@@ -52,7 +52,7 @@
                   </div>
 
                   <a href="/product/iphone-15-pro-max-256-gb-titanovyy-1-sim-esim" class="product-link">
-                       {{$val['real_name']}}
+                       {{$val['real_item_name']}}
                   </a>
 
 

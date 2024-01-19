@@ -37,13 +37,14 @@ class DataService {
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
                     foreach($names_my as $nam){ 
                         if(stripos($k, $nam) !==false){ 
-                            $transfer[$k][$key]['real_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
+                            $transfer[$k][$key]['real_item_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
                             break;
                         }
                         else {
-                            $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
+                            $transfer[$k][$key]['real_item_name'] = EmojiRemover::filter( $val['real_name']);
                         }
                     }
+                    $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
                 }
                 else $transfer[$k][$key] = EmojiRemover::filter( $val);
             }
@@ -51,8 +52,18 @@ class DataService {
                 foreach ($new_data[$k] as $key => $val) {
                 $key = EmojiRemover::filter($key);
                     if($key != 'real_name'){
-                    $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
-                    $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
+                        $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
+                        
+                        foreach($names_my as $nam){ 
+                            if(stripos($k, $nam) !==false){ 
+                                $transfer[$k][$key]['real_item_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
+                                break;
+                            }
+                            else {
+                                $transfer[$k][$key]['real_item_name'] = EmojiRemover::filter( $val['real_name']);
+                            }
+                        }
+                        
                     }
                 else $transfer[$k][$key] = EmojiRemover::filter( $val);
 
@@ -75,13 +86,14 @@ class DataService {
                     if($key == 'price')
                         $cart[$k]['price'] = $this->formatNumber( $val );
                     elseif($key == 'name'  ){
+                        $cart[$k][$key] =  $val; 
                         foreach($names_my as $nam){ //dd($k, $nam);
                             if(stripos($k, $nam) !==false){
-                                $cart[$k][$key] = $nam. ' '. $val; 
+                                $cart[$k]['real_item_name'] = $nam. ' '. $val; 
                                 break;
                             }
                             else {
-                                $cart[$k][$key] =  $val; 
+                                $cart[$k]['real_item_name'] =  $val; 
                             }
                         }
                     } else $cart[$k][$key] =  $val; 

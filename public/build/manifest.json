@@ -2,7 +2,7 @@
   "resources/css/app.css": {
     "file": "assets/app-NKXD-ctf.css",
     "isEntry": true,
-    "src": "resources/css/app.scss"
+    "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
     "file": "assets/app-ecWDpuvf.js",
