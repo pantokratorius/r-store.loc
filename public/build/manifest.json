@@ -8,6 +8,10 @@
     "file": "assets/100063319348b0-Kx3zC_0F.webp",
     "src": "resources/images/products/100063319348b0.webp"
   },
+  "resources/images/products/30045357b.jpg": {
+    "file": "assets/30045357b-HgeBCrO0.jpg",
+    "src": "resources/images/products/30045357b.jpg"
+  },
   "resources/images/products/600x800.webp": {
     "file": "assets/600x800-HqUukBNC.webp",
     "src": "resources/images/products/600x800.webp"
@@ -19,6 +23,46 @@
   "resources/images/products/MRXJ2.jpg": {
     "file": "assets/MRXJ2-e06YtQUX.jpg",
     "src": "resources/images/products/MRXJ2.jpg"
+  },
+  "resources/images/products/iPhone12_Blue.jpg": {
+    "file": "assets/iPhone12_Blue-VRY6ikLU.jpg",
+    "src": "resources/images/products/iPhone12_Blue.jpg"
+  },
+  "resources/images/products/iPhone12_Red.jpg": {
+    "file": "assets/iPhone12_Red-eXQZmrOW.jpg",
+    "src": "resources/images/products/iPhone12_Red.jpg"
+  },
+  "resources/images/products/iPhone_13_0.jpg": {
+    "file": "assets/iPhone_13_0-oGK_JcTv.jpg",
+    "src": "resources/images/products/iPhone_13_0.jpg"
+  },
+  "resources/images/products/iPhone_13_mini_BLUE_1.jpg": {
+    "file": "assets/iPhone_13_mini_BLUE_1-2hOPbbcE.jpg",
+    "src": "resources/images/products/iPhone_13_mini_BLUE_1.jpg"
+  },
+  "resources/images/products/iPhone_13_mini_MIDNIGHT_1 (1).jpg": {
+    "file": "assets/iPhone_13_mini_MIDNIGHT_1-lYFZzKky.jpg",
+    "src": "resources/images/products/iPhone_13_mini_MIDNIGHT_1.jpg"
+  },
+  "resources/images/products/iPhone_13_mini_MIDNIGHT_1.jpg": {
+    "file": "assets/iPhone_13_mini_MIDNIGHT_1-lYFZzKky.jpg",
+    "src": "resources/images/products/iPhone_13_mini_MIDNIGHT_1.jpg"
+  },
+  "resources/images/products/iPhone_13_mini_PINK_1.jpg": {
+    "file": "assets/iPhone_13_mini_PINK_1-U9W46irz.jpg",
+    "src": "resources/images/products/iPhone_13_mini_PINK_1.jpg"
+  },
+  "resources/images/products/iPhone_13_mini_RED_1.jpg": {
+    "file": "assets/iPhone_13_mini_RED_1-11-vyQQ2.jpg",
+    "src": "resources/images/products/iPhone_13_mini_RED_1.jpg"
+  },
+  "resources/images/products/iPhone_13_mini_STARLIGHT_1.jpg": {
+    "file": "assets/iPhone_13_mini_STARLIGHT_1-eWvNlzSO.jpg",
+    "src": "resources/images/products/iPhone_13_mini_STARLIGHT_1.jpg"
+  },
+  "resources/images/products/large_iPhone12_White.jpg": {
+    "file": "assets/large_iPhone12_White-ejEGJ81K.jpg",
+    "src": "resources/images/products/large_iPhone12_White.jpg"
   },
   "resources/js/app.js": {
     "file": "assets/app-ecWDpuvf.js",
