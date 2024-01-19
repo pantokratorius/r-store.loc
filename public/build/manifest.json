@@ -4,6 +4,22 @@
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/images/products/100063319348b0.webp": {
+    "file": "assets/100063319348b0-Kx3zC_0F.webp",
+    "src": "resources/images/products/100063319348b0.webp"
+  },
+  "resources/images/products/600x800.webp": {
+    "file": "assets/600x800-HqUukBNC.webp",
+    "src": "resources/images/products/600x800.webp"
+  },
+  "resources/images/products/AirPods_3_.jpg": {
+    "file": "assets/AirPods_3_-kpZmyK9d.jpg",
+    "src": "resources/images/products/AirPods_3_.jpg"
+  },
+  "resources/images/products/MRXJ2.jpg": {
+    "file": "assets/MRXJ2-e06YtQUX.jpg",
+    "src": "resources/images/products/MRXJ2.jpg"
+  },
   "resources/js/app.js": {
     "file": "assets/app-ecWDpuvf.js",
     "isEntry": true,

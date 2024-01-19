@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="products-list is-collection row">
- 
+
 
 @foreach($res as $k=>$v)
  @foreach($v as $key=>$val)
@@ -17,8 +17,8 @@
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
-                    <img
-                      src="https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg"
+                    <img style="max-width: 194px"
+                      src="@isset($images[$key])  {{ Vite::asset('resources/images/products/'. $images[$key]) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endisset"
                       title="" alt="iPhone 15 Pro Max, 256 ГБ, Титановый" class="product-card-image">
                   </a>
 
@@ -39,15 +39,15 @@
                       <input type="hidden" name="variant_id" value="663625981">
                       <input type="hidden" name="quantity" class="counter-input input-number input-field" value="1">
 
-                      <!-- Если больше 1 модификации --> 
- 
+                      <!-- Если больше 1 модификации -->
+
                       <div class="buy text-right-xl more-info">
                         <a href="{{route('addcart', [str_replace('/', '-', $k),   str_replace(' ', '-', trim($val['real_name']))])}}"  class="button button-buy is-primary" type="submit" data-item-add=""></a>
                       </div><!-- /.buy -->
 
                       <!-- product.quantity == 0 -->
 
- 
+
                     </form><!-- /.product-control -->
                   </div>
 

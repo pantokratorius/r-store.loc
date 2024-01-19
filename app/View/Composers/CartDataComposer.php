@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use App\Services\DataService;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 
@@ -12,10 +13,8 @@ class CartDataComposer
     {
        $cart_count = 0;  $cart_price = 0;
        $cart = session()->get('cart', []);
-       
-       
        if($cart){
-            foreach($cart as $k=>$v){ 
+            foreach($cart as $k=>$v){
                 $cart_price += $v['price'] *  $v['quantity'];
                 $cart_count += $v['quantity'];
             }
