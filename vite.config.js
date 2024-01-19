@@ -4,16 +4,17 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     plugins: [
         laravel({
+            publicDirectory: "public_html",
             input: [
                 'resources/css/app.scss',
                 'resources/js/app.js',
             ],
-            refresh: [
-                'resources/routes/**',
-                'routes/**',
-                'resources/views/**',
-            ],
-            // refresh: true,
+            // refresh: [
+            //     'resources/routes/**',
+            //     'routes/**',
+            //     'resources/views/**',
+            // ],
+            refresh: true,
         }),
     ],
 

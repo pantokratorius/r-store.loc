@@ -39,15 +39,15 @@
                       <input type="hidden" name="variant_id" value="663625981">
                       <input type="hidden" name="quantity" class="counter-input input-number input-field" value="1">
 
-                      <!-- Если больше 1 модификации -->
-
+                      <!-- Если больше 1 модификации --> 
+ 
                       <div class="buy text-right-xl more-info">
                         <a href="{{route('addcart', [str_replace('/', '-', $k),   str_replace(' ', '-', trim($val['real_name']))])}}"  class="button button-buy is-primary" type="submit" data-item-add=""></a>
                       </div><!-- /.buy -->
 
                       <!-- product.quantity == 0 -->
 
-
+ 
                     </form><!-- /.product-control -->
                   </div>
 
