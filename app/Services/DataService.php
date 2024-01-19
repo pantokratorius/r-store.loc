@@ -63,7 +63,7 @@ class DataService {
                                 $transfer[$k][$key]['real_item_name'] = EmojiRemover::filter( $val['real_name']);
                             }
                         }
-                        $transfer[$k][$key]['real_item_name'] = EmojiRemover::filter( $val['real_name']);
+                        $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
                     }
                 else $transfer[$k][$key] = EmojiRemover::filter( $val);
 
