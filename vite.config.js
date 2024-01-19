@@ -6,7 +6,7 @@ export default defineConfig({
         laravel({
             publicDirectory: "public_html",
             input: [
-                'resources/css/app.scss',
+                'resources/css/app.css',
                 'resources/js/app.js',
             ],
             // refresh: [

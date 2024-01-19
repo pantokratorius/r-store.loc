@@ -1,5 +1,5 @@
 {
-  "resources/css/app.scss": {
+  "resources/css/app.css": {
     "file": "assets/app-NKXD-ctf.css",
     "isEntry": true,
     "src": "resources/css/app.scss"
