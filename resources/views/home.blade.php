@@ -13,7 +13,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', [str_replace('/', '-', $k),  str_replace(' ', '-', trim($val['real_name']))])}}"
+                    <a href="{{route('item', [str_replace('/', '-', $k),  str_replace(' ', '-', trim($key))])}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
