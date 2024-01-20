@@ -15,12 +15,12 @@ class DataService {
         $names_my = ['Iphone', 'Watch'];
 
         $data =  DB::table('data')->pluck('data');
-        if(!empty($data[0])) $data = json_decode ($data[0], 1);
+        if(!empty($data[0])) $data = json_decode ($data[0], 1);   dd($data);
         $nacenka = DB::table('nacenka')->pluck('data'); 
         if(!empty($nacenka[0])) $nacenka = json_decode ($nacenka[0], 1);
         foreach($data as $k=>$v){
-        $k = EmojiRemover::filter($k);
-        $new_data[$k] = $v;
+            $k = EmojiRemover::filter($k);
+            $new_data[$k] = $v;
         }
         foreach($nacenka as $k=>$v){
         $k = EmojiRemover::filter($k);

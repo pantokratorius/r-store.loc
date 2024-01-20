@@ -17,7 +17,7 @@ class HomeController extends Controller
         //session()->flush();
     //    dd( session()->get('cart') );
         $transfer = $dataService->getAllData();
-// foreach($transfer as $k=>$v) dump($v);
+foreach($transfer as $k=>$v) dump($v);
         // dd($transfer);
         foreach ($transfer as $k => $v) {
             $name = EmojiRemover::filter($v['real_name']);
