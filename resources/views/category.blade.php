@@ -17,7 +17,7 @@
                     Титановый">
 
                     <img
-                      src="@isset($images[$key])  {{ asset('images/products/'. $images[$key]) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endisset"
+                      src="@if(isset($images[$key]))  {{ asset('images/products/'. $images[$key]) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif"
                       title="" alt="iPhone 15 Pro Max, 256 ГБ, Титановый" class="product-card-image">
                   </a>
 
