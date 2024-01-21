@@ -5,7 +5,19 @@
 
 <div class="cart-body">
   <div class="cart-list">
+    <div class="content-wrapper container fhg-content">
+        <div class="row cart-wrapper">
+          <div class="cart cell-12">
 
+    <div class="page-headding-wrapper">
+    <h1 class="page-headding">
+      Корзина
+    </h1>
+    </div><!-- /.page_headding -->
+
+          </div>
+        </div>
+      </div>
 
     @forelse($cart as $k=>$v)
 <div class="cart-item " data-product-id="399428219" data-item-id="663628205">
@@ -60,14 +72,14 @@
 
 
 @empty
-
-<div class="cart-item " >
-  <div class="cart-item-inner  ">
-    <div>
-    <h2 style="padding: 35%; box-sizing: content-box">Корзина пуста</h2>
-  </div>
-  </div>
-
+<div class="content-wrapper container fhg-content">
+    <div class="row cart-wrapper">
+      <div class="cart cell-12">
+<div class="notice is-info text-center js-cart-empty">
+Ваша корзина пуста
+</div>
+      </div>
+    </div>
   </div>
 @endforelse
 
@@ -77,13 +89,12 @@
 
   <div class="cell-4 cell-6-md cell-12-sm">
 
-
 <div class="discount-comment-list js-discount-comment-list">
 
 </div>
 
   </div>
-
+@if(!empty($cart))
   <div class="cell-4 cell-6-md cell-12-sm flex-start-sm cart-block-checkout">
     <div class="cart-total js-shopcart-total-summ">{{$cart_price}}&nbsp;руб</div>
 
@@ -93,6 +104,6 @@
       </span>
     </button>
   </div>
-
+@endif
 </div>
 @endsection

@@ -282,7 +282,7 @@
     <div class="content-wrapper container fhg-content">
 
       <div class="row collection-wrapper">
-        <div class="collection cell-9 cell-8-md cell-12-sm">
+        <div class="collection @if(isset($cats)) cell-9  @else cell-12 @endif cell-8-md cell-12-sm">
 
 
           @isset($bread)
@@ -377,7 +377,7 @@
 
           <div class="collection-description is-seo editor">
             <p><span style="font-family: helvetica; color: #999999;">Купить оригинальный iPhone в рассрочку | айфон | в
-                Анапе по низкой цене.</span></p>
+                Новороссийске по низкой цене.</span></p>
           </div>
 
 
