@@ -500,7 +500,7 @@
 
 
                 <li class="social-menu-item">
-                  <a target="blank" title="Vkontakte" href="http://vk.com/apple_inside" class="social-menu-link">
+                  <a target="blank" title="Vkontakte" href="http://vk.com/r-store" class="social-menu-link">
                     <div class="fa fa-vk fa-lg"></div>
                   </a>
                 </li>
@@ -508,7 +508,7 @@
 
 
                 <li class="social-menu-item">
-                  <a target="blank" title="Instagram" href="https://www.instagram.com/appleinside_ru/"
+                  <a target="blank" title="Instagram" href="https://www.instagram.com/r-store/"
                     class="social-menu-link">
                     <div class="fa fa-instagram fa-lg"></div>
                   </a>

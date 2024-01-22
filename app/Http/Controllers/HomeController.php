@@ -25,12 +25,12 @@ class HomeController extends Controller
         }
         // dd($cats);
         $res = $transfer;
-        $bread = end($cats);
+        // $bread = end($cats);
 
 
         $cart = session()->get('cart', []);
         //    dd($cart);
-        return view('home', compact('res', 'cats', 'bread'));
+        return view('home', compact('res', 'cats'));
     }
 
 
@@ -40,7 +40,7 @@ class HomeController extends Controller
         $category = Str::replace('-', '/', $category);
 
         $transfer = $dataService->getAllData();
-
+        
 
         $dat = $transfer[$category];
 
