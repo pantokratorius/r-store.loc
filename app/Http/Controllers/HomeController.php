@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Arispati\EmojiRemover\EmojiRemover;
 use Illuminate\Support\Str;
 use App\Services\DataService;
-
-
-
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -34,13 +32,13 @@ class HomeController extends Controller
     }
 
 
-    public function category($category, DataService $dataService)
+    public function category($category, DataService $dataService, Request $request )
     {
 
         $category = Str::replace('-', '/', $category);
 
         $transfer = $dataService->getAllData();
-        
+
 
         $dat = $transfer[$category];
 
@@ -57,6 +55,9 @@ class HomeController extends Controller
         $res = $dat; //dd($res);
         $active = $category;
 
+        if($request->ajax() ) {
+            return response()->json($res, 200);
+        }
 
         return view('category', compact('res', 'cats', 'bread', 'active'));
     }

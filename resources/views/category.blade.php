@@ -73,3 +73,16 @@
 
           </div>
 @endsection
+
+@push('scripts')
+<script>
+
+    $('.button-buy').click(function(){
+        $.get( $(this).attr('href'), function( data ) {
+            console.log(data )
+        });
+        return false
+    })
+
+</script>
+@endpush
