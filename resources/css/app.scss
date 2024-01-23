@@ -6828,6 +6828,11 @@ textarea {
     background-color: #969696
 }
 
+.button_mobile_menu {
+    text-decoration: none;
+    background-color: #969696 !important
+}
+
 .button.disabled,
 .disabled.co-button[type=submit],
 .disabled.co-button[name=commit],
@@ -8203,10 +8208,10 @@ body {
     transition: background-color .15s ease-out .15s
 }
 
-.top-panel-open-sidebar:before {
-    font-family: Bamblby;
-    content: ""
-}
+// .top-panel-open-sidebar:before {
+//     // font-family: Bamblby;
+//     // content: ""
+// }
 
 .top-panel-open-sidebar:active,
 .top-panel-open-sidebar:focus,
@@ -8569,6 +8574,10 @@ body {
     color: #969696
 }
 
+.mobile_menu {
+    display: none;
+}
+
 .mobile-sidebar-menu {
     margin-left: .5rem
 }
@@ -8617,7 +8626,7 @@ body {
 
 .mobile-sidebar-menu-marker:before {
     font-family: Bamblby;
-    content: "";
+    // content: "";
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -8781,11 +8790,11 @@ body {
     margin-bottom: 1.5rem
 }
 
-.home-icon:before {
-    font-family: Bamblby;
-    content: "";
-    font-size: 1.25rem
-}
+// .home-icon:before {
+//     font-family: Bamblby;
+//     content: "";
+//     font-size: 1.25rem
+// }
 
 .breadcrumb {
     display: -webkit-box;
@@ -20472,6 +20481,7 @@ a:not([class]):hover,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: row;
     margin: 0;
     padding: 0;
     -ms-flex-wrap: wrap;
@@ -20522,7 +20532,7 @@ a:not([class]):hover,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    
 }
 
 .menu.to-left {

@@ -1,4 +1,4 @@
-<div class="cell-12 cell-4-md hidden-sm flex-first">
+<div class="cell-12 cell-12-md hidden-sm flex-first">
     <div class="sidebar-block">
       <div class="sidebar-block-heading mega-menu-main_heading">
         Каталог

@@ -19,12 +19,11 @@
 <div class="product-gallery">
   <div class="gallery-main-wrapper">
 
-
     <a href="@if(isset($images[$res['image']]) ) @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" class="image-wrapper" id="gallery" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-gallery-count="1">
       <img src="@if(isset($images[$res['image']]) ) {{ asset('images/products/' . $images[$res['image']]) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " class="slide-image">
     </a>
   </div>
-  <!-- Для тыкалок js -->
+  <!-- Для тыкалок js 
 
     <div class="gallery-thumbs-wrapper  hidden-sm">
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs" style="cursor: grab;">
@@ -75,9 +74,9 @@
     </div>
 
 
-<!-- Для планшетов -->
+ Для планшетов -->
 
-    <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
+    {{-- <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs-mobile" style="cursor: grab;">
 
           <div class="product-slider-controls gallery-controls" data-slider-controls="">
@@ -124,7 +123,7 @@
 
 
       </div>
-    </div>
+    </div> --}}
 
 
 

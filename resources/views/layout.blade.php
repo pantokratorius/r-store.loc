@@ -27,18 +27,19 @@
       @endif
   <div class="body-wrapper">
 
+
+@include('mobile_menu')
+    
     <div class="top-panel-wrapper">
       <div class="container">
         <div class="top-panel row js-top-panel-fixed">
-          <div class="top-menu-wrapper hidden-sm">
-            <a class="client-account-link" href="/client_account/login">
-
-              <span>Вход / Регистрация</span>
-
-            </a>
-          </div>
-          <div class="top-menu-wrapper cell- hidden shown-sm">
-            <button type="button" class="top-panel-open-sidebar button js-open-sidebar"></button>
+    
+          <div class="top-menu-wrapper hidden shown-sm button_mobile_menu">
+            <button type="button" class="top-panel-open-sidebar button  js-open-sidebar">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
+                </svg>
+            </button>
           </div>
 
           <div class="top-menu-icons-block collapse-block hide show-sm cell-">
@@ -285,7 +286,7 @@
       @includeWhen(isset($cats), 'sidebar')
 
       <div class="row collection-wrapper">
-        <div class="collection cell-12 cell-8-md cell-12-sm">
+        <div class="collection cell-12 cell-12-md cell-12-sm">
 
 
           @isset($bread)
@@ -295,7 +296,7 @@
 
                 <li class="breadcrumb-item home">
                   <a class="breadcrumb-link home-icon" title="Главная" href="/">
-
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA80lEQVR4nM3UP0sDQRQE8F9SWKigASGNiJxFhBDBJvgBrDRW11lYamlhYSGxTaOVlVgE0iiK31EWHnLEP2wuAR0Ydt883tweyw552ArOjVWM8BAchVYLJ3jHQUXbxxvO0Mg12sUzLtH8pt8Iw1fs/Wa0jjvcYy3jwyu4xRM2ppvHeEHX7OjG7FFVnJgfk2oxXoDh+KeixGMmyxzDhZ+wj/NM9nMMCxxmsviTXy7/7aV0sIQeNtGKfSvqXvQ78TqaoRWRQF8ML9DGEINIlmGsg9i343avsBzaKXamDVMo3OC6JtNs8vhEiqTtOH4dptnsfJwJH3cFP7BDKMvAAAAAAElFTkSuQmCC">
                   </a>
                 </li>
                 <li class="breadcrumb-item">
@@ -305,7 +306,7 @@
               </ul>
 
             </div>
-
+{{-- 
             <div class="page-headding-wrapper">
               <h1 class="page-headding">
 
@@ -315,7 +316,7 @@
 
 
               </h1>
-            </div><!-- /.page_headding -->
+            </div><!-- /.page_headding --> --}}
 
 
             <div class="collection-mix-description">
@@ -328,7 +329,7 @@
             </div>
 
 
-          <div class="toolbar collection-toolbar at-top">
+          <div class="toolbar collection-toolbar at-top" style="display: none">
             <div class="toolbar-inner is-between">
 
               <div class="filter-collapse ">
@@ -547,6 +548,17 @@
        })
   </script>
 @endif
+
+<script>
+  $('.button_mobile_menu').click(function(){
+      $('.mobile_menu').toggle()
+    }) 
+
+    $('.ajs-modal').click(function(){
+        $('.mobile_menu').hide()
+    })
+</script>
+
 
 </body>
 
