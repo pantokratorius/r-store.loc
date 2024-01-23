@@ -76,7 +76,7 @@
 
  Для планшетов -->
 
-    {{-- <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
+    <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs-mobile" style="cursor: grab;">
 
           <div class="product-slider-controls gallery-controls" data-slider-controls="">
@@ -106,12 +106,14 @@
             <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7362/757046466/iPhone15ProMax_Star3.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="4">
               <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7362/757046466/large_iPhone15ProMax_Star3.jpg 400w, https://static.insales-cdn.com/images/products/1/7362/757046466/iPhone15ProMax_Star3.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7362/757046466/large_iPhone15ProMax_Star3.jpg">
             </a>
-          </div><div data-slider-slide="" class="swiper-slide">
+          </div>
+          <div data-slider-slide="" class="swiper-slide">
 
             <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7363/757046467/iPhone15ProMax_Star4.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="5">
               <img data-src="https://static.insales-cdn.com/images/products/1/7363/757046467/large_iPhone15ProMax_Star4.jpg" data-srcset="https://static.insales-cdn.com/images/products/1/7363/757046467/large_iPhone15ProMax_Star4.jpg 400w, https://static.insales-cdn.com/images/products/1/7363/757046467/iPhone15ProMax_Star4.jpg 800w" sizes="" class="slide-image swiper-lazy" data-slider-lazy="">
             </a>
-          <div class="swiper-lazy-preloader"></div></div></div>
+          <div class="swiper-lazy-preloader"></div></div>
+        </div>
 
 
 
@@ -123,7 +125,7 @@
 
 
       </div>
-    </div> --}}
+    </div>
 
 
 

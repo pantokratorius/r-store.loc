@@ -379,10 +379,10 @@
           </div>
 
 
-          <div class="collection-description is-seo editor">
+          {{-- <div class="collection-description is-seo editor">
             <p><span style="font-family: helvetica; color: #999999;">Купить оригинальный iPhone в рассрочку | айфон | в
                 Новороссийске по низкой цене.</span></p>
-          </div>
+          </div> --}}
 
 
 
