@@ -8474,7 +8474,14 @@ body {
 
 .sidebar-menu {
     margin-left: .5rem;
-    background-color: #eee
+    // background-color: #eee
+
+
+    // li {
+    //     border: 1px solid;
+    //     border-radius: 5px;
+    // }
+
 }
 
 .sidebar-menu.level-1 {
@@ -8496,7 +8503,8 @@ body {
     margin-left: 0;
     padding-left: 1.25rem;
     padding-right: .5rem;
-    border-bottom: 2px solid #dddddd
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
 }
 
 .sidebar-menu-item.level-1:last-child {
@@ -9239,8 +9247,8 @@ body {
 }
 
 .mega-menu-main_heading {
-    background: #000;
-    color: #fff;
+    // background: #000;
+    color: #000000;
     border: none;
     padding-left: 1.25rem;
     border-top-left-radius: .15rem;
@@ -20513,7 +20521,8 @@ a:not([class]):hover,
 .menu.is-collapse.is-opened {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
+    flex-direction: row;
 }
 
 .menu.to-left {

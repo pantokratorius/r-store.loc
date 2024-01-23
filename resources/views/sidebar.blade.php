@@ -1,7 +1,4 @@
-<div class="cell-3 cell-4-md hidden-sm flex-first">
-
-
-
+<div class="cell-12 cell-4-md hidden-sm flex-first">
     <div class="sidebar-block">
       <div class="sidebar-block-heading mega-menu-main_heading">
         Каталог
@@ -9,7 +6,7 @@
 
       <div class="sidebar-block-content">
 
-        <ul class="sidebar-menu menu level-1 is-vertical is-collapse insales-menu--loaded"
+        <ul class="sidebar-menu menu level-1 is-collapse insales-menu--loaded"
           data-menu-id="sidebar-menu">
 @isset($cats)
             @foreach($cats as $k=>$v)
@@ -22,10 +19,8 @@
                         data-menu-link-source="collection">
                               {{ $v }}
                       </a>
-
                     </div>
                   </li>
-
             @endforeach
 @endisset
         </ul>

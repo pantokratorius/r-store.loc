@@ -281,8 +281,11 @@
 
     <div class="content-wrapper container fhg-content">
 
+
+      @includeWhen(isset($cats), 'sidebar')
+
       <div class="row collection-wrapper">
-        <div class="collection @if(isset($cats)) cell-9  @else cell-12 @endif cell-8-md cell-12-sm">
+        <div class="collection cell-12 cell-8-md cell-12-sm">
 
 
           @isset($bread)
@@ -389,7 +392,7 @@
         </div>
 
 
-       @includeWhen(isset($cats), 'sidebar')
+       
 
       </div>
     </div>
