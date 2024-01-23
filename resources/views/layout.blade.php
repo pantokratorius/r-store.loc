@@ -29,11 +29,11 @@
 
 
 @include('mobile_menu')
-    
+
     <div class="top-panel-wrapper">
       <div class="container">
         <div class="top-panel row js-top-panel-fixed">
-    
+
           <div class="top-menu-wrapper hidden shown-sm button_mobile_menu">
             <button type="button" class="top-panel-open-sidebar button  js-open-sidebar">
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
@@ -306,7 +306,7 @@
               </ul>
 
             </div>
-{{-- 
+{{--
             <div class="page-headding-wrapper">
               <h1 class="page-headding">
 
@@ -393,7 +393,7 @@
         </div>
 
 
-       
+
 
       </div>
     </div>
@@ -552,7 +552,7 @@
 <script>
   $('.button_mobile_menu').click(function(){
       $('.mobile_menu').toggle()
-    }) 
+    })
 
     $('.ajs-modal').click(function(){
         $('.mobile_menu').hide()

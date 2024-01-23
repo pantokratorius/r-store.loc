@@ -20532,7 +20532,7 @@ a:not([class]):hover,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    
+
 }
 
 .menu.to-left {
@@ -22066,9 +22066,10 @@ button.swiper-pagination-bullet {
 }
 
 .ajs-message.ajs-success {
-    background: #969696;
-    color: #222;
+    background: rgba(150, 150, 150,  0.7);
+    color: #f7f7f7;
     z-index: 1;
+    padding: 20px;
 }
 
 .ajs-message.ajs-error {
