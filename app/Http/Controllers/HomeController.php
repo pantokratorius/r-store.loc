@@ -56,6 +56,7 @@ class HomeController extends Controller
         $active = $category;
 
         if($request->ajax() ) {
+            
             return response()->json($res, 200);
         }
 
