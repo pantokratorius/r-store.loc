@@ -485,7 +485,7 @@
             <div class="footer-block js-contacts-header  cell-4 cell-12-sm   ">
               <div class="phone text-left text-center-sm">
 
-                <a href="tel:+7(988)13-222-02" class="contact-link tel"> +7(988)13-222-02</a>
+                <a href="tel:+7(967)307-01-00" class="contact-link tel"> +7(967)307-01-00</a>
 
               </div>
 

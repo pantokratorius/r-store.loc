@@ -52,7 +52,7 @@ class HomeController extends Controller
         $res = $dat;
         $dat['real_name'] = EmojiRemover::filter(Str::replace(['/', ' '], ['-', ''], $dat['real_name']));
 
-        $res = $dat; //dd($res);
+        $res = $dat; dd($res);
         $active = $category;
 
         if($request->ajax() ) {
