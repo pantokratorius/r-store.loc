@@ -33,6 +33,7 @@ class DataService {
             $nacenk = $new_nacenka[$k]; 
             foreach ($new_data[$k] as $key => $val) { 
                 $key = EmojiRemover::filter($key); 
+                $key = str_replace('/','',$key); 
                 if($key != 'real_name'){
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
                     foreach($names_my as $nam){ 

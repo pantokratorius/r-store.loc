@@ -84,46 +84,14 @@
             <button class="product-slider-next swiper-button-next" data-slider-next=""></button>
           </div>
 
-
-
           <div class="swiper-wrapper" data-slider-container="" style="transition-duration: 0ms;"><div data-slider-slide="" class="swiper-slide swiper-slide-active is-active">
 
             <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="1">
               <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg 400w, https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg">
             </a>
-          </div><div data-slider-slide="" class="swiper-slide swiper-slide-next">
-
-            <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7357/757046461/iPhone15ProMax_Star1.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="2">
-              <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7357/757046461/large_iPhone15ProMax_Star1.jpg 400w, https://static.insales-cdn.com/images/products/1/7357/757046461/iPhone15ProMax_Star1.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7357/757046461/large_iPhone15ProMax_Star1.jpg">
-            </a>
-          </div><div data-slider-slide="" class="swiper-slide">
-
-            <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7358/757046462/iPhone15ProMax_Star2.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="3">
-              <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7358/757046462/large_iPhone15ProMax_Star2.jpg 400w, https://static.insales-cdn.com/images/products/1/7358/757046462/iPhone15ProMax_Star2.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7358/757046462/large_iPhone15ProMax_Star2.jpg">
-            </a>
-          </div><div data-slider-slide="" class="swiper-slide">
-
-            <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7362/757046466/iPhone15ProMax_Star3.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="4">
-              <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7362/757046466/large_iPhone15ProMax_Star3.jpg 400w, https://static.insales-cdn.com/images/products/1/7362/757046466/iPhone15ProMax_Star3.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7362/757046466/large_iPhone15ProMax_Star3.jpg">
-            </a>
           </div>
-          <div data-slider-slide="" class="swiper-slide">
-
-            <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7363/757046467/iPhone15ProMax_Star4.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="5">
-              <img data-src="https://static.insales-cdn.com/images/products/1/7363/757046467/large_iPhone15ProMax_Star4.jpg" data-srcset="https://static.insales-cdn.com/images/products/1/7363/757046467/large_iPhone15ProMax_Star4.jpg 400w, https://static.insales-cdn.com/images/products/1/7363/757046467/iPhone15ProMax_Star4.jpg 800w" sizes="" class="slide-image swiper-lazy" data-slider-lazy="">
-            </a>
-          <div class="swiper-lazy-preloader"></div></div>
+          
         </div>
-
-
-
-
-
-
-
-
-
-
       </div>
     </div>
 
