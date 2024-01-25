@@ -35,7 +35,7 @@
   <div class="item-caption">
     <p class="item-title">
         <a href="{{ route('item', [$links[$k]['cat'], $links[$k]['item'] ]) }}">
-         {{ $v['name'] }}
+         {{ $v['real_item_name'] }}
         </a>
     </p>
 
@@ -47,11 +47,11 @@
 
 <div class="counter js-variant-counter" data-quantity="" data-quantity-change-init="true">
 
-<a href="{{ route('updatecart', [ str_replace('/', '-', $k), 'down']) }}" data-quantity="{{$v['quantity']}}" class="counter-button is-count-down " onclick="if($(this).data('quantity') == 1) return false">-</a>
+<a href="{{route('addcart', [$v['category'],   $v['item'], 'minus' ])}}" class="counter-button is-count-down">-</a>
 
 <input type="text" value="{{ $v['quantity'] }}" name="cart[quantity][663628205]" class="counter-input ">
 
-<a href="{{ route('updatecart', [str_replace('/', '-', $k), 'up']) }}"  class="counter-button is-count-up ">+</a>
+<a href="{{route('addcart', [$v['category'],   $v['item'] ])}}"  class="counter-button is-count-up ">+</a>
 </div>
 
 
@@ -107,3 +107,59 @@
 @endif
 </div>
 @endsection
+
+@push('scripts')
+<script>
+  $('.counter-button').click(function(e){
+    e.preventDefault()
+    const input = $(this).closest('div').find('.counter-input')
+    const number = Number( input.val() )
+    const href = $(this).attr('href')
+    if(href.indexOf('minus') + 1 && number <= 1) return false
+    $.get( href, function( data ) {
+      input.val(data[3]);
+        const elements = $('.js-shopcart-widget-count')
+        elements.each(function(){
+          $(this).text(data[1]) 
+        })
+        const price = $('.js-shopcart-widget-amount')
+        price.each(function(){
+          $(this).text(`${data[0]} руб`) 
+        })
+        $('.js-shopcart-total-summ').text(`${data[0]} руб`)
+        if(!$('.ajs-visible').length)
+          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
+        else $('.ajs-visible').text(data[2])
+        $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
+        
+    });
+    return false
+  })
+
+
+  $('.counter-input ').blur(function(){
+     const number = $(this).val()
+     const url = $(this).closest('div').find('.is-count-down').attr('href');
+     const href = url.split('addcart')[0] + `quantity/${number}/updatecart`
+
+     $.get( href, function( data ) {
+        const elements = $('.js-shopcart-widget-count')
+        elements.each(function(){
+          $(this).text(data[1]) 
+        })
+        const price = $('.js-shopcart-widget-amount')
+        price.each(function(){
+          $(this).text(`${data[0]} руб`) 
+        })
+        if(!$('.ajs-visible').length)
+          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
+        else $('.ajs-visible').text(data[2])
+        $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
+        
+    });
+
+     console.log(number)
+  })
+
+</script>
+@endpush

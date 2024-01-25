@@ -23,6 +23,7 @@ Route::get('category/{id}/item/{id2}', [HomeController::class, 'item'])->name('i
 Route::get('cart', CartController::class)->name('cart');
 Route::get('category/{id}/item/{id2}/addcart', [CartController::class, 'addProducttoCart'])->name('addcart');
 Route::get('category-name/{category_name}/delete', [CartController::class, 'deleteProductCart'])->name('deletecart');
-Route::get('category-name/{category_name}/{up_down}/updatecart', [CartController::class, 'updateCart'])->name('updatecart');
+Route::get('category/{id}/item/{id2}/quantity/{quantity}/updatecart', [CartController::class, 'updateCart'])->name('updatecart');
+
 
 Route::get('order', OrderController::class)->name('order');

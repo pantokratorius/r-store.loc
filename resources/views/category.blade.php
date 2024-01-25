@@ -12,7 +12,7 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']) )) ] )}}"
+                    <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ] )}}"
                     class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
                     Титановый">
 
@@ -41,7 +41,7 @@
                       <!-- Если больше 1 модификации -->
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [$res['real_name'],   str_replace(' ', '-', trim($val['real_name']) ) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
+                        <a href="{{route('addcart', [$res['real_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
                         </a>
                       </div><!-- /.buy -->
 
@@ -51,7 +51,7 @@
                     </form><!-- /.product-control -->
                   </div>
 
-                  <a href="{{route('item', [$res['real_name'],  str_replace(' ', '-', trim($val['real_name']))])}}" class="product-link">
+                  <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="product-link">
                        {{$val['real_item_name']}}
                   </a>
 
@@ -77,9 +77,22 @@
 @push('scripts')
 <script>
 
-    $('.button-buy').click(function(){
+    $('.button-buy').click(function(e){
+        e.preventDefault()
+
         $.get( $(this).attr('href'), function( data ) {
-            console.log(data )
+            const elements = $('.js-shopcart-widget-count')
+            elements.each(function(){
+              $(this).text(data[1]) 
+            })
+            const price = $('.js-shopcart-widget-amount')
+            price.each(function(){
+              $(this).text(`${data[0]} руб`) 
+            })
+            if(!$('.ajs-visible').length)
+              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
+            $('.ajs-success').slideDown().delay(2000).slideUp()
+            
         });
         return false
     })

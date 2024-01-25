@@ -8,7 +8,6 @@
   <meta name="description" content="iPhone" />
   <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <!-- icons-->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon1.png') }}">
   <script src="{{asset('assets/js/jquery.js')}}"></script>

@@ -21,7 +21,7 @@ class CartController extends Controller
              $links[$k]['item'] = str_replace('/', '-', $item);
         }
 
-
+// dd($cart);
         return view('cart', compact('cart', 'links') );
     }
 
@@ -31,62 +31,80 @@ class CartController extends Controller
     }
 
 
-    public function addProducttoCart($raw_category, $raw_item,  DataService $dataservice)
-    {
+    public function addProducttoCart($raw_category, $raw_item, DataService $dataservice, Request $request )
+    { 
+        $success = 'Товар добавлен в корзину!';
         $category = str_replace('-', '/', $raw_category);
         $item = str_replace('-', '', $raw_item);
 
         $id = $category . '$$' . $item;
-
         $data =  $dataservice->getAllData();
 
-
         $group = $data[$category];
-
-
 
         $result = $group[$item];
 
         $cart = session()->get('cart', []);
+        
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            if($request->has('minus') && $cart[$id]['quantity'] > 1){
+                $cart[$id]['quantity']--;
+                $success = 'Товар удален из корзины!';
+            }else{
+                $cart[$id]['quantity']++;
+            }
         } else {
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
-                "name" =>  trim( $result['real_name'])
+                "name" =>  trim( $result['real_name']),
+                "category" => $raw_category,
+                "item" => $raw_item,
             ];
         }
 
         // dd($raw_item);
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Товар добавлен в корзину!');
+
+        if($request->ajax() ) {
+
+            $price = $dataservice->getCartPrice();
+            $price[] = $success;
+            $price[] = $cart[$id]['quantity'];
+            return response()->json($price, 200);
+        }
+
+        return redirect()->back()->with('success', $success);
     }
 
 
-    public function updateCart($category_name, $up_down, DataService $dataservice)
+    public function updateCart($raw_category, $raw_item, $quantity, DataService $dataservice, Request $request )
     {
+        $success = 'Количество товара обновлено!';
+        $category = str_replace('-', '/', $raw_category);
+        $item = str_replace('-', '', $raw_item);
 
-        $category_name = str_replace('-','/', $category_name);
+        $id = $category . '$$' . $item;
+        $data =  $dataservice->getAllData();
+
+        $group = $data[$category];  
+
+        $result = $group[$item];
+
         $cart = session()->get('cart');
-        $links = [];
-        foreach($cart as $k=>$v){
-            list($cat, $item) = explode('$$', $k);
-            $links[$k]['cat'] = str_replace('/', '-', $cat);
-            $links[$k]['item'] = str_replace('/', '-', $item);
-       }
+        
+        $cart[$id]['quantity'] = $quantity;
+        
+        session()->put('cart', $cart);
+        // dd($cart, $id);
 
+        if($request->ajax() ) {
 
-        if(isset($cart[$category_name])){
-            if($up_down == 'up')
-                $cart[$category_name]['quantity'] += 1;
-            elseif($up_down == 'down' && $cart[$category_name]['quantity'] > 1){
-                $cart[$category_name]['quantity'] -= 1;
-            }
-            session()->put('cart', $cart);
+            $price = $dataservice->getCartPrice();
+            $price[] = $success;
+            return response()->json($price, 200);
         }
 
-        $cart = $dataservice->getCartData();
 
         return view('cart', compact('cart', 'links') );
     }

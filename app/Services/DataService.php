@@ -77,7 +77,7 @@ class DataService {
 
 
     public function getCartData(){
-        $temp = session()->get('cart');
+        $temp = session()->get('cart', []);
         $cart = []; $names_my = ['Iphone', 'Watch'];
         if(!empty($temp))
             foreach($temp as $k=>$v){
@@ -102,6 +102,21 @@ class DataService {
             }
             // dd($cart);
         return $cart;
+    }
+
+
+    public function getCartPrice(){
+        $cart_count = 0;  $cart_price = 0;
+        $cart = session()->get('cart', []);
+        // dd($cart);
+        if($cart){
+             foreach($cart as $k=>$v){
+                 $cart_price += $v['price'] *  $v['quantity'];
+                 $cart_count += $v['quantity'];
+             }
+             if($cart_price > 0) $cart_price = DataService::formatNumber($cart_price);
+         }
+         return [$cart_price, $cart_count];
     }
   
 

@@ -50,15 +50,11 @@ class HomeController extends Controller
         $bread =  $cats[$category];
 
         $res = $dat;
-        $dat['real_name'] = EmojiRemover::filter(Str::replace(['/', ' '], ['-', ''], $dat['real_name']));
+        $dat['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $dat['real_name']));
 
         $res = $dat; //dd($res);
         $active = $category;
 
-        if($request->ajax() ) {
-            
-            return response()->json($res, 200);
-        }
 
         return view('category', compact('res', 'cats', 'bread', 'active'));
     }
