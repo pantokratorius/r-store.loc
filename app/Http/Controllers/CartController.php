@@ -33,7 +33,7 @@ class CartController extends Controller
 
     public function addProducttoCart($raw_category, $raw_item, DataService $dataservice, Request $request )
     { 
-        $success = 'Количество товара обновлено!';
+        $success = 'Корзина обновлена!';
         $category = str_replace('-', '/', $raw_category);
         $item = str_replace('-', '', $raw_item);
 
@@ -79,7 +79,7 @@ class CartController extends Controller
 
     public function updateCart($raw_category, $raw_item, $quantity, DataService $dataservice, Request $request )
     {
-        $success = 'Количество товара обновлено!';
+        $success = 'Корзина обновлена!';
         $category = str_replace('-', '/', $raw_category);
         $item = str_replace('-', '', $raw_item);
 
