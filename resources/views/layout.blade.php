@@ -209,7 +209,7 @@
               <div class="main-menu-item-controls menu-item-controls level-1">
 
 
-                <a href="https://www.service-ai.ru" class="main-menu-link menu-link level-1"
+                <a href="#" class="main-menu-link menu-link level-1"
                   data-menu-link-source="menu" data-menu-link-current="no">
                   Ремонт
                 </a>
@@ -220,7 +220,7 @@
               <div class="main-menu-item-controls menu-item-controls level-1">
 
 
-                <a href="/page/delivery" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
                   data-menu-link-current="no">
                   Доставка
                 </a>
@@ -230,7 +230,7 @@
               <div class="main-menu-item-controls menu-item-controls level-1">
 
 
-                <a href="/page/rassrochka" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
                   data-menu-link-current="no">
                   Кредит
                 </a>
@@ -240,7 +240,7 @@
               <div class="main-menu-item-controls menu-item-controls level-1">
 
 
-                <a href="/page/oplata" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
                   data-menu-link-current="no">
                   Оплата
                 </a>
@@ -250,7 +250,7 @@
               <div class="main-menu-item-controls menu-item-controls level-1">
 
 
-                <a href="/page/kontakty" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
                   data-menu-link-current="no">
                   Контакты
                 </a>
