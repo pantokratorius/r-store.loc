@@ -47,11 +47,11 @@
 
 <div class="counter js-variant-counter" data-quantity="" data-quantity-change-init="true">
 
-<a href="{{route('addcart', [$v['category'],   $v['item'], 'minus' ])}}" class="counter-button is-count-down">-</a>
+  <a href="{{route('addcart', [$v['category'],   $v['item'], 'minus' ])}}" class="counter-button is-count-down">-</a>
 
-<input type="text" value="{{ $v['quantity'] }}" name="cart[quantity][663628205]" class="counter-input ">
+  <input type="text" value="{{ $v['quantity'] }}" name="cart[quantity][663628205]" class="counter-input ">
 
-<a href="{{route('addcart', [$v['category'],   $v['item'] ])}}"  class="counter-button is-count-up ">+</a>
+  <a href="{{route('addcart', [$v['category'],   $v['item'] ])}}"  class="counter-button is-count-up ">+</a>
 </div>
 
 
@@ -110,14 +110,53 @@
 
 @push('scripts')
 <script>
+  
+$(function(){
+  let tim 
+
   $('.counter-button').click(function(e){
     e.preventDefault()
+
+if(typeof tim !== 'undefined') clearTimeout(tim)
+
+  const total_price_line = $(this).closest('div.item-counter').next();
     const input = $(this).closest('div').find('.counter-input')
-    const number = Number( input.val() )
+    let number = Number( input.val() )
+    
     const href = $(this).attr('href')
-    if(href.indexOf('minus') + 1 && number <= 1) return false
-    $.get( href, function( data ) {
-      input.val(data[3]);
+    if(href.indexOf('minus') + 1){ 
+      if(number <= 1)
+          number = 1
+        else
+        number = number - 1
+    } else {
+        number = number + 1
+    }
+    input.val(number)
+
+    tim = setTimeout(() => {
+        updateQuantity(number, href, total_price_line)
+    }, 500);
+
+  })
+
+})
+
+  $('.counter-input ').blur(function(){
+     let number = $(this).val()
+     const url = $(this).closest('div').find('.is-count-down').attr('href');
+     const total_price_line = $(this).closest('div.item-counter').next();
+     if(number <= 1) number = 1
+     updateQuantity(number, url, total_price_line)
+  })
+
+
+
+  function updateQuantity(number, url, total_price_line ){
+     const href = url.split('addcart')[0] + `quantity/${number}/updatecart`
+     if(number < 1) return false
+     $.get( href, function( data ) {
+
         const elements = $('.js-shopcart-widget-count')
         elements.each(function(){
           $(this).text(data[1]) 
@@ -126,6 +165,7 @@
         price.each(function(){
           $(this).text(`${data[0]} руб`) 
         })
+        total_price_line.text(`${data[3]} руб`)
         $('.js-shopcart-total-summ').text(`${data[0]} руб`)
         if(!$('.ajs-visible').length)
           $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
@@ -133,33 +173,7 @@
         $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
         
     });
-    return false
-  })
-
-
-  $('.counter-input ').blur(function(){
-     const number = $(this).val()
-     const url = $(this).closest('div').find('.is-count-down').attr('href');
-     const href = url.split('addcart')[0] + `quantity/${number}/updatecart`
-
-     $.get( href, function( data ) {
-        const elements = $('.js-shopcart-widget-count')
-        elements.each(function(){
-          $(this).text(data[1]) 
-        })
-        const price = $('.js-shopcart-widget-amount')
-        price.each(function(){
-          $(this).text(`${data[0]} руб`) 
-        })
-        if(!$('.ajs-visible').length)
-          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
-        else $('.ajs-visible').text(data[2])
-        $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
-        
-    });
-
-     console.log(number)
-  })
+  }
 
 </script>
 @endpush

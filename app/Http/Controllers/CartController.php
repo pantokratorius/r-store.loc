@@ -33,7 +33,7 @@ class CartController extends Controller
 
     public function addProducttoCart($raw_category, $raw_item, DataService $dataservice, Request $request )
     { 
-        $success = 'Товар добавлен в корзину!';
+        $success = 'Количество товара обновлено!';
         $category = str_replace('-', '/', $raw_category);
         $item = str_replace('-', '', $raw_item);
 
@@ -49,7 +49,6 @@ class CartController extends Controller
         if(isset($cart[$id])) {
             if($request->has('minus') && $cart[$id]['quantity'] > 1){
                 $cart[$id]['quantity']--;
-                $success = 'Товар удален из корзины!';
             }else{
                 $cart[$id]['quantity']++;
             }
@@ -102,6 +101,7 @@ class CartController extends Controller
 
             $price = $dataservice->getCartPrice();
             $price[] = $success;
+            $price[] = $dataservice->formatNumber( $cart[$id]['quantity'] * $cart[$id]['price'] );
             return response()->json($price, 200);
         }
 
