@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('content')
 <div class="products-list is-collection row">

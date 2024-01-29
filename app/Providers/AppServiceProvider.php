@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        view()->composer(['layout', 'cart'], CartDataComposer::class );
-        view()->composer('*', ImagesDataComposer::class );
+        view()->composer(['frontend.layout', 'frontend.cart'], CartDataComposer::class );
+        view()->composer('frontend.*', ImagesDataComposer::class );
     }
 
 }

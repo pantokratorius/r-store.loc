@@ -22,12 +22,12 @@ class CartController extends Controller
         }
 
 // dd($cart);
-        return view('cart', compact('cart', 'links') );
+        return view('frontend.cart', compact('cart', 'links') );
     }
 
     public function productCart()
     {
-        return view('cart');
+        return view('frontend.cart');
     }
 
 
@@ -106,7 +106,7 @@ class CartController extends Controller
         }
 
 
-        return view('cart', compact('cart', 'links') );
+        return view('frontend.cart', compact('cart', 'links') );
     }
 
     public function deleteProductCart( $category_name, DataService $dataservice)
@@ -130,7 +130,7 @@ class CartController extends Controller
 
 
 
-        return view('cart', compact('cart', 'links') );
+        return view('frontend.cart', compact('cart', 'links') );
     }
 }
 

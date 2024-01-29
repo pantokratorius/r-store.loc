@@ -2,16 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Arispati\EmojiRemover\EmojiRemover;
 use Illuminate\Support\Str;
 use App\Services\DataService;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
     public function __invoke(DataService $dataService)
     {
+
+        // Role::create([
+        //     'name' => 'Super Admin',
+        //     // 'name' => 'admin',
+        //     // 'name' => 'user',
+        // ]);
+
+        $user = User::get()->first();
+        // $user->assignRole('Super Admin');
+        dd($user);
         //session()->flush();
     //    dd( session()->get('cart') );
         $transfer = $dataService->getAllData();
@@ -28,7 +40,7 @@ class HomeController extends Controller
 
         $cart = session()->get('cart', []);
         //    dd($cart);
-        return view('home', compact('res', 'cats'));
+        return view('frontend.home', compact('res', 'cats'));
     }
 
 
@@ -56,7 +68,7 @@ class HomeController extends Controller
         $active = $category;
 
 
-        return view('category', compact('res', 'cats', 'bread', 'active'));
+        return view('frontend.category', compact('res', 'cats', 'bread', 'active'));
     }
 
     public function item($category, $item, DataService $dataService)
@@ -89,6 +101,6 @@ class HomeController extends Controller
 
 
 
-        return view('item', compact('res', 'cats', 'bread', 'active'));
+        return view('frontend.item', compact('res', 'cats', 'bread', 'active'));
     }
 }

@@ -17,7 +17,7 @@
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
-@vite(['resources/css/app.scss',  'resources/js/app.js'])
+@vite(['resources/css/app.scss',   'resources/js/app.js'])
 </head>
 
 <body class="fhg-body">
@@ -27,7 +27,7 @@
   <div class="body-wrapper">
 
 
-@include('mobile_menu')
+@include('frontend.mobile_menu')
 
     <div class="top-panel-wrapper">
       <div class="container">
@@ -282,7 +282,7 @@
     <div class="content-wrapper container fhg-content">
 
 
-      @includeWhen(isset($cats), 'sidebar')
+      @includeWhen(isset($cats), 'frontend.sidebar')
 
       <div class="row collection-wrapper">
         <div class="collection cell-12 cell-12-md cell-12-sm">

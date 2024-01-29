@@ -7418,19 +7418,12 @@ select:-moz-focusring {
 }
 
 .review-inner.is-left {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-flow: row;
     flex-flow: row;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: start
+    align-items: flex-start
 }
 
 @media screen and (max-width: 480px) {
@@ -7805,7 +7798,7 @@ body {
     font-size: 14px;
     font-family: Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
-    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-text-decoration-skip: ink
 }
@@ -9735,7 +9728,7 @@ body {
 
 .collection-mix-description {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     margin: 0;
     margin-bottom: 1rem;
     flex-wrap: wrap
