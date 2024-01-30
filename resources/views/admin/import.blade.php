@@ -35,12 +35,13 @@
     <div class="box-head" style="margin-bottom: 5px">	<h2>Форма добавления прайса</h2></div>
     <div class="box-content">
         <form action="" method="post"  id="addForm">
-            <div class="form-row" style="margin-bottom: 50px;">
+            <div class="form-row" >
                 <div class="form-item">
                     <textarea rows="10" cols="50" type="text" name="data"></textarea>
                 </div>
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" class="button green" value="Сохранить" style='width:150px; float:right; margin-top:10px;' /></div>
+            <input type="submit" class="button_save" value="Сохранить" />
+          </div>
             <div class="form-row">
 
         </form>
@@ -52,7 +53,7 @@
                     @foreach($v as $key=>$val) 
                     {{-- {{dump($key)}} --}}
                         @if($key != 'nacenka' && $key != 'real_name')
-                               <div class="form-row" style="margin: 0 0 0px 0px; background: #dff1df; padding: 15px">
+                               <div class="form-row" style="margin: 0 0 0px 0px;  padding: 15px; border: 1px solid rgb(221, 221, 221)">
                                 <span class="line"></span>
                                     <p class="form-label" style="text-wrap: nowrap;"><?=$val['real_name'] ?>:</p>
                                     <div class="form-item">
@@ -65,7 +66,7 @@
                 @endforeach
                    <div class="form-row">
                        <input type="hidden" name="type" value="edit" />
-                       <input type="submit" class="button green" value="Сохранить" style='width:150px; float:right; margin-top:-30px;' /></div>
+                       <input type="submit" class="button_save bottom" value="Сохранить" /></div>
                     </form>
     @endif
                
@@ -87,11 +88,33 @@
             .line {
                 background: #005c4c;
                 width: 25px;
-                height: 4px;
+                height: 1px;
                 border-radius: 5px;
                 margin-right: 15px;
-                margin-top: 10px;
+                margin-top: 14px;
+                margin-left: 20px;
             }
+
+            .button_save {
+                background: #47c363;
+                padding: 5px 15px;
+                border-radius: 8px;
+                margin-top: 10px;
+                color: white;
+            }
+
+            #addForm {
+              display: flex;
+              flex-direction: column;
+              width: fit-content;
+              align-items: flex-end;
+              margin-bottom: 50px;
+            }
+
+            input.bottom {
+              margin-left: 500px;
+            }
+
         </style>
 
     @endpush
