@@ -19,9 +19,9 @@ class CartController extends Controller
              list($cat, $item) = explode('$$', $k);
              $links[$k]['cat'] = str_replace('/', '-', $cat);
              $links[$k]['item'] = str_replace('/', '-', $item);
+             $img = DB::table('images')->where('ref_id', $item)->pluck('image_link');
         }
 
-// dd($cart);
         return view('frontend.cart', compact('cart', 'links') );
     }
 
@@ -53,6 +53,7 @@ class CartController extends Controller
                 $cart[$id]['quantity']++;
             }
         } else {
+            $img = DB::table('images')->where('ref_id', $item)->pluck('image_link');
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
@@ -60,6 +61,8 @@ class CartController extends Controller
                 "category" => $raw_category,
                 "item" => $raw_item,
             ];
+            if($img)
+                $cart[$id]['image'] = $img[0];
         }
 
         // dd($raw_item);
@@ -127,7 +130,6 @@ class CartController extends Controller
         }
 
         $cart = $dataservice->getCartData();
-
 
 
         return view('frontend.cart', compact('cart', 'links') );

@@ -19,8 +19,8 @@
 <div class="product-gallery">
   <div class="gallery-main-wrapper">
 
-    <a href="@if(isset($images[$res['image']]) ) @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" class="image-wrapper" id="gallery" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-gallery-count="1">
-      <img src="@if(isset($images[$res['image']]) ) {{ asset('images/products/' . $images[$res['image']]) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " class="slide-image">
+    <a href="@if(isset($res['image']) ) @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" class="image-wrapper" id="gallery" title="iPhone 15 Pro Max, 256 ГБ, Титановый" data-gallery-count="1">
+      <img src="@if(isset($res['image']) ) {{ asset('images/products/' . $res['image']) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " class="slide-image">
     </a>
   </div>
   <!-- Для тыкалок js 
@@ -117,18 +117,24 @@
       <div class="price js-product-price on-page">{{ $res['price'] }}&nbsp;руб</div>
     </div>
 
-    <div class="product-introtext on-page editor"><ul>
-<li>Впервые в iPhone - титановый корпус</li>
-<li>Новый чип A17 Pro</li>
-<li>Ray Tracing</li>
-<li>48 МП камера</li>
-<li>Spatial video</li>
-<li>Оптический зум 5x</li>
-<li>Action Button - новая програмируемая кнопка на корпусе</li>
-<li>Новый режим портретов<span class="Apple-converted-space">&nbsp;</span></li>
-<li>Порт USB-C вместо Lightning</li>
-<li>Заряд аккумулятора на весь день</li>
-</ul></div>
+    <div class="product-introtext on-page editor">
+      @if(isset($res['specs']))
+        {!! $res['specs'] !!}
+      @else
+      <ul>
+        <li>Впервые в iPhone - титановый корпус</li>
+        <li>Новый чип A17 Pro</li>
+        <li>Ray Tracing</li>
+        <li>48 МП камера</li>
+        <li>Spatial video</li>
+        <li>Оптический зум 5x</li>
+        <li>Action Button - новая програмируемая кнопка на корпусе</li>
+        <li>Новый режим портретов<span class="Apple-converted-space">&nbsp;</span></li>
+        <li>Порт USB-C вместо Lightning</li>
+        <li>Заряд аккумулятора на весь день</li>
+      </ul>
+      @endif
+</div>
 
     <form class="product-form" action="/cart_items">
 

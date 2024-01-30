@@ -26,7 +26,7 @@
 <div class="item-image-wrapper ">
   <div class="item-image-inner">
     <span class="item-image-link image-container is-square is-cover">
-      <img title="iPhone 15 Pro Max, 1 ТБ, Титановый синий" alt="iPhone 15 Pro Max, 1 ТБ, Титановый синий" src="https://static.insales-cdn.com/images/products/1/3682/757050978/large_iPhone15ProMax_Blue_Small.jpg" class="item-image">
+      <img title="iPhone 15 Pro Max, 1 ТБ, Титановый синий" alt="iPhone 15 Pro Max, 1 ТБ, Титановый синий" src="@if(!empty($v['image'])) {{ asset('images/products/'. $v['image']) }} @else https://static.insales-cdn.com/images/products/1/3682/757050978/large_iPhone15ProMax_Blue_Small.jpg @endif" class="item-image">
     </span>
   </div>
 </div>
