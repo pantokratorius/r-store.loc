@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ImportController extends Controller
 {
-    public function prices(){
+    public function import(){
 
         $res = DB::table('data')->pluck('data');
         if($res) $res = json_decode ($res[0], 1);
@@ -31,16 +31,15 @@ class ImportController extends Controller
         }
 
 // dd($res);
-        return view('admin.prices', compact('res'));
+        return view('admin.import', compact('res'));
     }
 
-    public function import(){
 
-        
+
+
+    public function importSave(){
         return view('admin.import');
     }
-
-
 
 
 

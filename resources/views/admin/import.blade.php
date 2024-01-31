@@ -17,7 +17,7 @@
 <div class="box" style="">
     <div class="box-head" style="margin-bottom: 5px">	<h2>Форма добавления прайса</h2></div>
     <div class="box-content">
-        <form action="" method="post"  id="addForm">
+        <form action="{{route('import.save')}}" method="post"  id="addForm">
             <div class="form-row" >
                 <div class="form-item">
                     <textarea rows="10" cols="50" type="text" name="data"></textarea>
@@ -28,7 +28,29 @@
             <div class="form-row">
 
         </form>
-
+        @if($res)
+        <form action="" method="post">
+                @foreach($res as $k=>$v) 
+            <div style="width: 100%; display: flex; align-items: center; background: #f1f0df; padding: 20px "><h2><?=$k ?></h2><input type="text" name="<?=$k ?>" value="<?=$v['nacenka']?>" style="width: 80px; margin-left: 20px; height: 27px" /></div>
+                    @foreach($v as $key=>$val) 
+                    {{-- {{dump($key)}} --}}
+                        @if($key != 'nacenka' && $key != 'real_name')
+                               <div class="form-row" style="margin: 0 0 0px 0px;  padding: 15px; border: 1px solid rgb(221, 221, 221)">
+                                <span class="line"></span>
+                                    <p class="form-label" style="text-wrap: nowrap;"><?=$val['real_name'] ?>:</p>
+                                    <div class="form-item">
+                                        <span>{{$val['price']}} </span>
+                                        <input type="text" name="{{$key}}" value="@isset($val['nacenka']) {{$val['nacenka']}} @endisset" style="width: 80px; margin-left: 20px; height: 27px">
+                                    </div>
+                                </div>
+                        @endif
+                    @endforeach
+                @endforeach
+                   <div class="form-row">
+                       <input type="hidden" name="type" value="edit" />
+                       <input type="submit" class="button_save bottom" value="Сохранить" /></div>
+                    </form>
+    @endif
                
     </div>
                                                             

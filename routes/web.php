@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::get('/import', [ImportController::class, 'import'])->name('import')->middleware('auth','role:Super Admin|admin');
-    Route::get('/prices', [ImportController::class, 'prices'])->name('prices')->middleware('auth','role:Super Admin|admin');
+    Route::post('/import/save', [ImportController::class, 'importSave'])->name('import.save')->middleware('auth','role:Super Admin|admin');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
