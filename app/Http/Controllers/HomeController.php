@@ -28,9 +28,10 @@ class HomeController extends Controller
         // dd($cats);
         $res = $transfer;
         // $bread = end($cats);
-
-
+        
+        
         $cart = session()->get('cart', []);
+        $cats = array_reverse($cats);
         //    dd($cart);
         return view('frontend.home', compact('res', 'cats'));
     }
@@ -66,7 +67,7 @@ class HomeController extends Controller
         $res = $dat; //dd($res);
         $active = $category;
 
-
+        $cats = array_reverse($cats);
         return view('frontend.category', compact('res', 'cats', 'bread', 'active', 'images'));
     }
 
@@ -118,7 +119,7 @@ class HomeController extends Controller
         $active = $category;
 
 
-
+        $cats = array_reverse($cats);
         return view('frontend.item', compact('res', 'cats', 'bread', 'active'));
     }
 }

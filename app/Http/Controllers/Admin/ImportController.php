@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ActionsController extends Controller
+class ImportController extends Controller
 {
-    public function import(){
+    public function prices(){
 
         $res = DB::table('data')->pluck('data');
         if($res) $res = json_decode ($res[0], 1);
@@ -31,6 +31,20 @@ class ActionsController extends Controller
         }
 
 // dd($res);
-        return view('admin.import', compact('res'));
+        return view('admin.prices', compact('res'));
     }
+
+    public function import(){
+
+        
+        return view('admin.import');
+    }
+
+
+
+
+
+
+
+
 }

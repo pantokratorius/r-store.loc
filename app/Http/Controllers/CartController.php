@@ -22,7 +22,15 @@ class CartController extends Controller
              $img = DB::table('images')->where('ref_id', $item)->pluck('image_link');
         }
 
-        return view('frontend.cart', compact('cart', 'links') );
+        $transfer = $dataservice->getAllData();
+                foreach ($transfer as $k => $v) {
+                    $name = EmojiRemover::filter($v['real_name']);
+                    $cats[$k] = $name;
+                }
+                $cats = array_reverse($cats);
+
+
+        return view('frontend.cart', compact('cart', 'links', 'cats') );
     }
 
     public function productCart()

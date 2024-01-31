@@ -8097,7 +8097,10 @@ body {
 }
 
 .header-info {
-    color: #3b3b3b
+    color: #3b3b3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contacts-top-menu-block {
@@ -8124,6 +8127,14 @@ body {
 
 .left-header-block .phone {
     margin-bottom: .5rem
+}
+
+.phone {
+    width: 150px; 
+    border-right: 1px solid;
+    display: flex;
+    align-items: center;
+    height: 28px;
 }
 
 .left-header-block .contact-link {
@@ -8499,8 +8510,8 @@ body {
 
 .sidebar-menu-item.level-1 {
     margin-left: 0;
-    padding-left: 1.25rem;
-    padding-right: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
 }
@@ -20605,7 +20616,6 @@ a:not([class]):hover,
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    color: pointer;
     word-break: break-word;
     white-space: normal
 }
@@ -22206,5 +22216,23 @@ button.swiper-pagination-bullet {
 .sidebar-menu .active {
     color: #924848;
     font-weight: 700;
-    text-decoration: underline
+    text-decoration: underline;
+}
+
+.sidebar-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    // line-height: 32px;
+    padding: 0 20px;
+    // font-family: "Inter", "Arial", sans-serif;
+    font-size: 12px;
+    border: 1px solid #E7E6DF;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    margin: 3px;
 }

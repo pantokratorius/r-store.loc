@@ -8,6 +8,6 @@ class OrderController extends Controller
 {
     public function __invoke(){
 
-        return view('order' );
+        return view('frontend.order' );
     }
 }

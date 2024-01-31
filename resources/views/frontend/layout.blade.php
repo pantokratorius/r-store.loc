@@ -81,7 +81,7 @@
                   <span class="shopcart-widget-icon">
                     <span class="shopcart-widget-count js-shopcart-widget-count is-top-panel">{{ $cart_count }}</span>
                   </span>
-                  <span class="shopcart-widget-data">
+                  <span class="shopcart-widget-data" >
                     <span class="shopcart-widget-caption">
                       Корзина
                     </span>
@@ -110,23 +110,16 @@
           <div class="left-blocks cell-">
             <div class="left-blocks-inner row flex-middle">
 
-              <div class="header-block js-contacts-header cell-4 hidden-sm ">
-
-                <div class="email text-left hidden-sm">
-
-                </div>
-                <div class="phone text-left text-center-sm hidden-sm">
-
-                  <a href="tel:+7(967)307-01-00" class="contact-link tel"> +7(967)307-01-00</a>
-                  {{-- <br> <a class="backcall-toggle js-backcall-toggle">Обратный звонок</a> --}}
-
-                </div>
-
-
+              <div class="logotype text-center-sm hidden shown-sm" style="margin: 0 auto; width: 150px; padding: 0 1rem">
+                <a title="R-store" href="/" class="logotype-link">
+                    <img src="{{url('/images/logo_rstore.png')}}"
+                    class="logotype-image" alt="R-store logo" title="R-store">
+                </a>
               </div>
 
-              <div class="logotype-wrapper cell-4 cell-7-md cell-12-sm text-center">
-                <div class="logotype text-center-sm cell-5" style="margin: 0 auto">
+
+<div class="logotype-wrapper cell-10 cell-7-md cell-12-sm text-center">
+                <div class="logotype text-center-sm hidden-sm" style="margin: 5px auto 0; width: 120px">
 
                   <a title="R-store" href="/" class="logotype-link">
 
@@ -137,7 +130,43 @@
                 </div>
               </div>
 
-              <div class="header-info header-block hidden-sm cell-4 cell-7-md cell-12-sm">
+              <div class="header-block js-contacts-header cell-4 hidden-sm ">
+
+                <div class="email text-left hidden-sm">
+
+                </div>
+            
+
+
+              </div>
+              <ul class="main-menu menu level-1 insales-menu--loaded cell-4 hidden-sm" data-menu-id="main-menu">
+                <li class="main-menu-item menu-item level-1">
+                  <div class="main-menu-item-controls menu-item-controls level-1">
+                    <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                      data-menu-link-current="no">
+                      Оплата
+                    </a>
+                  </div>
+                </li>
+                <li class="main-menu-item menu-item level-1">
+                  <div class="main-menu-item-controls menu-item-controls level-1">
+                    <a href="{{route('contacts')}}" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                      data-menu-link-current="no">
+                      Контакты
+                    </a>
+                  </div>
+                </li>
+    
+              </ul>
+              
+
+              <div class="header-info header-block hidden-sm cell-6 cell-7-md cell-12-sm">
+                <div class="phone text-left text-center-sm hidden-sm">
+
+                  <a href="tel:+7(967)307-01-00" class="contact-link tel"> +7(967)307-01-00</a>
+                  {{-- <br> <a class="backcall-toggle js-backcall-toggle">Обратный звонок</a> --}}
+
+                </div>
                 <div class="header-block header-compare" style="justify-content: flex-end">
 
 
@@ -148,7 +177,7 @@
                         <span class="shopcart-widget-icon">
                           <span class="shopcart-widget-count js-shopcart-widget-count">{{ $cart_count }}</span>
                         </span>
-                        <span class="shopcart-widget-data">
+                        <span class="shopcart-widget-data" style="display: flex; flex-wrap: nowrap">
                           <span class="shopcart-widget-caption">
                             Корзина:
                           </span>
@@ -201,63 +230,9 @@
 
 
         </div>
-
+{{-- 
         <div class="main-menu-wrapper hidden-sm">
-          <ul class="main-menu menu level-1 insales-menu--loaded" data-menu-id="main-menu">
-
-            <li class="main-menu-item menu-item level-1">
-              <div class="main-menu-item-controls menu-item-controls level-1">
-
-
-                <a href="#" class="main-menu-link menu-link level-1"
-                  data-menu-link-source="menu" data-menu-link-current="no">
-                  Ремонт
-                </a>
-              </div>
-            </li>
-
-            <li class="main-menu-item menu-item level-1">
-              <div class="main-menu-item-controls menu-item-controls level-1">
-
-
-                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
-                  data-menu-link-current="no">
-                  Доставка
-                </a>
-              </div>
-            </li>
-            <li class="main-menu-item menu-item level-1">
-              <div class="main-menu-item-controls menu-item-controls level-1">
-
-
-                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
-                  data-menu-link-current="no">
-                  Кредит
-                </a>
-              </div>
-            </li>
-            <li class="main-menu-item menu-item level-1">
-              <div class="main-menu-item-controls menu-item-controls level-1">
-
-
-                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
-                  data-menu-link-current="no">
-                  Оплата
-                </a>
-              </div>
-            </li>
-            <li class="main-menu-item menu-item level-1">
-              <div class="main-menu-item-controls menu-item-controls level-1">
-
-
-                <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
-                  data-menu-link-current="no">
-                  Контакты
-                </a>
-              </div>
-            </li>
-
-          </ul>
+      
 
 
           <form class="search-widget in-header " action="/search" method="get">
@@ -274,7 +249,7 @@
 
 
 
-        </div>
+        </div> --}}
       </header>
 
     </div>
@@ -403,50 +378,8 @@
 
         <footer class="footer ">
 
-
-
-
-
-
-
-
-
-
           <div class="footer-menu-wrapper is-vertical cell-12 cell-12-sm text-center">
             <ul class="footer-menu menu level-1 insales-menu--loaded" data-menu-id="footer-menu">
-
-
-
-
-              <li class="footer-menu-item menu-item level-1">
-                <div class="footer-menu-item-controls menu-item-controls level-1">
-
-
-                  <a href="/page/delivery" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
-                    data-menu-link-current="no">
-                    Доставка
-                  </a>
-                </div>
-              </li>
-
-
-
-
-
-              <li class="footer-menu-item menu-item level-1">
-                <div class="footer-menu-item-controls menu-item-controls level-1">
-
-
-                  <a href="/page/rassrochka" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
-                    data-menu-link-current="no">
-                    Кредит
-                  </a>
-                </div>
-              </li>
-
-
-
-
 
               <li class="footer-menu-item menu-item level-1">
                 <div class="footer-menu-item-controls menu-item-controls level-1">
@@ -458,10 +391,6 @@
                   </a>
                 </div>
               </li>
-
-
-
-
 
               <li class="footer-menu-item menu-item level-1">
                 <div class="footer-menu-item-controls menu-item-controls level-1">
@@ -558,6 +487,7 @@
     })
 </script>
 
+@stack('styles')
 @stack('scripts')
 </body>
 

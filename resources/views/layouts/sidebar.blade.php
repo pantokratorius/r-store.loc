@@ -41,9 +41,15 @@
           <a href="{{ route('dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         </li>
         @role('Super Admin|admin')
-          <li class="nav-item ">
-            <a href="{{ route('import') }}" class="nav-link"><i class="fas fa-fire"></i><span>Import</span></a>
-          </li>
+        
+
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Товары</span></a>
+            <ul class="dropdown-menu" style="display: none;">
+              <li class=""><a class="nav-link" href="{{route('import')}}">Импорт</a></li>
+              <li class=""><a class="nav-link" href="{{route('prices')}}">Наценки</a></li>
+            </ul>
+        </li>
         @endrole
       
 
