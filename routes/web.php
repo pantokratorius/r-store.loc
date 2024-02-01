@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +32,8 @@ Route::get('category/{id}/item/{id2}/quantity/{quantity}/updatecart', [CartContr
 
 
 Route::get('order', OrderController::class)->name('order');
-
 Route::get('contacts', ContactsController::class)->name('contacts');
+Route::get('payments', PaymentsController::class)->name('payments');
 
 
 // ------------------------------------------------------------------------

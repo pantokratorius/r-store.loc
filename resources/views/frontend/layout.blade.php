@@ -142,7 +142,7 @@
               <ul class="main-menu menu level-1 insales-menu--loaded cell-4 hidden-sm" data-menu-id="main-menu">
                 <li class="main-menu-item menu-item level-1">
                   <div class="main-menu-item-controls menu-item-controls level-1">
-                    <a href="#" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
+                    <a href="{{route('payments')}}" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
                       data-menu-link-current="no">
                       Оплата
                     </a>
@@ -385,7 +385,7 @@
                 <div class="footer-menu-item-controls menu-item-controls level-1">
 
 
-                  <a href="/page/oplata" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
+                  <a href="{{route('payments')}}" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
                     data-menu-link-current="no">
                     Оплата
                   </a>
@@ -396,7 +396,7 @@
                 <div class="footer-menu-item-controls menu-item-controls level-1">
 
 
-                  <a href="/page/kontakty" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
+                  <a href="{{route('contacts')}}" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
                     data-menu-link-current="no">
                     Контакты
                   </a>
