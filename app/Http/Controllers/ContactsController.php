@@ -8,6 +8,6 @@ class ContactsController extends Controller
 {
     public function __invoke()
     {
-        return view('frontend.construction');
+        return view('frontend.contacts');
     }
 }

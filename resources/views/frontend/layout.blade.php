@@ -135,7 +135,7 @@
                 <div class="email text-left hidden-sm">
 
                 </div>
-            
+
 
 
               </div>
@@ -156,9 +156,9 @@
                     </a>
                   </div>
                 </li>
-    
+
               </ul>
-              
+
 
               <div class="header-info header-block hidden-sm cell-6 cell-7-md cell-12-sm">
                 <div class="phone text-left text-center-sm hidden-sm">
@@ -230,9 +230,9 @@
 
 
         </div>
-{{-- 
+{{--
         <div class="main-menu-wrapper hidden-sm">
-      
+
 
 
           <form class="search-widget in-header " action="/search" method="get">
@@ -432,7 +432,7 @@
 
 
                 <li class="social-menu-item">
-                  <a target="blank" title="Vkontakte" href="https://wa.clck.bar/79673070100" class="social-menu-link">
+                  <a target="blank" title="watsapp" href="https://wa.clck.bar/79673070100" class="social-menu-link">
                     <div class="fa fa-whatsapp fa-lg"></div>
                   </a>
                 </li>
@@ -440,7 +440,7 @@
 
 
                 <li class="social-menu-item">
-                  <a target="blank" title="Instagram" href="https://t.me/rstore_novoross"
+                  <a target="blank" title="Telegram" href="https://t.me/rstore_novoross"
                     class="social-menu-link">
                     <div class="fa fa-telegram fa-lg"></div>
                   </a>
