@@ -18,6 +18,7 @@
     <div class="box-head" style="margin-bottom: 5px">	<h2>Форма добавления прайса</h2></div>
     <div class="box-content">
         <form action="{{route('import.save')}}" method="post"  id="addForm">
+          @csrf
             <div class="form-row" >
                 <div class="form-item">
                     <textarea rows="10" cols="50" type="text" name="data"></textarea>
@@ -29,15 +30,17 @@
 
         </form>
         @if($res)
-        <form action="" method="post">
+        <form action="{{route('import.price.save')}}" method="post">
+          @csrf
                 @foreach($res as $k=>$v) 
-            <div style="width: 100%; display: flex; align-items: center; background: #f1f0df; padding: 20px "><h2><?=$k ?></h2><input type="text" name="<?=$k ?>" value="<?=$v['nacenka']?>" style="width: 80px; margin-left: 20px; height: 27px" /></div>
+            <div style="width: 100%; display: flex; align-items: center; background: #f1f0df; padding: 20px "><h2>{{ $k }}</h2><input type="text" name="{{ $k }}" value="@isset($v['nacenka']) {{$v['nacenka']}} @endisset" style="width: 80px; margin-left: 20px; height: 27px" /></div>
                     @foreach($v as $key=>$val) 
-                    {{-- {{dump($key)}} --}}
                         @if($key != 'nacenka' && $key != 'real_name')
-                               <div class="form-row" style="margin: 0 0 0px 0px;  padding: 15px; border: 1px solid rgb(221, 221, 221)">
-                                <span class="line"></span>
-                                    <p class="form-label" style="text-wrap: nowrap;"><?=$val['real_name'] ?>:</p>
+                               <div class="form-row" style="margin: 0 0 0px 0px;  padding: 15px; border: 1px solid rgb(221, 221, 221); display:flex; justify-content: space-between">
+                                <div style="display: flex">
+                                  <span class="line"></span>
+                                    <p class="form-label" style="text-wrap: nowrap;">{{$val['real_name'] }}:</p>
+                                </div>
                                     <div class="form-item">
                                         <span>{{$val['price']}} </span>
                                         <input type="text" name="{{$key}}" value="@isset($val['nacenka']) {{$val['nacenka']}} @endisset" style="width: 80px; margin-left: 20px; height: 27px">
