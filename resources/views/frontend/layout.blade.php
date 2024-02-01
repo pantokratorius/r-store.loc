@@ -432,17 +432,17 @@
 
 
                 <li class="social-menu-item">
-                  <a target="blank" title="Vkontakte" href="http://vk.com/r-store" class="social-menu-link">
-                    <div class="fa fa-vk fa-lg"></div>
+                  <a target="blank" title="Vkontakte" href="https://wa.clck.bar/79673070100" class="social-menu-link">
+                    <div class="fa fa-whatsapp fa-lg"></div>
                   </a>
                 </li>
 
 
 
                 <li class="social-menu-item">
-                  <a target="blank" title="Instagram" href="https://www.instagram.com/r-store/"
+                  <a target="blank" title="Instagram" href="https://t.me/rstore_novoross"
                     class="social-menu-link">
-                    <div class="fa fa-instagram fa-lg"></div>
+                    <div class="fa fa-telegram fa-lg"></div>
                   </a>
                 </li>
 
