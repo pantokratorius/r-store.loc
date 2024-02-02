@@ -29,7 +29,7 @@
       <img @if(isset($res['image']) )
           src="{{ asset('images/products/' . $res['image']) }}" alt="{{$res['real_item_name']}}" title="{{$res['real_item_name']}}"
           @else 
-          src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 200px; object-fit: contain"
+          src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 100px; object-fit: contain"
        @endif 
        class="slide-image">
     </a>
@@ -82,16 +82,7 @@
         {!! $res['specs'] !!}
       @else
       <ul>
-        <li>Впервые в iPhone - титановый корпус</li>
-        <li>Новый чип A17 Pro</li>
-        <li>Ray Tracing</li>
-        <li>48 МП камера</li>
-        <li>Spatial video</li>
-        <li>Оптический зум 5x</li>
-        <li>Action Button - новая програмируемая кнопка на корпусе</li>
-        <li>Новый режим портретов<span class="Apple-converted-space">&nbsp;</span></li>
-        <li>Порт USB-C вместо Lightning</li>
-        <li>Заряд аккумулятора на весь день</li>
+        <li>Информация вскоре появится</li>
       </ul>
       @endif
 </div>

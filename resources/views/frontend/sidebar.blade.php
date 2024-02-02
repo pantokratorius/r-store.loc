@@ -21,7 +21,9 @@
                       </a>
                     </div>
                   </li>
+                  
             @endforeach
+            <li><i class="icon icon-magnifier"></i></li>
 @endisset
         </ul>
       </div>

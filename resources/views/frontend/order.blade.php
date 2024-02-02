@@ -108,8 +108,8 @@
               </span>
             </span>
             <span class="co-toggable_field-information co-delivery_method-information">
-              <span class="co-delivery_method-title co-toggable_field-title co-input-title" id="delivery_title_1390420">Мне нужна доставка по Анапе или Анапскому району</span>
-              <span class="co-delivery_method-description co-toggable_field-description co-input-description" id="delivery_description_1390420"><p>Стоимость доставки по анапскому району можно уточнить в разделе доставка</p>
+              <span class="co-delivery_method-title co-toggable_field-title co-input-title" id="delivery_title_1390420">Мне нужна доставка по Новороссийску или Новороссийскому району</span>
+              <span class="co-delivery_method-description co-toggable_field-description co-input-description" id="delivery_description_1390420"><p></p>
               </span>
               <span class="co-delivery_method-description co-toggable_field-description co-input-description" id="delivery_outlet_1390420"></span>
               <span class="co-delivery_method-description co-toggable_field-description co-input-description" id="delivery_interval_1390420"></span>
