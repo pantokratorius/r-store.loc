@@ -51,7 +51,7 @@ class ImportController extends Controller
             
             foreach($dat as $k=>$v){ 
                 if(!empty(preg_replace('!\s++!u', '', $v))){ 
-                    $v = preg_replace('!\s++!u', '', $v);
+                    // $v = preg_replace('!\s++!u', '', $v);
                     if(strpos ($v, '••') !== false){
                         $key = trim( str_replace(['•', ' '], '',  $v));
                         $res[$key]['real_name'] = trim( str_replace('•', '',  $v));

@@ -1,5 +1,11 @@
 @extends('frontend.layout')
 
+
+@section('page_title')
+{{$res['real_item_name']}}
+@endsection
+
+
 @section('content')
 
 <div class="page-headding-wrapper">
@@ -19,62 +25,16 @@
 <div class="product-gallery">
   <div class="gallery-main-wrapper">
 
-    <a href="@if(isset($res['image']) ) @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" class="image-wrapper" id="gallery" title="iPhone 15 Pro Max, 256 ГБ, Титановый" data-gallery-count="1">
-      <img src="@if(isset($res['image']) ) {{ asset('images/products/' . $res['image']) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " class="slide-image">
+    <a href="@if(isset($res['image']) ) @else {{url('/images/noimage.png')}} @endif" class="image-wrapper" id="gallery">
+      <img @if(isset($res['image']) )
+          src="{{ asset('images/products/' . $res['image']) }}" alt="{{$res['real_item_name']}}" title="{{$res['real_item_name']}}"
+          @else 
+          src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 200px; object-fit: contain"
+       @endif 
+       class="slide-image">
     </a>
   </div>
-  <!-- Для тыкалок js 
-
-    <div class="gallery-thumbs-wrapper  hidden-sm">
-      <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs" style="cursor: grab;">
-
-          <div class="product-slider-controls above-gallery" data-slider-controls="">
-            {{-- <button class="product-slider-prev swiper-button-prev swiper-button-disabled is-disabled" data-slider-prev=""></button> --}}
-            {{-- <button class="product-slider-next swiper-button-next" data-slider-next=""></button> --}}
-          </div>
-
-
-
-          <div class="swiper-wrapper" data-slider-container="" style="height: 59px;"><div data-slider-slide="" class="swiper-slide swiper-slide-active is-active" style="width: 57.25px; margin-right: 16px;">
-
-            <a class="slide-inner image-container is-square js-copy-src" href="https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg" data-gallery-count="1" data-image-large="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="">
-              <img class="slide-image swiper-lazy swiper-lazy-loaded" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " data-slider-lazy="" src="https://static.insales-cdn.com/images/products/1/7352/757046456/medium_iPhone15ProMax_Star_Small.jpg">
-            </a>
-          </div><div data-slider-slide="" class="swiper-slide swiper-slide-next" style="width: 57.25px; margin-right: 16px;">
-
-            <a class="slide-inner image-container is-square js-copy-src" href="https://static.insales-cdn.com/images/products/1/7357/757046461/iPhone15ProMax_Star1.jpg" data-gallery-count="2" data-image-large="https://static.insales-cdn.com/images/products/1/7357/757046461/large_iPhone15ProMax_Star1.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="">
-              <img class="slide-image swiper-lazy swiper-lazy-loaded" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " data-slider-lazy="" src="https://static.insales-cdn.com/images/products/1/7357/757046461/medium_iPhone15ProMax_Star1.jpg">
-            </a>
-          </div><div data-slider-slide="" class="swiper-slide" style="width: 57.25px; margin-right: 16px;">
-
-            <a class="slide-inner image-container is-square js-copy-src" href="https://static.insales-cdn.com/images/products/1/7358/757046462/iPhone15ProMax_Star2.jpg" data-gallery-count="3" data-image-large="https://static.insales-cdn.com/images/products/1/7358/757046462/large_iPhone15ProMax_Star2.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="">
-              <img class="slide-image swiper-lazy swiper-lazy-loaded" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " data-slider-lazy="" src="https://static.insales-cdn.com/images/products/1/7358/757046462/medium_iPhone15ProMax_Star2.jpg">
-            </a>
-          </div><div data-slider-slide="" class="swiper-slide" style="width: 57.25px; margin-right: 16px;">
-
-            <a class="slide-inner image-container is-square js-copy-src" href="https://static.insales-cdn.com/images/products/1/7362/757046466/iPhone15ProMax_Star3.jpg" data-gallery-count="4" data-image-large="https://static.insales-cdn.com/images/products/1/7362/757046466/large_iPhone15ProMax_Star3.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="">
-              <img class="slide-image swiper-lazy swiper-lazy-loaded" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " data-slider-lazy="" src="https://static.insales-cdn.com/images/products/1/7362/757046466/medium_iPhone15ProMax_Star3.jpg">
-            </a>
-          </div><div data-slider-slide="" class="swiper-slide" style="width: 57.25px; margin-right: 16px;">
-
-            <a class="slide-inner image-container is-square js-copy-src" href="https://static.insales-cdn.com/images/products/1/7363/757046467/iPhone15ProMax_Star4.jpg" data-gallery-count="5" data-image-large="https://static.insales-cdn.com/images/products/1/7363/757046467/large_iPhone15ProMax_Star4.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="">
-              <img data-src="https://static.insales-cdn.com/images/products/1/7363/757046467/medium_iPhone15ProMax_Star4.jpg" class="slide-image swiper-lazy" alt="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" title="iPhone 15 Pro Max, 256 ГБ, " data-slider-lazy="">
-            </a>
-          <div class="swiper-lazy-preloader"></div></div></div>
-
-
-
-
-
-
-
-
-
-      </div>
-    </div>
-
-
- Для планшетов -->
+ 
 
     <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs-mobile" style="cursor: grab;">
@@ -138,60 +98,62 @@
 
     <form class="product-form" action="/cart_items">
 
-  <div class="product-option-selectors option-selectors">
+ 
 
-      <input type="hidden" name="variant_id" value="663625981">
-
-  </div>
-
-  <div class="product-control on-page" data-compare="399427784">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="product-control on-page" data-compare="">
 
 
     {{-- <button class="product-button button is-primary  js-variant-shown" type="submit" data-item-add="" style="display: block;"> --}}
 
-      <a href="{{route('addcart', [str_replace('/', '-', $active ),   str_replace(' ', '-', trim($res['real_name'])) ] ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
+      <a href="{{route('addcart', [str_replace('/', '-', $active ),   str_replace('/', '', preg_replace('!\s++!u', '-', trim($res['real_name']))) ] ) }}" class="product-button button is-primary  js-variant-shown cart_button" style="display: block;">
         В корзину
+      </a>
+
+      <a href="#" class="product-button button is-primary  js-variant-shown" style="display: block;">
+        Купить в один клик
       </a>
     {{-- </button> --}}
 
-    <div class="product-order-variant variant-hidden js-variant-hidden" style="display: none;">
-      <p class="notice notice-info">
-        Товар отсутствует
-      </p>
-    </div>
-
-    <button class="product-button button is-primary js-variant-preorder " type="button" style="display: none;">
-
-      <span class="button-text">
-        Предзаказ
-      </span>
-    </button>
-
-
-
-
-
 
   </div>
-
-
 </form>
-
   </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+
+    $('.cart_button').click(function(e){
+        e.preventDefault()
+
+        $.get( $(this).attr('href'), function( data ) {
+            const elements = $('.js-shopcart-widget-count')
+            elements.each(function(){
+              $(this).text(data[1]) 
+            })
+            const price = $('.js-shopcart-widget-amount')
+            price.each(function(){
+              $(this).text(`${data[0]} руб`) 
+            })
+            if(!$('.ajs-visible').length)
+              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
+            $('.ajs-success').slideDown().delay(2000).slideUp()
+            
+        });
+        return false
+    })
+
+</script>
+@endpush
+
+@push('styles')
+<style>
+  .product-gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+@endpush

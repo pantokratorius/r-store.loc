@@ -1,5 +1,6 @@
 @extends('frontend.layout')
 
+
 @section('content')
 <div class="products-list is-collection row">
   <div class="promo-slide swiper-slide swiper-slide-active is-active" data-slider-slide="" data-swiper-slide-index="1" >

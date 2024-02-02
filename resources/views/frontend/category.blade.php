@@ -1,11 +1,17 @@
 @extends('frontend.layout')
 
+
+@section('page_title')
+{{$res['real_category_name']}}
+@endsection
+
+
 @section('content')
 <div class="products-list is-collection row">
 
 
  @foreach($res as $key=>$val)
-    @if($key != 'nacenka' && $key != 'real_name')
+    @if(is_array($val))
 
             <div class="product-card-wrapper in-collection cell-3 cell-4-md cell-6-xs cell-6-mc">
 
@@ -13,14 +19,17 @@
                 <div class="product-card-inner">
 
                     <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ] )}}"
-                    class="product-card-photo image-container is-square is-cover" title="iPhone 15 Pro Max, 256 ГБ,
-                    Титановый">
+                    class="product-card-photo image-container is-square is-cover">
 
-                    <img
-                      src="@if(isset($images[$key]))  {{ asset('images/products/'. $images[$key]) }} @else https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg @endif"
-                      title="" alt="iPhone 15 Pro Max, 256 ГБ, Титановый" class="product-card-image">
+                    
+                    <img @if(isset($images[$key]))  
+                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_name'])}}" alt="{{trim($val['real_name'])}}" 
+                      @else 
+                        style="max-width: 100px; object-fit: contain" src="{{url('/images/noimage.png')}}" title="" alt="Apple products" 
+                        class="product-card-image">
+                     @endif
+                     />
                   </a>
-
                   <div class="product-card-form_block">
                     <div class="product-card-price product-prices in-card">
                       <div class="price in-card">

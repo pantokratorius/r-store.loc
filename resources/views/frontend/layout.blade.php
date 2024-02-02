@@ -4,7 +4,7 @@
   <!-- meta -->
   <meta charset="UTF-8" />
   <meta name="keywords" content="iPhone" />
-  <title>iPhone – купить в интернет-магазине по лучшей цене</title>
+  <title>@yield('page_title') - Купить технику Apple в Новороссийске</title>
   <meta name="description" content="iPhone" />
   <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

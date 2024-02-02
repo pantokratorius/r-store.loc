@@ -51,7 +51,7 @@ class HomeController extends Controller
             $cats[$k] = $name;
         }
 
-        // dd($transfer);
+        // dd($dat);
         $image_keys = [] ;
         foreach($dat as $k=>$v){
             if(is_array($v))
@@ -62,9 +62,10 @@ class HomeController extends Controller
         $bread =  $cats[$category];
 
         $res = $dat;
+        $dat['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $dat['real_name'])));
         $dat['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $dat['real_name']));
 
-        $res = $dat; //dd($res);
+        $res = $dat; //dd($dat);
         $active = $category;
 
         $cats = array_reverse($cats);
