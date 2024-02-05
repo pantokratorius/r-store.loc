@@ -1,4 +1,4 @@
-<div class="cell-12 cell-12-md hidden-sm flex-first">
+<div class="cell-12 cell-12-md hidden-sm flex-first" style="position: relative">
     <div class="sidebar-block">
       <div class="sidebar-block-heading mega-menu-main_heading">
         {{-- Каталог --}}
@@ -23,13 +23,17 @@
                   </li>
                   
             @endforeach
-            <li><i class="icon icon-magnifier"></i></li>
-@endisset
-        </ul>
+            <li class="search"><div class="fa fa-search fa-lg"></div></li>
+            @endisset
+          </ul>
+        </div>
+        
       </div>
-
-    </div>
-
-
+      
+      @include('frontend.components.search_input')
 
   </div>
+
+
+
+ 
