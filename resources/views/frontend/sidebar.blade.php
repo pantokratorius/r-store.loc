@@ -23,7 +23,7 @@
                   </li>
                   
             @endforeach
-            <li class="search"><div class="fa fa-search fa-lg"></div></li>
+            <li class="search"><input type="text" class="search_input" /><div class="fa fa-search fa-lg"></div></li>
             @endisset
           </ul>
         </div>
