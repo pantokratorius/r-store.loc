@@ -143,15 +143,15 @@
                 <li class="main-menu-item menu-item level-1">
                   <div class="main-menu-item-controls menu-item-controls level-1">
                     <a href="{{route('payments')}}" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
-                      data-menu-link-current="no">
-                      Оплата
+                      data-menu-link-current= @if(Request::path() == 'payments') "yes" @else "no" @endif>
+                      Оплата и доставка
                     </a>
                   </div>
                 </li>
                 <li class="main-menu-item menu-item level-1">
                   <div class="main-menu-item-controls menu-item-controls level-1">
                     <a href="{{route('contacts')}}" class="main-menu-link menu-link level-1" data-menu-link-source="menu"
-                      data-menu-link-current="no">
+                      data-menu-link-current= @if(Request::path() == 'contacts') "yes" @else "no" @endif>
                       Контакты
                     </a>
                   </div>
@@ -386,8 +386,8 @@
 
 
                   <a href="{{route('payments')}}" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
-                    data-menu-link-current="no">
-                    Оплата
+                    data-menu-link-current= @if(Request::path() == 'payments') "yes" @else "no" @endif >
+                    Оплата и доставка
                   </a>
                 </div>
               </li>
@@ -397,7 +397,7 @@
 
 
                   <a href="{{route('contacts')}}" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
-                    data-menu-link-current="no">
+                    data-menu-link-current= @if(Request::path() == 'contacts') "yes" @else "no" @endif >
                     Контакты
                   </a>
                 </div>

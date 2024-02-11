@@ -110,9 +110,9 @@
 
 @push('scripts')
 <script>
-  
+
 $(function(){
-  let tim 
+  let tim
 
   $('.counter-button').click(function(e){
     e.preventDefault()
@@ -122,9 +122,9 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
   const total_price_line = $(this).closest('div.item-counter').next();
     const input = $(this).closest('div').find('.counter-input')
     let number = Number( input.val() )
-    
+
     const href = $(this).attr('href')
-    if(href.indexOf('minus') + 1){ 
+    if(href.indexOf('minus') + 1){
       if(number <= 1)
           number = 1
         else
@@ -146,7 +146,10 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
      let number = $(this).val()
      const url = $(this).closest('div').find('.is-count-down').attr('href');
      const total_price_line = $(this).closest('div.item-counter').next();
-     if(number <= 1) number = 1
+     if(number <= 1){
+        number = 1
+        $(this).val(1)
+     }
      updateQuantity(number, url, total_price_line)
   })
 
@@ -159,19 +162,19 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
 
         const elements = $('.js-shopcart-widget-count')
         elements.each(function(){
-          $(this).text(data[1]) 
+          $(this).text(data[1])
         })
         const price = $('.js-shopcart-widget-amount')
         price.each(function(){
-          $(this).text(`${data[0]} руб`) 
+          $(this).text(`${data[0]} руб`)
         })
         total_price_line.text(`${data[3]} руб`)
         $('.js-shopcart-total-summ').text(`${data[0]} руб`)
         if(!$('.ajs-visible').length)
-          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`) 
+          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`)
         else $('.ajs-visible').text(data[2])
         $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
-        
+
     });
   }
 

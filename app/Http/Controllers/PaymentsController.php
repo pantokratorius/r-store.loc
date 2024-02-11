@@ -8,6 +8,6 @@ class PaymentsController extends Controller
 {
     public function __invoke()
     {
-        return view('frontend.construction');
+        return view('frontend.payments');
     }
 }
