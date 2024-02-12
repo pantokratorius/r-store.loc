@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ImportController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
@@ -34,6 +35,7 @@ Route::get('category/{id}/item/{id2}/quantity/{quantity}/updatecart', [CartContr
 Route::get('order', OrderController::class)->name('order');
 Route::get('contacts', ContactsController::class)->name('contacts');
 Route::get('payments', PaymentsController::class)->name('payments');
+Route::post('checkout', CheckoutController::class)->name('checkout');
 
 
 // ------------------------------------------------------------------------

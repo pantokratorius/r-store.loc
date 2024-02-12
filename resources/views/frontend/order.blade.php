@@ -20,7 +20,7 @@
           <span class="co-sidebar-toggler_title">Ваш заказ</span>
           <span class="co-icon halfling-menu-down"></span>
         </span>
-        <span class="co-basket_total-price co-price--current">3131780&nbsp;руб</span>
+        <span class="co-basket_total-price co-price--current">{{$cart_price}}&nbsp;руб</span> 
       </button>
       <div class="co-sidebar co-sidebar--hidden@sm js-co-sidebar co-sidebar--fixed">
         <div class="co-basket co-checkout-block--padded">
@@ -36,12 +36,23 @@
                 <span class="co-basket_item-count">1</span> x <span class="co-basket_item-price co-price--current">164990&nbsp;руб</span>
               </div>
             </div>
+            <div class="co-basket_item">
+              <div class="co-basket_item-image_container">
+                <div class="co-basket_item-image">
+                  <img alt="image" src="https://static.insales-cdn.com/images/products/1/3682/757050978/thumb_iPhone15ProMax_Blue_Small.jpg">
+                </div>
+              </div>
+              <div class="co-basket_item-description">iPhone 15 Pro Max, 1 ТБ, Титановый синий</div>
+              <div class="co-basket_item-total">
+                <span class="co-basket_item-count">1</span> x <span class="co-basket_item-price co-price--current">164990&nbsp;руб</span>
+              </div>
+            </div>
             </div>
             <div class="co-basket_subtotal-list">
               <div class="co-basket_subtotal">
                 <div class="co-basket_subtotal-title">Сумма по товарам</div>
-                <div class="co-basket_subtotal-price co-price--current" id="items_price">3131780&nbsp;руб</div>
-                <div id="order_items_price" style="display:none">3131780.0</div>
+                <div class="co-basket_subtotal-price co-price--current" id="items_price">{{$cart_price}}&nbsp;руб</div>
+                <div id="order_items_price" style="display:none">{{$cart_price}}</div>
               </div>
               <div id="discounts-block"></div>
               <div style="display: none">
@@ -61,7 +72,7 @@
               </div>
             </div>
             <div class="co-basket_total">
-              <div class="co-basket_total-title">Итого:</div><div class="co-basket_total-price co-price--current" id="total_price">3131780&nbsp;руб</div>
+              <div class="co-basket_total-title">Итого:</div><div class="co-basket_total-price co-price--current" id="total_price">{{$cart_price}}&nbsp;руб</div>
             </div>
           </div>
         </div>

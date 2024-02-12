@@ -33,7 +33,7 @@
 </ul>
 <ul>
     <li>Доставка по РФ</li>
-    <li>Доставка по России осуществляется транспортной компанией <a target="_blank" href="https://www.cdek.ru/calculator.html"><span style="text-decoration: underline;"><span style="color: #00ccff; text-decoration: underline;">СДЭК</span></span></a>&nbsp;по 100% предоплате.</li>
+    <li>Доставка по России осуществляется транспортной компанией <a target="_blank" href="https://www.cdek.ru/"><span style="text-decoration: underline;"><span style="color: #00ccff; text-decoration: underline;">СДЭК</span></span></a>&nbsp;по 100% предоплате.</li>
 </ul>
 
 <h2>Способы оплаты</h2>

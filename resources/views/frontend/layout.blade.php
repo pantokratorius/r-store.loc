@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon1.png') }}">
   <script src="{{asset('assets/js/jquery.js')}}"></script>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{{asset('assets/css/awesome.css')}}" rel="stylesheet" />
 
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
