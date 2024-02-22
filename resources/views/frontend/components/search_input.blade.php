@@ -32,8 +32,13 @@
     .shown {
       width: 100%;
       color: grey;
-      margin: 10 auto;
+      margin: 10px auto;
       transition: .1s
+    }
+
+    .active_search {
+        width: 50%;
+        margin: 10px auto !important;
     }
 
 </style>
@@ -44,7 +49,20 @@
 
 @push('scripts')
 <script>
+
+    $( ".search_input" ).keyup(function(e){
+        if(e.target.value.length > 2){
+            $.get( `/search/${e.target.value}`, function( data ) {
+                if(data)
+                    var data = JSON.parse(data)
+                    console.log(data);
+            })
+        }
+})
+
+
     $('.search').click(function(e){
+    $(this).addClass('active_search')
       $('.search_input').addClass('shown').focus()
 
       $(document).click(e=>closeSearch(e))
@@ -53,14 +71,16 @@
     })
 
 
-    function closeSearch(e){ 
-     
-		var div = $( ".search_input" ); 
-		if ( !div.is(e.target) 
-		    && div.has(e.target).length === 0 ) { 
-			div.removeClass('shown'); 
+    function closeSearch(e){
+
+		var div = $( ".search_input" );
+		if ( !div.is(e.target)
+		    && div.has(e.target).length === 0 ) {
+			div.removeClass('shown').val('');
+            $('.search').removeClass('active_search')
+            $(document).off('click')
 		}
-	
+
     }
 
 </script>

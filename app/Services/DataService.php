@@ -15,8 +15,8 @@ class DataService {
         $names_my = ['Iphone', 'Watch'];
 
         $data =  DB::table('data')->pluck('data');
-        if(!empty($data[0])) $data = json_decode ($data[0], 1);  
-        $nacenka = DB::table('nacenka')->pluck('data'); 
+        if(!empty($data[0])) $data = json_decode ($data[0], 1);
+        $nacenka = DB::table('nacenka')->pluck('data');
         if(!empty($nacenka[0])) $nacenka = json_decode ($nacenka[0], 1);
         foreach($data as $k=>$v){
             $k = EmojiRemover::filter($k);
@@ -27,17 +27,17 @@ class DataService {
         $new_nacenka[$k] = $v;
         }
 
-        foreach($new_data as $k=>$v){ 
+        foreach($new_data as $k=>$v){
         $k = EmojiRemover::filter($k);
         if( !empty($new_nacenka[$k]) ){
-            $nacenk = $new_nacenka[$k]; 
-            foreach ($new_data[$k] as $key => $val) { 
-                $key = EmojiRemover::filter($key); 
-                $key = str_replace('/','',$key); 
+            $nacenk = $new_nacenka[$k];
+            foreach ($new_data[$k] as $key => $val) {
+                $key = EmojiRemover::filter($key);
+                $key = str_replace('/','',$key);
                 if($key != 'real_name'){
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
-                    foreach($names_my as $nam){ 
-                        if(stripos($k, $nam) !==false){ 
+                    foreach($names_my as $nam){
+                        if(stripos($k, $nam) !==false){
                             $transfer[$k][$key]['real_item_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
                             break;
                         }
@@ -54,9 +54,9 @@ class DataService {
                 $key = EmojiRemover::filter($key);
                     if($key != 'real_name'){
                         $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
-                        
-                        foreach($names_my as $nam){ 
-                            if(stripos($k, $nam) !==false){ 
+
+                        foreach($names_my as $nam){
+                            if(stripos($k, $nam) !==false){
                                 $transfer[$k][$key]['real_item_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
                                 break;
                             }
@@ -70,7 +70,7 @@ class DataService {
 
             }
         }
-        } 
+        }
 
         return $transfer;
     }
@@ -82,22 +82,22 @@ class DataService {
         if(!empty($temp))
             foreach($temp as $k=>$v){
 
-                $cart[$k]['totalprice'] = $this->formatNumber( $v['price'] * $v['quantity'] ); 
+                $cart[$k]['totalprice'] = $this->formatNumber( $v['price'] * $v['quantity'] );
                 foreach($v as $key=>$val){
                     if($key == 'price')
                         $cart[$k]['price'] = $this->formatNumber( $val );
                     elseif($key == 'name'  ){
-                        $cart[$k][$key] =  $val; 
+                        $cart[$k][$key] =  $val;
                         foreach($names_my as $nam){ //dd($k, $nam);
                             if(stripos($k, $nam) !==false){
-                                $cart[$k]['real_item_name'] = $nam. ' '. $val; 
+                                $cart[$k]['real_item_name'] = $nam. ' '. $val;
                                 break;
                             }
                             else {
-                                $cart[$k]['real_item_name'] =  $val; 
+                                $cart[$k]['real_item_name'] =  $val;
                             }
                         }
-                    } else $cart[$k][$key] =  $val; 
+                    } else $cart[$k][$key] =  $val;
                 }
             }
             // dd($cart);
@@ -118,7 +118,7 @@ class DataService {
          }
          return [$cart_price, $cart_count];
     }
-  
+
 
     public static function formatNumber($number){
         return  number_format( str_replace([' ', '.', ','], '', $number), 0, '.', ' ' );
