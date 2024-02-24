@@ -53,9 +53,10 @@
     $( ".search_input" ).keyup(function(e){
         if(e.target.value.length > 2){
             $.get( `/search/${e.target.value}`, function( data ) {
-                if(data)
-                    var data = JSON.parse(data)
-                    console.log(data);
+                if(data){
+                    history.pushState('', "", `/searchitem/${e.target.value}`);
+                $('.collection-wrapper').html(data)
+                }
             })
         }
 })

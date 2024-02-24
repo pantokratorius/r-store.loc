@@ -1,10 +1,10 @@
-{{-- @extends('frontend.layout') --}}
+@extends('frontend.layout')
 
 
 
 
 
-{{-- @section('content') --}}
+@section('content')
 
 
 @if(!empty($res))
@@ -93,7 +93,7 @@
 
   @endif
 
-{{-- @endsection
+@endsection
 
 @push('scripts')
 <script>
@@ -119,4 +119,4 @@
     })
 
 </script>
-@endpush --}}
+@endpush

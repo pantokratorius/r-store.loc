@@ -127,19 +127,23 @@ class HomeController extends Controller
     public function search($query, DataService $dataService){
         $transfer = $dataService->getAllData();
 
+        // dd($transfer);
+        $c = 0; $dat = [];
         foreach($transfer as $k=>$v){
             if(is_array($v)){
                 foreach($v as $key=>$val){
                     if(is_array($val) && stripos($val['real_item_name'], $query) !== false ){
-                        $dat[] = $val;
-                        $dat['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $val['real_item_name'])));
-                        $dat['real_catereal_namegory_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $val['real_item_name']));;
+                        $dat[$c] = $val;
+                        $dat[$c]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/', ' '], ['-', ''], $v['real_name'])));
+                        $dat[$c]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $val['real_name']));;
+                        $c++;
                     }
+
                 }
             }
         }
 
-        dd($dat);
+        // dd($dat);
 
         foreach ($transfer as $k => $v) {
             $name = EmojiRemover::filter($v['real_name']);
@@ -148,18 +152,18 @@ class HomeController extends Controller
 
         $image_keys = [] ;
         foreach($dat as $k=>$v){
-            if(is_array($v))
-                $image_keys[] = $k;
+                $image_keys[] = $v['real_name'];
         }
+
         $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
 
+// dd($image_keys);
 
-
-        foreach($dat as $k => $v){
-            $dat[$k]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $k)));
-            $dat[$k]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $k));
-        }
-        dd($dat);
+        // foreach($dat as $k => $v){
+        //     $dat[$k]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $k)));
+        //     $dat[$k]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $k));
+        // }
+        // dd($dat);
         $res = $dat; //dd($dat);
 
         $cats = array_reverse($cats);
@@ -173,6 +177,59 @@ class HomeController extends Controller
             echo $view;
     }
 
+
+    public function searchitem($query, DataService $dataService){
+        $transfer = $dataService->getAllData();
+
+        // dd($transfer);
+        $c = 0; $dat = [];
+        foreach($transfer as $k=>$v){
+            if(is_array($v)){
+                foreach($v as $key=>$val){
+                    if(is_array($val) && stripos($val['real_item_name'], $query) !== false ){
+                        $dat[$c] = $val;
+                        $dat[$c]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/', ' '], ['-', ''], $v['real_name'])));
+                        $dat[$c]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $val['real_name']));;
+                        $c++;
+                    }
+
+                }
+            }
+        }
+
+        // dd($dat);
+
+        foreach ($transfer as $k => $v) {
+            $name = EmojiRemover::filter($v['real_name']);
+            $cats[$k] = $name;
+        }
+
+        $image_keys = [] ;
+        foreach($dat as $k=>$v){
+                $image_keys[] = $v['real_name'];
+        }
+
+        $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
+
+// dd($image_keys);
+
+        // foreach($dat as $k => $v){
+        //     $dat[$k]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $k)));
+        //     $dat[$k]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $k));
+        // }
+        // dd($dat);
+        $res = $dat; //dd($dat);
+
+        $cats = array_reverse($cats);
+
+
+
+
+
+            $view=view('frontend.searchitem', compact('res', 'cats',  'images'));
+            $view=$view->render();
+            echo $view;
+    }
 
 
 }
