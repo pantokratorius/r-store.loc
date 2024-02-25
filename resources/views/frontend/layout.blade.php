@@ -259,7 +259,7 @@
 
       @includeWhen(isset($cats), 'frontend.sidebar')
 
-      <div class="row collection-wrapper">
+      <div class="row collection-wrapper" style="justify-content: center">
         <div class="collection cell-12 cell-12-md cell-12-sm">
 
 

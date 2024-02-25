@@ -211,24 +211,13 @@ class HomeController extends Controller
 
         $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
 
-// dd($image_keys);
-
-        // foreach($dat as $k => $v){
-        //     $dat[$k]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $k)));
-        //     $dat[$k]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $k));
-        // }
-        // dd($dat);
         $res = $dat; //dd($dat);
 
         $cats = array_reverse($cats);
 
-
-
-
-
-            $view=view('frontend.searchitem', compact('res', 'cats',  'images'));
-            $view=$view->render();
-            echo $view;
+        $view=view('frontend.searchitem', compact('res', 'cats',  'images'));
+        $view=$view->render();
+        echo $view;
     }
 
 
