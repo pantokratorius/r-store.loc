@@ -20,7 +20,7 @@
           <span class="co-sidebar-toggler_title">Ваш заказ</span>
           <span class="co-icon halfling-menu-down"></span>
         </span>
-        <span class="co-basket_total-price co-price--current">{{$cart_price}}&nbsp;руб</span> 
+        <span class="co-basket_total-price co-price--current">{{$cart_price}}&nbsp;руб</span>
       </button>
       <div class="co-sidebar co-sidebar--hidden@sm js-co-sidebar co-sidebar--fixed">
         <div class="co-basket co-checkout-block--padded">
@@ -88,16 +88,16 @@
           </div>
         </div>
         <div id="hidden-data" style="display: none">
-          <input id="default_delivery_variant_id" type="hidden" name="order[delivery_variant_id]" value="">
+          <input id="default_delivery_variant_id" type="hidden" name="order_delivery_variant_id" value="">
         </div>
         <div class="variants delivery_variants co-input co-input--required co-input--radio co-tabs"  id="delivery_variants" style="z-index: inherit;"><div id="deliveries-not-available" style="display: none;">Для данного населенного пункта нет подходящих способов доставки</div>
-        
+
         <input name="shipping_address[no_delivery]" type="hidden" value="0" autocomplete="off">
-        <input style="display: none" type="checkbox" value="1" checked="checked" name="shipping_address[no_delivery]" id="shipping_address_no_delivery">
+        <input style="display: none" type="checkbox" value="1"  name="shipping_address[no_delivery]" id="shipping_address_no_delivery">
         <div class="co-tabs-content co-tabs-content--active">
           <label class="co-delivery_method co-input-wrapper co-toggable_field co-toggable_field--bordered co-delivery_method--for_individual co-delivery_method--for_juridical" for="order_delivery_variant_id_1390419">
             <span class="radio co-delivery_method-input co-toggable_field-input co-toggable_field-input--radio">
-              <input checked="checked" class="radio_button js-input-field" data-delivery-id="1390419" id="order_delivery_variant_id_1390419" name="order[delivery_variant_id]" rel="#price_1390419" type="radio" value="1390419" style="cursor: pointer; opacity: 1;">
+              <input class="radio_button js-input-field" data-delivery-id="1390419" id="order_delivery_variant_id_1390419" name="order_delivery_variant_id" rel="#price_1390419" type="radio" required value="1390419" style="cursor: pointer; opacity: 1;">
             <span>
               </span>
             </span>
@@ -115,7 +115,7 @@
           </label>
           <label class="co-delivery_method co-input-wrapper co-toggable_field co-toggable_field--bordered co-delivery_method--for_individual co-delivery_method--for_juridical" for="order_delivery_variant_id_1390420">
             <span class="radio co-delivery_method-input co-toggable_field-input co-toggable_field-input--radio">
-            <input class="radio_button js-input-field" data-delivery-id="1390420" id="order_delivery_variant_id_1390420" name="order[delivery_variant_id]" rel="#price_1390420" type="radio" value="1390420" style="cursor: pointer; opacity: 1;"><span>
+            <input class="radio_button js-input-field" data-delivery-id="1390420" id="order_delivery_variant_id_1390420" name="order_delivery_variant_id" rel="#price_1390420" type="radio" required value="1390420" style="cursor: pointer; opacity: 1;"><span>
               </span>
             </span>
             <span class="co-toggable_field-information co-delivery_method-information">
@@ -133,7 +133,7 @@
           </label>
           <label class="co-delivery_method co-input-wrapper co-toggable_field co-toggable_field--bordered co-delivery_method--for_individual co-delivery_method--for_juridical" for="order_delivery_variant_id_1390425">
             <span class="radio co-delivery_method-input co-toggable_field-input co-toggable_field-input--radio">
-              <input class="radio_button js-input-field" data-delivery-id="1390425" id="order_delivery_variant_id_1390425" name="order[delivery_variant_id]" rel="#price_1390425" type="radio" value="1390425" style="cursor: pointer; opacity: 1;">
+              <input class="radio_button js-input-field" data-delivery-id="1390425" id="order_delivery_variant_id_1390425" name="order_delivery_variant_id" rel="#price_1390425" type="radio" required value="1390425" style="cursor: pointer; opacity: 1;">
               <span>
                 </span>
               </span>
@@ -222,7 +222,7 @@
           <h3 class="co-title co-title--h2 co-input-label">Способ оплаты</h3>
           <label class="co-payment_method  co-input-wrapper co-toggable_field co-toggable_field--bordered juridical individual" for="order_payment_gateway_id_458164">
             <span class="co-payment_method-input co-toggable_field-input  co-toggable_field-input--radio">
-              <input checked="checked" class="radio_button js-input-field" data-payment-id="458164" data-payment-position="1" id="order_payment_gateway_id_458164" name="order[payment_gateway_id]" rel="#summ_458164" type="radio" value="458164" style="cursor: pointer; opacity: 1;"><span>
+              <input  class="radio_button js-input-field" data-payment-id="458164" data-payment-position="1" id="order_payment_gateway_id_458164" name="order[payment_gateway_id]" rel="#summ_458164" type="radio" required value="458164" style="cursor: pointer; opacity: 1;"><span>
                 </span>
               </span>
               <span class="co-payment_method-information co-toggable_field-information">
@@ -234,7 +234,7 @@
               </label>
               <label class="co-payment_method  co-input-wrapper co-toggable_field co-toggable_field--bordered juridical individual" for="order_payment_gateway_id_661054">
                 <span class="co-payment_method-input co-toggable_field-input  co-toggable_field-input--radio">
-                  <input class="radio_button js-input-field" data-payment-id="661054" data-payment-position="2" id="order_payment_gateway_id_661054" name="order[payment_gateway_id]" rel="#summ_661054" type="radio" value="661054" style="cursor: pointer; opacity: 1;">
+                  <input class="radio_button js-input-field" data-payment-id="661054" data-payment-position="2" id="order_payment_gateway_id_661054" name="order[payment_gateway_id]" rel="#summ_661054" type="radio" required value="661054" style="cursor: pointer; opacity: 1;">
                   <span></span>
                 </span>
                 <span class="co-payment_method-information co-toggable_field-information">
@@ -261,3 +261,16 @@
 </div>
 
 @endsection
+
+
+@push('scripts')
+    <script>
+        $('#create_order').click(function(){
+            if( $('#client_name').val().trim() == ''
+                || !$('.payment_variants .radio_button').is(':checked')
+                || $('.co-tabs-content . radio_button').is('checked')
+            )
+                return false
+        })
+    </script>
+@endpush
