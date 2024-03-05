@@ -25,28 +25,28 @@
       <div class="co-sidebar co-sidebar--hidden@sm js-co-sidebar co-sidebar--fixed">
         <div class="co-basket co-checkout-block--padded">
           <div class="co-basket_item-list">
+
+           @foreach ($cart as $k => $v)
+
+
             <div class="co-basket_item">
               <div class="co-basket_item-image_container">
                 <div class="co-basket_item-image">
-                  <img alt="image" src="https://static.insales-cdn.com/images/products/1/3682/757050978/thumb_iPhone15ProMax_Blue_Small.jpg">
+                   <img @if(isset($v['image']) )
+                      src="{{ asset('images/products/' . $v['image']) }}" alt="{{$v['real_item_name']}}" title="{{$v['real_item_name']}}"
+                      @else
+                      src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 100px; object-fit: contain"
+                  @endif />
                 </div>
               </div>
-              <div class="co-basket_item-description">iPhone 15 Pro Max, 1 ТБ, Титановый синий</div>
+              <div class="co-basket_item-description">{{ $v['real_item_name'] }}</div>
               <div class="co-basket_item-total">
-                <span class="co-basket_item-count">1</span> x <span class="co-basket_item-price co-price--current">164990&nbsp;руб</span>
+                <span class="co-basket_item-count">{{ $v['quantity'] }}</span> x <span class="co-basket_item-price co-price--current">{{ $v['price'] }}&nbsp;руб</span>
               </div>
             </div>
-            <div class="co-basket_item">
-              <div class="co-basket_item-image_container">
-                <div class="co-basket_item-image">
-                  <img alt="image" src="https://static.insales-cdn.com/images/products/1/3682/757050978/thumb_iPhone15ProMax_Blue_Small.jpg">
-                </div>
-              </div>
-              <div class="co-basket_item-description">iPhone 15 Pro Max, 1 ТБ, Титановый синий</div>
-              <div class="co-basket_item-total">
-                <span class="co-basket_item-count">1</span> x <span class="co-basket_item-price co-price--current">164990&nbsp;руб</span>
-              </div>
-            </div>
+
+            @endforeach
+
             </div>
             <div class="co-basket_subtotal-list">
               <div class="co-basket_subtotal">
@@ -243,7 +243,7 @@
                     <p>Без комиссии</p>
                   </span>
                 </span>
-                <span class="co-toggable_field-price co-price--current" id="summ_661054" data-price="219224.6">+ 219224.60&nbsp;руб</span>
+                <span class="co-toggable_field-price co-price--current" id="summ_661054" data-price="219224.6">+ {{$cart_price}}&nbsp;руб</span>
               </label>
               <div id="payments-not-available" style="display: none;">Для данного способа доставки нет подходящих способов оплаты</div>
             </div>
