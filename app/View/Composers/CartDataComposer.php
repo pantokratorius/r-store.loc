@@ -15,7 +15,8 @@ class CartDataComposer
         $arr = $data->getCartPrice();
 // dd($arr);
         $view->with('cart_count', $arr[1])
-        ->with('cart_price', $arr[0]);
+        ->with('cart_price', $arr[0])
+        ->with('cart_price_uncash', $arr[2]);
      }
 }
 

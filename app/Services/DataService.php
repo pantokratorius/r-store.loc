@@ -106,17 +106,19 @@ class DataService {
 
 
     public function getCartPrice(){
-        $cart_count = 0;  $cart_price = 0;
+        $cart_count = 0;  $cart_price = 0; $cart_price_uncash = 0;
         $cart = session()->get('cart', []);
         // dd($cart);
         if($cart){
              foreach($cart as $k=>$v){
                  $cart_price += $v['price'] *  $v['quantity'];
+                 $cart_price_uncash += $v['price'] *  $v['quantity'] * 1.03;
                  $cart_count += $v['quantity'];
              }
              if($cart_price > 0) $cart_price = DataService::formatNumber($cart_price);
+             if($cart_price_uncash > 0) $cart_price_uncash = DataService::formatNumber($cart_price_uncash);
          }
-         return [$cart_price, $cart_count];
+         return [$cart_price, $cart_count, $cart_price_uncash];
     }
 
 

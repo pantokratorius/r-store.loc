@@ -20,7 +20,9 @@
           <span class="co-sidebar-toggler_title">Ваш заказ</span>
           <span class="co-icon halfling-menu-down"></span>
         </span>
-        <span class="co-basket_total-price co-price--current">{{$cart_price}}&nbsp;руб</span>
+        <span class="co-basket_total-price co-price--current cart_price" 
+         data-cart_price_uncash="{{$cart_price_uncash}}"
+         data-cart_price="{{$cart_price}}"><span>{{$cart_price}}</span>&nbsp;руб</span>
       </button>
       <div class="co-sidebar co-sidebar--hidden@sm js-co-sidebar co-sidebar--fixed">
         <div class="co-basket co-checkout-block--padded">
@@ -51,8 +53,9 @@
             <div class="co-basket_subtotal-list">
               <div class="co-basket_subtotal">
                 <div class="co-basket_subtotal-title">Сумма по товарам</div>
-                <div class="co-basket_subtotal-price co-price--current" id="items_price">{{$cart_price}}&nbsp;руб</div>
-                <div id="order_items_price" style="display:none">{{$cart_price}}</div>
+                <div class="co-basket_subtotal-price co-price--current cart_price" id="items_price" 
+                data-cart_price_uncash="{{$cart_price_uncash}}"
+                data-cart_price="{{$cart_price}}"><span>{{$cart_price}}</span>&nbsp;руб</div>
               </div>
               <div id="discounts-block"></div>
               <div style="display: none">
@@ -72,7 +75,10 @@
               </div>
             </div>
             <div class="co-basket_total">
-              <div class="co-basket_total-title">Итого:</div><div class="co-basket_total-price co-price--current" id="total_price">{{$cart_price}}&nbsp;руб</div>
+              <div class="co-basket_total-title ">Итого:</div><div class="co-basket_total-price co-price--current cart_price" id="total_price"
+              data-cart_price_uncash="{{$cart_price_uncash}}"
+              data-cart_price="{{$cart_price}}"
+              ><span>{{$cart_price}}</span>&nbsp;руб</div>
             </div>
           </div>
         </div>
@@ -97,7 +103,7 @@
         <div class="co-tabs-content co-tabs-content--active">
           <label class="co-delivery_method co-input-wrapper co-toggable_field co-toggable_field--bordered co-delivery_method--for_individual co-delivery_method--for_juridical" for="order_delivery_variant_id_1390419">
             <span class="radio co-delivery_method-input co-toggable_field-input co-toggable_field-input--radio">
-              <input class="radio_button js-input-field" data-delivery-id="1390419" id="order_delivery_variant_id_1390419" name="order_delivery_variant_id" rel="#price_1390419" type="radio" required value="1390419" style="cursor: pointer; opacity: 1;">
+              <input checked class="radio_button js-input-field" data-delivery-id="1390419" id="order_delivery_variant_id_1390419" name="order_delivery_variant_id" rel="#price_1390419" type="radio" required value="1390419" style="cursor: pointer; opacity: 1;">
             <span>
               </span>
             </span>
@@ -222,7 +228,7 @@
           <h3 class="co-title co-title--h2 co-input-label">Способ оплаты</h3>
           <label class="co-payment_method  co-input-wrapper co-toggable_field co-toggable_field--bordered juridical individual" for="order_payment_gateway_id_458164">
             <span class="co-payment_method-input co-toggable_field-input  co-toggable_field-input--radio">
-              <input  class="radio_button js-input-field" data-payment-id="458164" data-payment-position="1" id="order_payment_gateway_id_458164" name="order[payment_gateway_id]" rel="#summ_458164" type="radio" required value="458164" style="cursor: pointer; opacity: 1;"><span>
+              <input checked class="radio_button js-input-field" data-payment-id="458164" data-payment-position="1" id="order_payment_gateway_id_458164" name="order[payment_gateway_id]" rel="#summ_458164" type="radio" required value="cash" style="cursor: pointer; opacity: 1;"><span>
                 </span>
               </span>
               <span class="co-payment_method-information co-toggable_field-information">
@@ -234,7 +240,7 @@
               </label>
               <label class="co-payment_method  co-input-wrapper co-toggable_field co-toggable_field--bordered juridical individual" for="order_payment_gateway_id_661054">
                 <span class="co-payment_method-input co-toggable_field-input  co-toggable_field-input--radio">
-                  <input class="radio_button js-input-field" data-payment-id="661054" data-payment-position="2" id="order_payment_gateway_id_661054" name="order[payment_gateway_id]" rel="#summ_661054" type="radio" required value="661054" style="cursor: pointer; opacity: 1;">
+                  <input class="radio_button js-input-field" data-payment-id="661054" data-payment-position="2" id="order_payment_gateway_id_661054" name="order[payment_gateway_id]" rel="#summ_661054" type="radio" required value="bank_card" style="cursor: pointer; opacity: 1;">
                   <span></span>
                 </span>
                 <span class="co-payment_method-information co-toggable_field-information">
@@ -243,7 +249,9 @@
                     <p>Без комиссии</p>
                   </span>
                 </span>
-                <span class="co-toggable_field-price co-price--current" id="summ_661054" data-price="219224.6">+ {{$cart_price}}&nbsp;руб</span>
+                <span class="co-toggable_field-price co-price--current cart_price" id="summ_661054" 
+                data-cart_price_uncash="{{$cart_price_uncash}}"
+                data-cart_price="{{$cart_price}}">+ <span>{{$cart_price}}</span>&nbsp;руб</span>
               </label>
               <div id="payments-not-available" style="display: none;">Для данного способа доставки нет подходящих способов оплаты</div>
             </div>
@@ -268,9 +276,19 @@
         $('#create_order').click(function(){
             if( $('#client_name').val().trim() == ''
                 || !$('.payment_variants .radio_button').is(':checked')
-                || $('.co-tabs-content . radio_button').is('checked')
+                || $('.co-tabs-content .radio_button').is('checked')
             )
                 return false
         })
+
+        $('.payment_variants .radio_button').click(function(e){ 
+            if(e.target.value == 'bank_card'){
+              $('.cart_price span').text($('.cart_price').data('cart_price_uncash'))
+            }else{
+              $('.cart_price span').text($('.cart_price').data('cart_price'))
+            }
+        })
+
+
     </script>
 @endpush

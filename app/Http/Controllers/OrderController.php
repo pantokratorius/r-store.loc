@@ -10,9 +10,9 @@ class OrderController extends Controller
     public function __invoke(DataService $dataService){
 
         $cart = $dataService->getCartData();
-        $cart_price = $dataService->getCartPrice();
-        // dd($cart);
+        // dd(compact('cart_price'));
 
-        return view('frontend.order', compact('cart', 'cart_price') );
+        return view('frontend.order', compact('cart') );
     }
 }
+    ?>
