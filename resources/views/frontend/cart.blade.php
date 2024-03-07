@@ -171,7 +171,7 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
         total_price_line.text(`${data[3]} руб`)
         $('.js-shopcart-total-summ').text(`${data[0]} руб`)
         if(!$('.ajs-visible').length)
-          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`)
+          $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`)
         else $('.ajs-visible').text(data[2])
         $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
 

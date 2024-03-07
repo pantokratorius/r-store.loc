@@ -111,7 +111,7 @@
               $(this).text(`${data[0]} руб`)
             })
             if(!$('.ajs-visible').length)
-              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[2]}</div>`)
+              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`)
             $('.ajs-success').slideDown().delay(2000).slideUp()
 
         });
