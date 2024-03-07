@@ -14,5 +14,12 @@ class OrderController extends Controller
 
         return view('frontend.order', compact('cart') );
     }
+
+    public function getRadioValues($param){
+        echo $param;
+    }
+
+
+
 }
     ?>

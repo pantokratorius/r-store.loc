@@ -139,7 +139,7 @@
           </label>
           <label class="co-delivery_method co-input-wrapper co-toggable_field co-toggable_field--bordered co-delivery_method--for_individual co-delivery_method--for_juridical" for="order_delivery_variant_id_1390425">
             <span class="radio co-delivery_method-input co-toggable_field-input co-toggable_field-input--radio">
-              <input class="radio_button js-input-field" data-delivery-id="1390425" id="order_delivery_variant_id_1390425" name="order_delivery_variant_id" rel="#price_1390425" type="radio" required value="1390425" style="cursor: pointer; opacity: 1;">
+              <input class="radio_button js-input-field" data-delivery-id="1390425" id="order_delivery_variant_id_1390425" name="order_delivery_variant_id" rel="#price_1390425" type="radio" required value="delivery" style="cursor: pointer; opacity: 1;">
               <span>
                 </span>
               </span>
@@ -275,20 +275,30 @@
     <script>
         $('#create_order').click(function(){
             if( $('#client_name').val().trim() == ''
-                || !$('.payment_variants .radio_button').is(':checked')
-                || $('.co-tabs-content .radio_button').is('checked')
+                // || !$('.payment_variants .radio_button').is(':checked')
+                // || !$('.co-tabs-content .radio_button').is('checked')
             )
                 return false
         })
 
-        $('.payment_variants .radio_button').click(function(e){ 
-            if(e.target.value == 'bank_card'){
-              $('.cart_price span').text($('.cart_price').data('cart_price_uncash'))
-            }else{
-              $('.cart_price span').text($('.cart_price').data('cart_price'))
-            }
+        $('.radio_button').click(function(e){ 
+          const searched = ['delivery', 'bank_card']
+          if( searched.includes(e.target.value) ){
+            const param = e.target.value
+            $.get(  `getRadioValues/${param}`, function( data ) {
+              console.log(data);
+            })
+          }
         })
+        // $('.payment_variants .radio_button').click(function(e){ 
+        //     if(e.target.value == 'bank_card'){
+        //       $('.cart_price span').text($('.cart_price').data('cart_price_uncash'))
+        //     }else{
+        //       $('.cart_price span').text($('.cart_price').data('cart_price'))
+        //     }
+        // })
 
+      
 
     </script>
 @endpush

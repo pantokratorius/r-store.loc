@@ -35,6 +35,7 @@ Route::get('category/{id}/item/{id2}/quantity/{quantity}/updatecart', [CartContr
 
 
 Route::get('order', OrderController::class)->name('order');
+Route::get('getRadioValues/{query}', [OrderController::class, 'getRadioValues'])->name('getRadioValues');
 Route::get('contacts', ContactsController::class)->name('contacts');
 Route::get('payments', PaymentsController::class)->name('payments');
 Route::post('checkout', CheckoutController::class)->name('checkout');
