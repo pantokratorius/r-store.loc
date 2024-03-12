@@ -29,6 +29,7 @@ Route::get('/search/{query}', [HomeController::class, 'search'])->name('search')
 Route::get('/searchitem/{query}', [HomeController::class, 'searchitem'])->name('searchitem');
 
 Route::get('cart', CartController::class)->name('cart');
+Route::get('category/{id}/item/{id2}/oneclick', [CartController::class, 'oneclickProducttoCart'])->name('oneclick');
 Route::get('category/{id}/item/{id2}/addcart', [CartController::class, 'addProducttoCart'])->name('addcart');
 Route::get('category-name/{category_name}/delete', [CartController::class, 'deleteProductCart'])->name('deletecart');
 Route::get('category/{id}/item/{id2}/quantity/{quantity}/updatecart', [CartController::class, 'updateCart'])->name('updatecart');

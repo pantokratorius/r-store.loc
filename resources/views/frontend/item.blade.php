@@ -28,13 +28,13 @@
     <a href="@if(isset($res['image']) ) @else {{url('/images/noimage.png')}} @endif" class="image-wrapper" id="gallery">
       <img @if(isset($res['image']) )
           src="{{ asset('images/products/' . $res['image']) }}" alt="{{$res['real_item_name']}}" title="{{$res['real_item_name']}}"
-          @else 
+          @else
           src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 100px; object-fit: contain"
-       @endif 
+       @endif
        class="slide-image">
     </a>
   </div>
- 
+
 
     <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs-mobile" style="cursor: grab;">
@@ -50,7 +50,7 @@
               <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg 400w, https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg">
             </a>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -89,7 +89,7 @@
 
     <form class="product-form" action="/cart_items">
 
- 
+
 
   <div class="product-control on-page" data-compare="">
 
@@ -100,7 +100,7 @@
         В корзину
       </a>
 
-      <a href="#" class="product-button button is-primary  js-variant-shown" style="display: block;">
+      <a href="{{route('oneclick', [str_replace('/', '-', $active ),   str_replace('/', '', preg_replace('!\s++!u', '-', trim($res['real_name']))) ] ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
         Купить в один клик
       </a>
     {{-- </button> --}}
@@ -121,16 +121,16 @@
         $.get( $(this).attr('href'), function( data ) {
             const elements = $('.js-shopcart-widget-count')
             elements.each(function(){
-              $(this).text(data[1]) 
+              $(this).text(data[1])
             })
             const price = $('.js-shopcart-widget-amount')
             price.each(function(){
-              $(this).text(`${data[0]} руб`) 
+              $(this).text(`${data[0]} руб`)
             })
             if(!$('.ajs-visible').length)
-              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`) 
+              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`)
             $('.ajs-success').slideDown().delay(2000).slideUp()
-            
+
         });
         return false
     })

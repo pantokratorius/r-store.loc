@@ -37,7 +37,7 @@
     }
 
     .active_search {
-        width: 50%;
+        width: 30%;
         margin: 10px auto !important;
     }
    /* HTML: <div class="loader"></div> */

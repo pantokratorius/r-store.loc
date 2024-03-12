@@ -168,11 +168,11 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
         price.each(function(){
           $(this).text(`${data[0]} руб`)
         })
-        total_price_line.text(`${data[3]} руб`)
+        total_price_line.text(`${data[4]} руб`)
         $('.js-shopcart-total-summ').text(`${data[0]} руб`)
         if(!$('.ajs-visible').length)
           $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`)
-        else $('.ajs-visible').text(data[2])
+        else $('.ajs-visible').text(data[3])
         $('.ajs-success').stop(true, true).slideDown().delay(2000).slideUp()
 
     });

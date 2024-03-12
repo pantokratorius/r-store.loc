@@ -5,8 +5,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
 use Arispati\EmojiRemover\EmojiRemover;
-
-
+use Common;
 
 class DataService {
 
@@ -78,7 +77,7 @@ class DataService {
 
     public function getCartData(){
         $temp = session()->get('cart', []);
-        $cart = []; $names_my = ['Iphone', 'Watch'];
+        $cart = []; $names_my = Common::$names;
         if(!empty($temp))
             foreach($temp as $k=>$v){
 
@@ -112,7 +111,7 @@ class DataService {
         if($cart){
              foreach($cart as $k=>$v){
                  $cart_price += $v['price'] *  $v['quantity'];
-                 $cart_price_uncash += $v['price'] *  $v['quantity'] * 1.03;
+                 $cart_price_uncash += $v['price'] *  $v['quantity'] * Common::$uncash;
                  $cart_count += $v['quantity'];
              }
              if($cart_price > 0) $cart_price = DataService::formatNumber($cart_price);

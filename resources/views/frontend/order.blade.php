@@ -20,9 +20,9 @@
           <span class="co-sidebar-toggler_title">Ваш заказ</span>
           <span class="co-icon halfling-menu-down"></span>
         </span>
-        <span class="co-basket_total-price co-price--current cart_price" 
-         data-cart_price_uncash="{{$cart_price_uncash}}"
-         data-cart_price="{{$cart_price}}"><span>{{$cart_price}}</span>&nbsp;руб</span>
+        <span class="co-basket_total-price co-price--current cart_price"
+         data-cart_price_uncash="@if(isset($oneclick))  {{reset($cart)['price_uncash']}} @else {{$cart_price_uncash}} @endif"
+         data-cart_price="@if(isset($oneclick))  {{reset($cart)['price']}} @else {{$cart_price}} @endif"><span>@if(isset($oneclick))  {{reset($cart)['price']}} @else {{$cart_price}} @endif</span>&nbsp;руб</span>
       </button>
       <div class="co-sidebar co-sidebar--hidden@sm js-co-sidebar co-sidebar--fixed">
         <div class="co-basket co-checkout-block--padded">
@@ -53,9 +53,9 @@
             <div class="co-basket_subtotal-list">
               <div class="co-basket_subtotal">
                 <div class="co-basket_subtotal-title">Сумма по товарам</div>
-                <div class="co-basket_subtotal-price co-price--current cart_price" id="items_price" 
-                data-cart_price_uncash="{{$cart_price_uncash}}"
-                data-cart_price="{{$cart_price}}"><span>{{$cart_price}}</span>&nbsp;руб</div>
+                <div class="co-basket_subtotal-price co-price--current cart_price" id="items_price"
+                data-cart_price_uncash="@if(isset($oneclick))  {{$v['price_uncash']}} @else {{$cart_price_uncash}} @endif"
+                data-cart_price="@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif"><span>@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif</span>&nbsp;руб</div>
               </div>
               <div id="discounts-block"></div>
               <div style="display: none">
@@ -76,9 +76,9 @@
             </div>
             <div class="co-basket_total">
               <div class="co-basket_total-title ">Итого:</div><div class="co-basket_total-price co-price--current cart_price" id="total_price"
-              data-cart_price_uncash="{{$cart_price_uncash}}"
-              data-cart_price="{{$cart_price}}"
-              ><span>{{$cart_price}}</span>&nbsp;руб</div>
+              data-cart_price_uncash="@if(isset($oneclick))  {{$v['price_uncash']}} @else {{$cart_price_uncash}} @endif"
+              data-cart_price="@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif"
+              ><span>@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif</span>&nbsp;руб</div>
             </div>
           </div>
         </div>
@@ -245,9 +245,9 @@
                     <p>Без комиссии</p>
                   </span>
                 </span>
-                <span class="co-toggable_field-price co-price--current cart_price" id="summ_661054" 
-                data-cart_price_uncash="{{$cart_price_uncash}}"
-                data-cart_price="{{$cart_price}}">+ <span>{{$cart_price}}</span>&nbsp;руб</span>
+                <span class="co-toggable_field-price co-price--current cart_price" id="summ_661054"
+                data-cart_price_uncash="@if(isset($oneclick))  {{$v['price_uncash']}} @else {{$cart_price_uncash}} @endif"
+                data-cart_price="@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif">+ <span>@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif</span>&nbsp;руб</span>
               </label>
               <div id="payments-not-available" style="display: none;">Для данного способа доставки нет подходящих способов оплаты</div>
             </div>
@@ -287,7 +287,7 @@
         })
 
 
-        $('.payment_variants .radio_button').click(function(e){ 
+        $('.payment_variants .radio_button').click(function(e){
             if(e.target.value == 'bank_card'){
               $('.cart_price span').text($('.cart_price').data('cart_price_uncash'))
             }else{
@@ -295,7 +295,7 @@
             }
         })
 
-      
+
 
     </script>
 @endpush

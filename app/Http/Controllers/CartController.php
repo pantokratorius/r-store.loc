@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Arispati\EmojiRemover\EmojiRemover;
 use App\Services\DataService;
+use Common;
 
 class CartController extends Controller
 {
@@ -40,7 +41,7 @@ class CartController extends Controller
 
 
     public function addProducttoCart($raw_category, $raw_item, DataService $dataservice, Request $request )
-    { 
+    {
         $success = 'Корзина обновлена!';
         $category = str_replace('-', '/', $raw_category);
         $item = str_replace('-', '', $raw_item);
@@ -53,7 +54,7 @@ class CartController extends Controller
         $result = $group[$item];
 
         $cart = session()->get('cart', []);
-        
+
         if(isset($cart[$id])) {
             if($request->has('minus') && $cart[$id]['quantity'] > 1){
                 $cart[$id]['quantity']--;
@@ -87,6 +88,54 @@ class CartController extends Controller
         return redirect()->back()->with('success', $success);
     }
 
+    public function oneclickProducttoCart($raw_category, $raw_item, DataService $dataservice)
+    {
+        $names_my = Common::$names;
+        $category = str_replace('-', '/', $raw_category);
+        $item = str_replace('-', '', $raw_item);
+
+        $id = $category . '$$' . $item;
+        $data =  $dataservice->getAllData();
+
+        $group = $data[$category];
+
+        $result = $group[$item];
+
+        $cart = [];
+
+            $img = DB::table('images')->where('ref_id', $item)->pluck('image_link');
+            $cart[$id] = [
+                "quantity" => 1,
+                "price" => str_replace(' ', '', $result['price']),
+                "name" =>  trim( $result['real_name']),
+                "category" => $raw_category,
+                "item" => $raw_item,
+            ];
+            if($img)
+                $cart[$id]['image'] = $img[0];
+
+            $cart[$id]['price_uncash'] = $dataservice->formatNumber( $cart[$id]['price'] * Common::$uncash );
+            $cart[$id]['price'] = $dataservice->formatNumber( $cart[$id]['price']  );
+            foreach($names_my as $nam){ //dd($k, $nam);
+                if(stripos($id, $nam) !==false){
+                    $cart[$id]['real_item_name'] = $nam. ' '. $cart[$id]['name'];
+                    break;
+                }
+                else {
+                    $cart[$id]['real_item_name'] =  $cart[$id]['name'];
+                }
+            }
+
+            $oneclick = true;
+// dd($cart);
+        if(count($cart) < 1 )
+            return view('frontend.cart', compact('cart') );
+        return view('frontend.order', compact('cart', 'oneclick') );
+
+
+
+    }
+
 
     public function updateCart($raw_category, $raw_item, $quantity, DataService $dataservice, Request $request )
     {
@@ -97,14 +146,14 @@ class CartController extends Controller
         $id = $category . '$$' . $item;
         $data =  $dataservice->getAllData();
 
-        $group = $data[$category];  
+        $group = $data[$category];
 
         $result = $group[$item];
 
         $cart = session()->get('cart');
-        
+
         $cart[$id]['quantity'] = $quantity;
-        
+
         session()->put('cart', $cart);
         // dd($cart, $id);
 
