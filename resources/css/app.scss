@@ -5994,7 +5994,13 @@ h6 {
 
 .container {
     padding-left: 1rem;
-    padding-right: 1rem
+    padding-right: 1rem;
+
+    @media (max-width: 768px) {
+        padding-right: 3rem;
+    }
+
+
 }
 
 .row {
@@ -22062,9 +22068,11 @@ button.swiper-pagination-bullet {
     position: fixed;
     top: 0;
     right: 10px;
+    top: 43px;
 
     @media(max-width: 768px ){
-        top: 43px;
+        left: 50%;
+        transform: translate(-50%);
     }
 }
 

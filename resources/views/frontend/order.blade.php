@@ -270,6 +270,11 @@
 
 @push('scripts')
     <script>
+
+        $(function(){
+          $('#client_phone').inputmask("+7 (999) 999-99-99")
+        })
+
         $('#create_order').click(function(){
           if( $('#client_name').val().trim() == '' ||  $('#client_phone').val().trim() == '' ){
             let message;
