@@ -58,6 +58,7 @@ class HomeController extends Controller
                 $image_keys[] = $k;
         }
         $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
+        $translate = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('translate', 'ref_id');
 
         $bread =  $cats[$category];
 
@@ -69,7 +70,7 @@ class HomeController extends Controller
         $active = $category;
 
         $cats = array_reverse($cats);
-        return view('frontend.category', compact('res', 'cats', 'bread', 'active', 'images'));
+        return view('frontend.category', compact('res', 'cats', 'bread', 'active', 'images', 'translate'));
     }
 
     public function item($category, $item, DataService $dataService)

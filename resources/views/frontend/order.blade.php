@@ -1,5 +1,9 @@
 @extends('frontend.layout')
 
+@section('head_script')
+<script src="{{ asset('assets/js/jquery.maskedinput.js') }}"></script>
+@endsection
+
 @section('content')
 
 <div class="content-wrapper container fhg-content">
@@ -272,7 +276,7 @@
     <script>
 
         $(function(){
-          $('#client_phone').inputmask("+7 (999) 999-99-99")
+          $('#client_phone').mask("+7 (999) 999-99-99")
         })
 
         $('#create_order').click(function(){
@@ -280,9 +284,9 @@
             let message;
 
             if( $('#client_name').val().trim() == '')
-                message = 'Введите Ваши данные!!!'
-            else if( $('#client_phone').val().trim() == '')
-            message = 'Введите Ваш телефон!!!'
+                message = 'Введите ваше ФИО!'
+            if( $('#client_phone').val().trim() == '')
+                message = 'Введите телефон для связи!'
             $('.fhg-body').append(`<div class="ajs-message ajs-success ajs-visible">${message}</div>`)
             setTimeout(()=>{
                 $('.ajs-success').slideUp()

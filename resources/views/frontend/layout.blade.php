@@ -13,7 +13,7 @@
   <script src="{{asset('assets/js/jquery.js')}}"></script>
 
   <link href="{{asset('assets/css/awesome.css')}}" rel="stylesheet" />
-
+  @yield('head_script')
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}

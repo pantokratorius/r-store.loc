@@ -37,11 +37,11 @@ class DataService {
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
                     foreach($names_my as $nam){
                         if(stripos($k, $nam) !==false){
-                            $transfer[$k][$key]['real_item_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
+                            $transfer[$k][$key]['real_item_name'] = $this->getName( $nam. ' ' .EmojiRemover::filter( $val['real_name']));
                             break;
                         }
                         else {
-                            $transfer[$k][$key]['real_item_name'] = EmojiRemover::filter( $val['real_name']);
+                            $transfer[$k][$key]['real_item_name'] = $this->getName( EmojiRemover::filter( $val['real_name']));
                         }
                     }
                     $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
@@ -56,11 +56,11 @@ class DataService {
 
                         foreach($names_my as $nam){
                             if(stripos($k, $nam) !==false){
-                                $transfer[$k][$key]['real_item_name'] = $nam. ' ' .EmojiRemover::filter( $val['real_name']);
+                                $transfer[$k][$key]['real_item_name'] = $this->getName( $nam. ' ' .EmojiRemover::filter( $val['real_name']));
                                 break;
                             }
                             else {
-                                $transfer[$k][$key]['real_item_name'] = EmojiRemover::filter( $val['real_name']);
+                                $transfer[$k][$key]['real_item_name'] = $this->getName( EmojiRemover::filter( $val['real_name']));
                             }
                         }
                         $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
@@ -72,6 +72,42 @@ class DataService {
         }
 
         return $transfer;
+    }
+
+    public function getName($name){ 
+
+        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12'];
+
+        $replace = [
+            'Black' => '"тёмная ночь"', 
+            'Midnight' => '"тёмная ночь"', 
+            'Red' => 'красный',
+            'Starlight' => '"сияющая звезда"',
+            'Pink' => 'розовый',
+            'Blue' => 'синий',
+            'Green' => 'зеленый',
+            'Purple' => 'фиолетовый',
+            'White' => 'белый',
+        ];
+        $replace = array_map(function($a){return 'ГБ, '.$a;}, $replace);
+
+        foreach($names as $k => $v){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){ 
+                $name = strtr($name, $replace);
+            }
+        }
+
+
+        $names = ['Iphone11', 'IphoneSE'];
+        $replace['Black'] = 'черный';
+
+        foreach($names as $k => $v){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){ 
+                $name = strtr($name, $replace);
+            }
+        }
+
+        return $name;
     }
 
 

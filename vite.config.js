@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/css/admin.scss',
                 'resources/js/admin.js',
+                'resources/js/jquery.maskedinput.js',
             ],
             refresh: true,
         }),

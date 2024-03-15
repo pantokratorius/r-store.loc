@@ -10230,7 +10230,8 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 1rem 0
+    margin: 1rem auto;
+    width: 70%;
 }
 
 @media screen and (max-width: 768px) {
@@ -10256,7 +10257,8 @@ body {
     margin: auto;
     display: block;
     line-height: 1.5rem;
-    text-align: left
+    text-align: left;
+    width: 70%;
 }
 
 .product-link:active,
