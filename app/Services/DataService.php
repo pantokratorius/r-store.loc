@@ -74,38 +74,77 @@ class DataService {
         return $transfer;
     }
 
-    public function getName($name){ 
+    public function getName($name){
 
-        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12'];
 
         $replace = [
-            'Black' => '"тёмная ночь"', 
-            'Midnight' => '"тёмная ночь"', 
-            'Red' => 'красный',
+            'Black' => '"тёмная ночь"',
+            'Midnight' => '"тёмная ночь"',
             'Starlight' => '"сияющая звезда"',
+            'Red' => 'красный',
             'Pink' => 'розовый',
             'Blue' => 'синий',
             'Green' => 'зеленый',
             'Purple' => 'фиолетовый',
             'White' => 'белый',
+            'Yellow' => 'желтый',
+            'Gold' => 'золотой',
+            'Silver' => 'серебристый',
         ];
         $replace = array_map(function($a){return 'ГБ, '.$a;}, $replace);
 
+
+        $names = ['14Pro'];
+
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', $name), $v) !== false){ 
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
+                $replace['Black'] = '"черный космос"';
+                $replace['Purple'] = 'тёмно-фиолетовый';
+                $name = strtr($name, $replace);
+            }
+        }
+
+        if(stripos(str_replace(' ', '', $name), '15Pro') !== false){
+            $replace = [
+                    'Red' => 'красный',
+                    'Pink' => 'розовый',
+                    'Blue' => 'синий',
+                    'Green' => 'зеленый',
+                    'Purple' => 'фиолетовый',
+                    'White' => 'белый',
+                    'Yellow' => 'желтый',
+                    'Gold' => 'золотой',
+                    'Silver' => 'серебристый',
+                    'Natural' => 'Титановый',
+                    'Black' => 'черный'
+                ];
+                $replace = array_map(function($a){return 'ГБ, Титановый '.$a;}, $replace);
+                $replace['Natural'] = 'Титановый';
+                $name = strtr($name, $replace);
+            }
+
+
+
+        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12', 'Iphone14'];
+
+
+        foreach($names as $k => $v){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $name = strtr($name, $replace);
             }
         }
 
 
-        $names = ['Iphone11', 'IphoneSE'];
-        $replace['Black'] = 'черный';
+        $names = ['Iphone11', 'IphoneSE', 'iphone15'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', $name), $v) !== false){ 
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
+                $replace['Black'] = 'черный';
                 $name = strtr($name, $replace);
             }
         }
+
+
 
         return $name;
     }
