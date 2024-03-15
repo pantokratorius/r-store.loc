@@ -23,7 +23,7 @@
 
                     
                     <img @if(isset($images[$key]))  
-                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_name'])}}" alt="{{trim($val['real_name'])}}" 
+                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}" 
                       @else 
                         style="max-width: 100px; object-fit: contain" src="{{url('/images/noimage.png')}}" title="" alt="Apple products" 
                         class="product-card-image">

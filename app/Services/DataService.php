@@ -125,11 +125,11 @@ class DataService {
                         $cart[$k][$key] =  $val;
                         foreach($names_my as $nam){ //dd($k, $nam);
                             if(stripos($k, $nam) !==false){
-                                $cart[$k]['real_item_name'] = $nam. ' '. $val;
+                                $cart[$k]['real_item_name'] = $this->getName($nam. ' '. $val);
                                 break;
                             }
                             else {
-                                $cart[$k]['real_item_name'] =  $val;
+                                $cart[$k]['real_item_name'] =  $this->getName($val);
                             }
                         }
                     } else $cart[$k][$key] =  $val;
