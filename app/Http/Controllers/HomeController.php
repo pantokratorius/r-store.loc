@@ -46,12 +46,11 @@ class HomeController extends Controller
 
 
         $dat = $transfer[$category];
-        foreach ($transfer as $k => $v) {
-            $name = EmojiRemover::filter($v['real_name']);
+        foreach ($transfer as $k => $v) { 
+            $name = trim(EmojiRemover::filter($v['real_name']));
             $cats[$k] = $name;
         }
-
-        // dd($dat);
+        // dump($cats);
         $image_keys = [] ;
         foreach($dat as $k=>$v){
             if(is_array($v))
@@ -74,13 +73,14 @@ class HomeController extends Controller
 
     public function item($category, $item, DataService $dataService)
     {
+
         $category = Str::replace('-', '/', $category);
         $item = Str::replace('-', '', $item);
-
+        
         $data =  $dataService->getAllData();
-
+        
         $group = $data[$category];
-
+        
         foreach ($group as $k => $v) {
             if (is_array($v))
                 $mass[EmojiRemover::filter($k)] = $v;

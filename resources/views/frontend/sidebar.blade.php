@@ -8,9 +8,8 @@
 
         <ul class="sidebar-menu menu level-1 is-collapse insales-menu--loaded"
           data-menu-id="sidebar-menu">
-@isset($cats)
+@isset($cats) 
             @foreach($cats as $k=>$v)
-
                   <li class="sidebar-menu-item menu-item level-1 has-submenu">
                     <div class="sidebar-menu-item-controls menu-item-controls level-1">
 
@@ -22,7 +21,13 @@
                   </li>
 
             @endforeach
-            <li class="search"><input type="text" class="search_input" /><div class="fa fa-search fa-lg"></div></li>
+            <li class="search">
+              <div class="search_input_wrap">
+                <input type="text" class="search_input" />
+              <div class="fa fa-search fa-lg"></div>
+            </div>
+          </li>
+
             @endisset
           </ul>
         </div>
@@ -32,6 +37,25 @@
       @include('frontend.components.search_input')
 
   </div>
+
+  @push('styles')
+    <style>
+       .search_input_wrap {
+          width: 30%;
+          display: flex;
+          align-items: center;
+          /* border: 1px solid #fff; */
+          border-radius: 15px;
+          /* padding: 0 20px; */
+       }
+
+       .search_input_wrap_shown {
+          padding: 0 20px;
+          border: 1px solid #ddd;
+       }
+
+    </style>
+  @endpush
 
 
 

@@ -37,8 +37,10 @@
     }
 
     .active_search {
-        width: 30%;
-        margin: 10px auto !important;
+        width: 100%;
+        border: none !important;
+        /* margin-bottom: -20px !important; */
+        /* margin: 10px auto !important; */
     }
    /* HTML: <div class="loader"></div> */
 .loader {
@@ -104,6 +106,7 @@
 
     $('.search').click(function(e){
     $(this).addClass('active_search')
+    $('.search_input_wrap').addClass('search_input_wrap_shown')
       $('.search_input').addClass('shown').focus()
 
       $(document).click(e=>closeSearch(e))
@@ -119,6 +122,7 @@
 		    && div.has(e.target).length === 0 ) {
 			div.removeClass('shown').val('');
             $('.search').removeClass('active_search')
+            $('.search_input_wrap').removeClass('search_input_wrap_shown')
             $(document).off('click')
 		}
 

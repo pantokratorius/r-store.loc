@@ -12,6 +12,8 @@ class DataService {
     public function getAllData(){
 
         $names_my = ['Iphone', 'Watch'];
+        $fullName = [1 => 'Apple Watch'];
+
 
         $data =  DB::table('data')->pluck('data');
         if(!empty($data[0])) $data = json_decode ($data[0], 1);
@@ -32,12 +34,12 @@ class DataService {
             $nacenk = $new_nacenka[$k];
             foreach ($new_data[$k] as $key => $val) {
                 $key = EmojiRemover::filter($key);
-                $key = str_replace('/','',$key);
+                $key = str_replace(['/', '-'],'',$key);
                 if($key != 'real_name'){
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
-                    foreach($names_my as $nam){
+                    foreach($names_my as $kk => $nam){ //dump([$nam, $k]);
                         if(stripos($k, $nam) !==false){
-                            $transfer[$k][$key]['real_item_name'] = $this->getName( $nam. ' ' .EmojiRemover::filter( $val['real_name']));
+                            $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
                             break;
                         }
                         else {
@@ -51,12 +53,13 @@ class DataService {
         }else{
                 foreach ($new_data[$k] as $key => $val) {
                 $key = EmojiRemover::filter($key);
+                $key = str_replace(['/', '-'],'',$key);
                     if($key != 'real_name'){
                         $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
 
-                        foreach($names_my as $nam){
+                        foreach($names_my as $kk => $nam){//dump([$nam, $k]);
                             if(stripos($k, $nam) !==false){
-                                $transfer[$k][$key]['real_item_name'] = $this->getName( $nam. ' ' .EmojiRemover::filter( $val['real_name']));
+                                $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
                                 break;
                             }
                             else {
@@ -91,6 +94,22 @@ class DataService {
             'Gold' => 'золотой',
             'Silver' => 'серебристый',
         ];
+        
+        
+        // -------------------  Apple Watch --------------
+        $names = ['WatchSE'];
+        
+        foreach($names as $k => $v){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
+                $replace['Black'] = '"черный космос"';
+                $replace['Purple'] = 'тёмно-фиолетовый';
+                $name = strtr($name, $replace);
+            }
+        }
+        // -------------------  Apple Watch --------------
+        
+
+
         $replace = array_map(function($a){return 'ГБ, '.$a;}, $replace);
 
 

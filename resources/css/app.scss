@@ -20091,7 +20091,9 @@ a:not([class]):hover,
 .image-container.is-cover img {
     height: 100%;
     max-width: none;
-    max-height: none
+    max-height: none;
+    width: 100%;
+    object-fit: contain;
 }
 
 .image-container.is-cover.with-trick {
@@ -22241,8 +22243,6 @@ button.swiper-pagination-bullet {
     border: 1px solid #E7E6DF;
     -webkit-border-radius: 25px;
     border-radius: 25px;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
-    transition: .2s;
+    transition: .4s;
     margin: 3px;
 }
