@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
@@ -15,6 +16,9 @@ class CheckoutController extends Controller
         $mail['phone'] = $request->input('client.phone');
         $mail['type'] = $request->input('order.payment_gateway_id');
         $mail['delivery'] = $request->input('order_delivery_variant_id');
+        DB::table('orders')->insert([
+            'data' =>  base64_encode( serialize($mail)),
+        ]);
         if( $this->send_mail($mail) )
             session()->put('cart', []);
         return view('frontend.checkout');
