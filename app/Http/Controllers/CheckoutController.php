@@ -39,7 +39,7 @@ class CheckoutController extends Controller
         $mail['date'] = 'Дата: '. $mail['date'];
         $mail['type'] = 'Оплата '. $type[ $mail['type']  ];
         $mail['delivery'] = $delivery[ $mail['delivery'] - 1 ];
-        $message = implode(PHP_EOL, $mail);
+        $message = implode('/n/r', $mail);
         // dd($mail);
         
         $theme = 'Новый Заказ!';
