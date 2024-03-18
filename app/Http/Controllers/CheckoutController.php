@@ -18,8 +18,8 @@ class CheckoutController extends Controller
         $mail['phone'] = $request->input('client.phone');
         $mail['type'] = $request->input('order.payment_gateway_id');
         $mail['delivery'] = $request->input('order_delivery_variant_id');
-        if(!empty( $request->input('client.email'))) $mail['email'] = $request->input('client.email');
-        if(!empty( $request->input('client.comment'))) $mail['email'] = $request->input('client.comment');
+        $mail['email'] = $request->input('client.email');
+        $mail['comment'] = $request->input('client.comment');
         $mail['cart'] =  unserialize($request->input('cart'));
         DB::table('orders')->insert([
             'data' =>  base64_encode( serialize($mail)),
@@ -51,9 +51,11 @@ class CheckoutController extends Controller
         $mail['name'] = 'ФИО: '. $mail['name'];
         $mail['phone'] = 'Тел: '. $mail['phone'];
         if(!empty($mail['email'])) $mail['email'] =  'Мэйл: ' . $mail['email'];
+            else unset($mail['email']);
         if(!empty($mail['comment'])) $mail['comment'] =  'Комментарий к заказу: ' . $mail['comment'];
+            else unset($mail['comment']);
         // $message = implode(PHP_EOL, $mail);
-        dd($mail);
+        // dd($mail);
         $recepient = 'erik.krasnauskas@yandex.ru';
 
         $res = Mail::to($recepient)->send(new OrderSend($mail));
