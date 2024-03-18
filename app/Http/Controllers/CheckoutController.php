@@ -49,7 +49,7 @@ class CheckoutController extends Controller
         // dd($mail);
         $recepient = 'erik.krasnauskas@yandex.ru';
 
-        $res = Mail::to($recepient)->send(new OrderSend($mail));
+        $res = Mail::to($recepient)->send(new OrderSend($message));
         return $res;
     }
 

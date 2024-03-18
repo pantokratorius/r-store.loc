@@ -39,7 +39,6 @@ class OrderSend extends Mailable
     {
         return new Content(
             view: 'mail.index',
-            with: $this->data
         );
     }
 

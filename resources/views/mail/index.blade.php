@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to EmailerApp</title>
+    <title>Новый заказ!</title>
 </head>
 <body>
     <h1>Hello from EmailerApp!</h1>
-    <p>This is a test email sent from our Laravel application.</p>
+    @foreach($data as $v)
+    <p>{{ $v }}</p>
+    @endforeach
 </body>
 </html>
