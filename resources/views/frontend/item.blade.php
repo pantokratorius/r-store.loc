@@ -47,7 +47,7 @@
           <div class="swiper-wrapper" data-slider-container="" style="transition-duration: 0ms;"><div data-slider-slide="" class="swiper-slide swiper-slide-active is-active">
 
             <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="1">
-              <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg 400w, https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg 800w" src="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg">
+              <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="" src="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg">
             </a>
           </div>
 

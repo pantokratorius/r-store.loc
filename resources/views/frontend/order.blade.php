@@ -94,7 +94,7 @@
         <div class="co-checkout-block">
           <div class="co-input co-input--required co-input--tel"><h2 class="co-input-label co-title co-title--h2">Контактный телефон</h2><input class="co-input-field js-input-field" type="tel" id="client_phone" name="client[phone]" value=""></div>
         </div>
-        <h2 class="co-title co-title--h2">Доставка</h2><div class="co-checkout-block" data-address-autocomplete="https://kladr.insales.ru" id="delivery_address">
+        <h2 class="co-title co-title--h2">Доставка</h2><div class="co-checkout-block" data-address-autocomplete="" id="delivery_address">
           <div class="co-input ">
           </div>
         </div>
