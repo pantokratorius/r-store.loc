@@ -12,13 +12,15 @@ class CheckoutController extends Controller
     public function __invoke(Request $request)
     {
 
-// dd(unserialize($request->input('cart')));
+dd($request->all());
         $mail['date'] = date('d.m.Y H:i:s');
         $mail['name'] = $request->input('client.name');
         $mail['phone'] = $request->input('client.phone');
         $mail['type'] = $request->input('order.payment_gateway_id');
         $mail['delivery'] = $request->input('order_delivery_variant_id');
         $mail['cart'] =  unserialize($request->input('cart'));
+        if(!empty( $request->input('client.email'))) $mail['email'] = $request->input('client.email');
+        if(!empty( $request->input('client.comment'))) $mail['email'] = $request->input('client.comment');
         DB::table('orders')->insert([
             'data' =>  base64_encode( serialize($mail)),
         ]);
@@ -48,6 +50,8 @@ class CheckoutController extends Controller
         $mail['delivery'] = $delivery[ $mail['delivery'] - 1 ];
         $mail['name'] = 'ФИО: '. $mail['name'];
         $mail['phone'] = 'Тел: '. $mail['phone'];
+        if(!empty($mail['email'])) $mail['email'] =  'Мэйл: ' . $mail['email'];
+        if(!empty($mail['comment'])) $mail['comment'] =  'Комментарий к заказу: ' . $mail['comment'];
         // $message = implode(PHP_EOL, $mail);
         // dd($mail);
         $recepient = 'erik.krasnauskas@yandex.ru';

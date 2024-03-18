@@ -187,7 +187,7 @@
           <label class="co-input-label" for="order_comment">
             <label for="order_comment">Комментарии к заказу</label>
           </label>
-          <textarea rows="2" class="co-input-field js-input-field" autocomplete="off" name="order[comment]" id="order_comment"></textarea>
+          <textarea rows="2" class="co-input-field js-input-field" autocomplete="off" name="client[comment]" id="order_comment"></textarea>
         </div>
       </div>
       <div class="co-checkout-block">
