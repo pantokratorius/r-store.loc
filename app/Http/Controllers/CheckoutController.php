@@ -54,7 +54,7 @@ class CheckoutController extends Controller
             else unset($mail['email']);
         if(!empty($mail['comment'])) $mail['comment'] =  'Комментарий к заказу: ' . $mail['comment'];
             else unset($mail['comment']);
-        // $message = implode(PHP_EOL, $mail);
+
         // dd($mail);
         $recepient = 'erik.krasnauskas@yandex.ru';
 
