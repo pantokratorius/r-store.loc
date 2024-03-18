@@ -19,6 +19,10 @@
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
 @vite(['resources/css/app.scss',   'resources/js/app.js'])
+
+@production
+    @include('frontend.components.yandex')
+@endproduction
 </head>
 
 <body class="fhg-body">
