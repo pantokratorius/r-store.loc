@@ -13,12 +13,13 @@ class OrderSend extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($data = [])
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -27,9 +28,7 @@ class OrderSend extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Новый заказ',
-           
-
+            subject: 'Новый заказ!',
         );
     }
 
@@ -39,14 +38,15 @@ class OrderSend extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.index',
+            with: $this->data
         );
     }
 
     /**
      * Get the attachments for the message.
      *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>`
      */
     public function attachments(): array
     {

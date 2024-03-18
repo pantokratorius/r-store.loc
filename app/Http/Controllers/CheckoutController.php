@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderSend;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -22,10 +24,10 @@ class CheckoutController extends Controller
         if( $this->send_mail($mail) )
             session()->put('cart', []);
         return view('frontend.checkout');
-        
 
 
-        
+
+
     }
 
     public function send_mail($mail) {
@@ -33,7 +35,7 @@ class CheckoutController extends Controller
             'cash' => 'наличными',
             'bank_card' => 'картой',
         ];
-        
+
         $delivery = [
             'Заберу сам',
             'Доставка по Новороссийску или Новороссийскому району',
@@ -45,9 +47,9 @@ class CheckoutController extends Controller
         $mail['delivery'] = $delivery[ $mail['delivery'] - 1 ];
         $message = implode(PHP_EOL, $mail);
         // dd($mail);
-        
-        $theme = 'Новый Заказ!';
-        $res =  mail("erik.krasnauskas@yandex.ru", $theme, $message, "From: =?utf-8?B?" . base64_encode("novo-trade.com") . "?=" . " <novo-trade@vip5.sweb.ru> \nContent-Type: text/html \n charset=utf-8\n");
+        $recepient = 'erik.krasnauskas@yandex.ru';
+
+        $res = Mail::to($recepient)->send(new OrderSend($mail));
         return $res;
     }
 
