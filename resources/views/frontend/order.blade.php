@@ -262,7 +262,7 @@
         <div class="co-checkout-block"></div>
         <div class="consent_to_personal_data_checkbox co-checkout-block"></div>
         <button class="co-button co-button--checkout js-button-checkout_submit" id="create_order" type="submit">Подтвердить заказ</button>
-        <input type="hidden" name="cart" value="" />
+        <input type="hidden" name="cart" value="{{ serialize($cart) }}" />
       </form><div id="picker-container"></div>
 
     </div>

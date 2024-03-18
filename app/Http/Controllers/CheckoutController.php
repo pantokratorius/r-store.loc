@@ -12,12 +12,13 @@ class CheckoutController extends Controller
     public function __invoke(Request $request)
     {
 
-
+// dd(unserialize($request->input('cart')));
         $mail['date'] = date('d.m.Y H:i:s');
         $mail['name'] = $request->input('client.name');
         $mail['phone'] = $request->input('client.phone');
         $mail['type'] = $request->input('order.payment_gateway_id');
         $mail['delivery'] = $request->input('order_delivery_variant_id');
+        $mail['cart'] =  unserialize($request->input('cart'));
         DB::table('orders')->insert([
             'data' =>  base64_encode( serialize($mail)),
         ]);
