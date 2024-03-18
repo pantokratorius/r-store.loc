@@ -5996,9 +5996,9 @@ h6 {
     padding-left: 1rem;
     padding-right: 1rem;
 
-    @media (max-width: 768px) {
-        padding-right: 3rem;
-    }
+    // @media (max-width: 768px) {
+    //     padding-right: 3rem;
+    // }
 
 
 }
@@ -8137,7 +8137,7 @@ body {
 
 .phone {
     width: 150px; 
-    border-right: 1px solid;
+    // border-right: 1px solid;
     display: flex;
     align-items: center;
     height: 28px;

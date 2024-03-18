@@ -452,7 +452,7 @@
 
 
             <div class="insales-copyright cell-4  cell-10-xs cell-10-sm text-right ">
-              <a href="https://www.rusprofile.ru/ip/323237500108825" class="insales-copyright-link" target="_blank">
+              <a href="" class="insales-copyright-link" target="_blank">
 
               </a>
             </div>
