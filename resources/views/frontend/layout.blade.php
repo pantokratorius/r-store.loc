@@ -6,6 +6,7 @@
   <meta name="keywords" content="iPhone" />
   <title>@yield('page_title') - Купить технику Apple в Новороссийске</title>
   <meta name="description" content="iPhone" />
+  <meta name="yandex-verification" content="91591ccbbaf0c843" />
   <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- icons-->
