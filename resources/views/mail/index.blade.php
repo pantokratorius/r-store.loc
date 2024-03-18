@@ -9,7 +9,7 @@
         @if(!is_array($val))
             <p>{{ $val }}</p>
         @else
-           <table border=0 >
+           <table style="border: none;">
             @foreach ($val as $v)
             <tr>
                 <td>
