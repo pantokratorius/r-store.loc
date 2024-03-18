@@ -13,7 +13,7 @@
             @foreach ($val as $v)
             <div class="co-basket_item-image_container">
                 <div class="co-basket_item-image">
-                   <img @if(isset($v['image']) )
+                   <img style="max-width: 150px" @if(isset($v['image']) )
                       src="{{ asset('images/products/' . $v['image']) }}" alt="{{$v['real_item_name']}}" title="{{$v['real_item_name']}}"
                       @else
                       src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 100px; object-fit: contain"
@@ -29,5 +29,7 @@
 
         @endif
     @endforeach
+
+
 </body>
 </html>
