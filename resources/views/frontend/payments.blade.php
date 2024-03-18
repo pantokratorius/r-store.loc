@@ -2,7 +2,7 @@
 
 
 @section('page_title')
-Оплата и доставка
+Оплата и доставка товара
 @endsection
 
 
