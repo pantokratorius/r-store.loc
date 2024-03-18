@@ -17,9 +17,9 @@
                       src="{{ asset('images/products/' . $v['image']) }}" alt="{{$v['real_item_name']}}" title="{{$v['real_item_name']}}"
                       />
                 </td>
-              <td ><b>{{ $v['real_item_name'] }}</b></td>
+              <td >{{ $v['real_item_name'] }}</td>
               <td>
-                <span>{{ $v['quantity'] }}</span> x <span>{{ $v['price'] }}&nbsp;руб</span>
+                <span><b>{{ $v['quantity'] }}</span> x <span>{{ $v['price'] }}&nbsp;руб</b></span>
               </td>
         </tr>
             @endforeach
