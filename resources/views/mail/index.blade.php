@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Новый заказ!</title>
+    <title>Заказ с сайта https://rstore-novoross.ru</title>
 </head>
 <body>
-    <h1>Заказ с сайта R-Store</h1>
+    <h1>Новый заказ!</h1>
     @foreach($data as $val)
         @if(!is_array($val))
             <p>{{ $val }}</p>
