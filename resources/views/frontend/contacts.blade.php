@@ -1,5 +1,9 @@
 @extends('frontend.layout')
 
+@section('page_title')
+Связаться с нами
+@endsection
+
 @section('content')
 
 <div class="page cell-12 cell-8-md cell-12-sm">
@@ -51,7 +55,7 @@
 </div>
   </div>
   </div>
-        
+
     <p>
       <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae5b2c8114a7f6f086af8a1d742faaf35a49a5e5d45b3e7f15a86ee0fdf05d20d&amp;source=constructor" width="100%" height="545" frameborder="0"></iframe>
   </p>
@@ -71,7 +75,7 @@
         margin: 5px 0 0;
       }
 
-     
 
-    </style>          
+
+    </style>
 @endpush

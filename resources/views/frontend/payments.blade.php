@@ -1,5 +1,11 @@
 @extends('frontend.layout')
 
+
+@section('page_title')
+Оплата и доставка
+@endsection
+
+
 @section('content')
 
 <div class="breadcrumb-wrapper">
