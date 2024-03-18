@@ -113,18 +113,18 @@
 
       return false;
     })
+    
 
-
-    function closeSearch(e){
+    function closeSearch(e){ 
 
 		var div = $( ".search_input" );
-		if ( !div.is(e.target)
-		    && div.has(e.target).length === 0 ) {
-			div.removeClass('shown').val('');
-            $('.search').removeClass('active_search')
-            $('.search_input_wrap').removeClass('search_input_wrap_shown')
-            $(document).off('click')
-		}
+
+      if ( !div.is(e.target)) {
+          div.removeClass('shown').val('');
+          $('.search').removeClass('active_search')
+          $('.search_input_wrap').removeClass('search_input_wrap_shown')
+          $(document).off('click')
+      }
 
     }
 
