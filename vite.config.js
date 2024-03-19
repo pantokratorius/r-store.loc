@@ -10,6 +10,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/css/admin.scss',
                 'resources/js/admin.js',
+                'resources/js/glide.js',
+                'resources/css/glide.scss',
             ],
             refresh: true,
         }),
