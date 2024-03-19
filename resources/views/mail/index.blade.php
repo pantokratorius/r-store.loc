@@ -23,8 +23,8 @@
               </td>
         </tr>
         <tr>
-            <td colspan="2">Общая сумма</td>
-            <td>{{ $data['total_price'] }}</td>
+            <td colspan="2">Общая сумма: </td>
+            <td style="text-align: right">{{ $data['total_price'] }}</td>
         </tr>
             @endforeach
         </table>
