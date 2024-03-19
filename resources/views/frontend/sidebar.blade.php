@@ -1,4 +1,4 @@
-<div class="cell-12 cell-12-md hidden-sm flex-first" style="position: relative">
+<div class="cell-12 cell-12-md hidden-sm flex-first" style="position: relative; display: flex; justify-content: center">
     <div class="sidebar-block">
       <div class="sidebar-block-heading mega-menu-main_heading">
         {{-- Каталог --}}

@@ -1,14 +1,39 @@
 @extends('frontend.layout')
 
-
 @section('content')
-<div class="products-list is-collection row">
-  <div class="promo-slide swiper-slide swiper-slide-active is-active" data-slider-slide="" data-swiper-slide-index="1" >
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">
+        <a href=" {{ route('category', 'iPhone15') }} ">
+          <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
+        </a>
+      </li>
         
-    <a class="promo-slide-inner" href=" {{ route('category', 'iPhone15') }} " title="Слайдер Блок 15">
-      <img class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
-    </a>
-  
+      <li class="glide__slide">
+        <a href=" {{ route('category', 'iPhone15') }} ">
+          <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">...</div>
+
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <button class="glide__bullet" data-glide-dir="=0"></button>
+    <button class="glide__bullet" data-glide-dir="=1"></button>
+  </div>
+</div>
+
 @endsection
+
+@push('styles')
+<style>
+    .collection-wrapper{
+        max-width: 1300px;
+        margin-top: 20px;
+      }
+</style>
+@endpush

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
     line-height: 1.15;
@@ -4456,7 +4460,12 @@ fieldset[disabled] .textarea-field {
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1220px
+    max-width: 2220px
+}
+
+.collection-wrapper {
+    max-width: 1220px;
+    margin: 0 auto;
 }
 
 .col,
@@ -8085,9 +8094,12 @@ body {
 .left-blocks-inner {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto
+    // -webkit-box-flex: 1;
+    // -ms-flex: 1 1 auto;
+    // flex: 1 1 auto;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .header-inner {

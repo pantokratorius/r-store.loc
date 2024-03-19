@@ -14,11 +14,15 @@
   <script src="{{asset('assets/js/jquery.js')}}"></script>
 
   <link href="{{asset('assets/css/awesome.css')}}" rel="stylesheet" />
+  {{-- <link href="{{asset('assets/js/boot.js')}}" />
+  <link href="{{asset('assets/css/boot.css')}}" rel="stylesheet" /> --}}
+  {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></link> --}}
   @yield('head_script')
 
   {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"
     type="text/css"> --}}
-@vite(['resources/css/app.scss',   'resources/js/app.js'])
+@vite(['resources/css/app.scss', 'resources/js/app.js'])
 
 @production
     @include('frontend.components.yandex')
@@ -124,7 +128,7 @@
 
 
 <div class="logotype-wrapper cell-10 cell-7-md cell-12-sm text-center">
-                <div class="logotype text-center-sm hidden-sm" style="margin: 5px auto 0; width: 120px">
+                <div class="logotype text-center-sm hidden-sm" style="margin: 5px 20px 0; width: 120px">
 
                   <a title="R-store" href="/" class="logotype-link">
 
@@ -135,15 +139,6 @@
                 </div>
               </div>
 
-              <div class="header-block js-contacts-header cell-4 hidden-sm ">
-
-                <div class="email text-left hidden-sm">
-
-                </div>
-
-
-
-              </div>
               <ul class="main-menu menu level-1 insales-menu--loaded cell-4 hidden-sm" data-menu-id="main-menu">
                 <li class="main-menu-item menu-item level-1">
                   <div class="main-menu-item-controls menu-item-controls level-1">
@@ -264,7 +259,7 @@
 
       @includeWhen(isset($cats), 'frontend.sidebar')
 
-      <div class="row collection-wrapper" style="justify-content: center">
+      <div class="collection-wrapper" style="justify-content: center">
         <div class="collection cell-12 cell-12-md cell-12-sm">
 
 
