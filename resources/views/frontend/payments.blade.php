@@ -68,7 +68,7 @@
 
         ul li:first-child {
             font-weight: bold;
-            font-size: 120%;
+            /* font-size: 120%; */
             list-style: none;
         }
     </style>

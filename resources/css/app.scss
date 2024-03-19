@@ -20513,7 +20513,8 @@ a:not([class]):hover,
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
-    list-style: none
+    list-style: none;
+    align-items: center;
 }
 
 .menu.is-horizontal {
