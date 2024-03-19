@@ -91,6 +91,7 @@
       <form id="order_form" class="co-checkout-order_form co-checkout-block--padded" data-onepage-checkout="true" data-checkout2="true" data-has-payment-rules="false" data-client-identifier="email" data-use-mask="1" action="{{route('checkout')}}" accept-charset="UTF-8" method="post">
         @csrf
         <input type="hidden" name="authenticity_token" value="HUHGMU6P62-BguVuQxwrmLyU2LW6nGZk73sSE_74GanNOATpVKOMogdvxWODS19BS5X9bBclYVBPjFrosPIYpA" autocomplete="off"><div class="co-delivery_method-list co-checkout-block">
+        <input type="hidden" name="total_price" id="total_price_input" value="@if(isset($oneclick))  {{$v['price']}} @else {{$cart_price}} @endif" />
         <div class="co-checkout-block">
           <div class="co-input co-input--required co-input--tel"><h2 class="co-input-label co-title co-title--h2">Контактный телефон</h2><input class="co-input-field js-input-field" type="tel" id="client_phone" name="client[phone]" value=""></div>
         </div>
@@ -299,8 +300,10 @@
         $('.payment_variants .radio_button').click(function(e){
             if(e.target.value == 'bank_card'){
               $('.cart_price span').text($('.cart_price').data('cart_price_uncash'))
+              $('#total_price_input').val($('.cart_price').data('cart_price_uncash'))
             }else{
-              $('.cart_price span').text($('.cart_price').data('cart_price'))
+                $('.cart_price span').text($('.cart_price').data('cart_price'))
+                $('#total_price_input').val($('.cart_price').data('cart_price'))
             }
         })
 

@@ -20,6 +20,7 @@ class CheckoutController extends Controller
         $mail['delivery'] = $request->input('order_delivery_variant_id');
         $mail['email'] = $request->input('client.email');
         $mail['comment'] = $request->input('client.comment');
+        $mail['total_price'] = $request->input('total_price');
         $mail['cart'] =  unserialize($request->input('cart'));
         DB::table('orders')->insert([
             'data' =>  base64_encode( serialize($mail)),

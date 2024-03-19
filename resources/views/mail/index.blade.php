@@ -5,10 +5,10 @@
 </head>
 <body>
     <h1>Новый заказ!</h1>
-    @foreach($data as $val)
-        @if(!is_array($val))
+    @foreach($data as $key => $val)
+        @if(!is_array($val) && $key != 'total_price')
             <p>{{ $val }}</p>
-        @else
+        @elseif(is_array($val))
            <table style="margin-top: 50px">
             @foreach ($val as $v)
             <tr>
@@ -21,6 +21,10 @@
               <td>
                 <span>{{ $v['quantity'] }}</span> x <span>{{ $v['price'] }}&nbsp;руб</span>
               </td>
+        </tr>
+        <tr>
+            <td colspan="2">Общая сумма</td>
+            <td>{{ $data['total_price'] }}</td>
         </tr>
             @endforeach
         </table>
