@@ -1,5 +1,15 @@
 @extends('frontend.layout')
 
+@section('page_title')
+Оформление заказа
+@endsection
+@section('page_description')
+Оформление заказа
+@endsection
+@section('page_keywords')
+Оформление заказа
+@endsection
+
 @section('head_script')
 <script src="{{ asset('assets/js/jquery.maskedinput.js') }}"></script>
 @endsection

@@ -3,9 +3,9 @@
 <head>
   <!-- meta -->
   <meta charset="UTF-8" />
-  <meta name="keywords" content="iPhone" />
-  <title>@yield('page_title') - Купить технику Apple в Новороссийске</title>
-  <meta name="description" content="iPhone" />
+  <title>@yield('page_title') - Купить технику Apple в Новороссийске по лучшим ценам</title>
+  <meta name="description" content="@yield('page_description')" />
+  <meta name="keywords" content="@yield('page_keywords')" />
   <meta name="yandex-verification" content="91591ccbbaf0c843" />
   <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

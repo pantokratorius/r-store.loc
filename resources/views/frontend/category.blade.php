@@ -4,6 +4,12 @@
 @section('page_title')
 {{$res['real_category_name']}}
 @endsection
+@section('page_description')
+{{$res['real_category_name']}} по самым низким ценам
+@endsection
+@section('page_keywords')
+{{$res['real_category_name']}}
+@endsection
 
 
 @section('content')
@@ -21,11 +27,11 @@
                     <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ] )}}"
                     class="product-card-photo image-container is-square is-cover">
 
-                    
-                    <img @if(isset($images[$key]))  
-                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}" 
-                      @else 
-                        style="max-width: 100px; object-fit: contain" src="{{url('/images/noimage.png')}}" title="" alt="Apple products" 
+
+                    <img @if(isset($images[$key]))
+                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}"
+                      @else
+                        style="max-width: 100px; object-fit: contain" src="{{url('/images/noimage.png')}}" title="" alt="Apple products"
                         class="product-card-image">
                      @endif
                      />
@@ -88,16 +94,16 @@
         $.get( $(this).attr('href'), function( data ) {
             const elements = $('.js-shopcart-widget-count')
             elements.each(function(){
-              $(this).text(data[1]) 
+              $(this).text(data[1])
             })
             const price = $('.js-shopcart-widget-amount')
             price.each(function(){
-              $(this).text(`${data[0]} руб`) 
+              $(this).text(`${data[0]} руб`)
             })
             if(!$('.ajs-visible').length)
-              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`) 
+              $('body').prepend(`<div class="ajs-message ajs-success ajs-visible" style="display: none">${data[3]}</div>`)
             $('.ajs-success').slideDown().delay(2000).slideUp()
-            
+
         });
         return false
     })

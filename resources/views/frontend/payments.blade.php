@@ -4,6 +4,12 @@
 @section('page_title')
 Оплата и доставка товара
 @endsection
+@section('page_description')
+    Способы оплаты и доставки
+@endsection
+@section('page_keywords')
+    Способы оплаты и доставки
+@endsection
 
 
 @section('content')

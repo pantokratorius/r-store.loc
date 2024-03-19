@@ -1,4 +1,15 @@
 @extends('frontend.layout')
+@section('page_title')
+    R-Store
+@endsection
+@section('page_description')
+    Техника Apple в наличии по лучшим ценам в г. Новороссийск
+@endsection
+@section('page_keywords')
+Техника Apple, лучшие цены, Техника Apple в г. Новороссийск
+@endsection
+
+
 @vite(['resources/js/glide.js', 'resources/css/glide.scss'])
 @section('content')
 <div class="glide">

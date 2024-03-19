@@ -4,7 +4,12 @@
 @section('page_title')
 {{$res['real_item_name']}}
 @endsection
-
+@section('page_description')
+{{$res['real_item_name']}} по самым низким ценам
+@endsection
+@section('page_keywords')
+{{$res['real_item_name']}}
+@endsection
 
 @section('content')
 

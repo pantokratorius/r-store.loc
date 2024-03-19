@@ -1,7 +1,13 @@
 @extends('frontend.layout')
 
 @section('page_title')
-Связаться с нами
+    Связаться с нами
+@endsection
+@section('page_description')
+    Связаться с нами, наши контакты
+@endsection
+@section('page_keywords')
+    Связаться с нами, наши контакты
 @endsection
 
 @section('content')

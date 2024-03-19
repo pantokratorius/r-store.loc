@@ -1,5 +1,13 @@
 @extends('frontend.layout')
-
+@section('page_title')
+Заказ оформлен
+@endsection
+@section('page_description')
+Заказ оформлен
+@endsection
+@section('page_keywords')
+Заказ оформлен
+@endsection
 
 @section('content')
 
