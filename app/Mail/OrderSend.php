@@ -28,7 +28,7 @@ class OrderSend extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Новый заказ!',
+            subject: 'Заказ с сайта https://rstore-novoross.ru',
         );
     }
 
