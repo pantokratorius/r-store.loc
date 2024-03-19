@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -8148,7 +8146,7 @@ body {
 }
 
 .phone {
-    width: 150px; 
+    width: 150px;
     // border-right: 1px solid;
     display: flex;
     align-items: center;
