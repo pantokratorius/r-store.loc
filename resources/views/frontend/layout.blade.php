@@ -8,7 +8,7 @@
   <meta name="keywords" content="@yield('page_keywords')" />
   <meta name="yandex-verification" content="91591ccbbaf0c843" />
   <meta name="robots" content="index,follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- icons-->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon1.png') }}">
   <script src="{{asset('assets/js/jquery.js')}}"></script>
