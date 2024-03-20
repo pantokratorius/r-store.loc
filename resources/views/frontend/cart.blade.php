@@ -180,15 +180,3 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
 
 </script>
 @endpush
-
-@push('styles')
-  <style>
-    [class*=cell-] {
-    @media(max-width: 768px){
-        padding-left: 0rem;
-        padding-right: 0rem;
-    }
-
-}
-  </style>
-@endpush
