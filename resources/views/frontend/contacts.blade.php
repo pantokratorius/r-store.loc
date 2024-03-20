@@ -82,6 +82,10 @@
       }
 
 
+      .mobile-sidebar-menu-bottom li:last-child {
+            text-decoration: underline
+        }
+
 
     </style>
 @endpush

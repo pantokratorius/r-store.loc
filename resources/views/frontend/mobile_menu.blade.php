@@ -13,7 +13,9 @@
             @foreach($cats as $k=>$v)
         <li class="mobile-sidebar-menu-item menu-item level-1 has-submenu">
             <div class="mobile-sidebar-menu-item-controls menu-item-controls level-1">
-              <a href="{{route('category', str_replace('/', '-', $k) ) }}" class="mobile-sidebar-menu-link menu-link level-1" data-menu-link="airpods" data-menu-link-source="collection">
+              <a href="{{route('category', str_replace('/', '-', $k) ) }}" class="mobile-sidebar-menu-link menu-link level-1
+              @isset($active) @if($active == $k)  active  @endif  @endisset
+              " data-menu-link="airpods" data-menu-link-source="collection">
                 {{ $v }}
               </a>
                 <button class="mobile-sidebar-menu-marker menu-marker level-1" type="button"></button>
@@ -27,17 +29,17 @@
 
   <div class="sidebar-block">
     <div class="sidebar-block-heading">
-      Верхнее меню
+      Главное меню
     </div>
 
     <div class="sidebar-block-content">
-  <ul class="mobile-sidebar-menu menu level-1 is-vertical is-collapse insales-menu--loaded" data-menu-id="mobile-sidebar-menu">
+  <ul class="mobile-sidebar-menu mobile-sidebar-menu-bottom menu level-1 is-vertical is-collapse insales-menu--loaded" data-menu-id="mobile-sidebar-menu">
       <li class="mobile-sidebar-menu-item menu-item level-1">
         <div class="mobile-sidebar-menu-item-controls menu-item-controls level-1">
           
 
-          <a href="/page/oplata" class="mobile-sidebar-menu-link menu-link level-1" data-menu-link-source="menu" data-menu-link-current="no">
-            Оплата
+          <a href="{{route('payments')}}" class="mobile-sidebar-menu-link menu-link level-1" data-menu-link-source="menu" data-menu-link-current="no">
+            Оплата и доставка
           </a>
         </div>
       </li>
@@ -45,7 +47,7 @@
         <div class="mobile-sidebar-menu-item-controls menu-item-controls level-1">
           
 
-          <a href="/page/kontakty" class="mobile-sidebar-menu-link menu-link level-1" data-menu-link-source="menu" data-menu-link-current="no">
+          <a href="{{route('contacts')}}" class="mobile-sidebar-menu-link menu-link level-1" data-menu-link-source="menu" data-menu-link-current="no">
             Контакты
           </a>
         </div>
@@ -75,3 +77,12 @@
             </div>
         </div>
     </div>
+
+
+    @push('styles')
+      <style>
+        .active {
+            text-decoration: underlineproduct-card-form_block
+        }
+      </style>
+    @endpush

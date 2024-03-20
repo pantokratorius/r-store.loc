@@ -54,7 +54,24 @@
 
 @push('styles')
 <style>
+
+  
+[class*=cell-] {
+    @media(max-width: 768px){
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+}
+
+
+
+
   @media(max-width: 768px){
+
+    .left-blocks-inner  {
+      margin-left: 10px;
+    }
      .glide__track ul,  .glide__track img {
       height: 100%;
     }

@@ -44,10 +44,6 @@
     <div class="gallery-thumbs-wrapper mobile-wrapper hidden shown-sm">
       <div class="gallery-thumbs swiper-container swiper-container-horizontal swiper-container-autoheight" data-slider="gallery-thumbs-mobile" style="cursor: grab;">
 
-          <div class="product-slider-controls gallery-controls" data-slider-controls="">
-            <button class="product-slider-prev swiper-button-prev" data-slider-prev=""></button>
-            <button class="product-slider-next swiper-button-next" data-slider-next=""></button>
-          </div>
 
           <div class="swiper-wrapper" data-slider-container="" style="transition-duration: 0ms;"><div data-slider-slide="" class="swiper-slide swiper-slide-active is-active">
 

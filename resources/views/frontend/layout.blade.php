@@ -54,7 +54,7 @@
             <div class="contacts-top-menu hidden shown-sm">
 
 
-              <button type="button" class="contacts-icon js-open-contacts"><a href="tel:+7(967)307-01-00"></a></button>
+              <a href="tel:+7(967)307-01-00" type="button" class="contacts-icon js-open-contacts"></ф>
 
 
               <div class="contacts-top-menu-block cell-12 hidden">
@@ -478,6 +478,7 @@
 @endif
 
 <script>
+
   $('.button_mobile_menu').click(function(){
       $('.mobile_menu').toggle()
     })
