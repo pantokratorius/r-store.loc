@@ -6003,9 +6003,10 @@ h6 {
     padding-left: 1rem;
     padding-right: 1rem;
 
-    // @media (max-width: 768px) {
-    //     padding-right: 3rem;
-    // }
+    @media (max-width: 1200px) {
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
 
 
 }
