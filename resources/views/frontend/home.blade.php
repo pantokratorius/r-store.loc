@@ -9,6 +9,14 @@
 Техника Apple, лучшие цены, Техника Apple в г. Новороссийск
 @endsection
 
+@php
+  $cat = 'MacBook-iMac';
+  foreach($cats as $k=>$v){
+    if(stripos($k, 'macbook')!==false){
+        $cat = $k;
+    }
+  }
+@endphp
 
 @vite(['resources/js/glide.js', 'resources/css/glide.scss'])
 @section('content')
@@ -16,19 +24,19 @@
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       <li class="glide__slide">
-        <a href=" {{ route('category', 'iPhone15') }} ">
+        <a href=" {{ route('category', 'iPhone15Pro') }} ">
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
+        </a>
+      </li>
+      <li class="glide__slide">
+        <a href=" {{ route('category', $cat ) }} ">
+          <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner2.jpg') }}" title="Слайдер Макбук" alt="Слайдер Блок 15">
         </a>
       </li>
 
       <li class="glide__slide">
-        <a href=" {{ route('category', 'iPhone15') }} ">
+        <a href=" {{ route('category', 'iPhone15Pro') }} ">
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner1.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
-        </a>
-      </li>
-      <li class="glide__slide">
-        <a href=" {{ route('category', 'iPhone15') }} ">
-          <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner2.jpg') }}" title="Слайдер Макбук" alt="Слайдер Блок 15">
         </a>
       </li>
     </ul>
