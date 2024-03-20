@@ -10,10 +10,10 @@
 @endsection
 
 @php
-  $cat = 'MacBook-iMac';
+   $cat = 'MacBook-iMac';
   foreach($cats as $k=>$v){
     if(stripos($k, 'macbook')!==false){
-        $cat = $k;
+        $cat = str_replace('/', '-', $k);
     }
   }
 @endphp
