@@ -54,6 +54,16 @@
 
 @push('styles')
 <style>
+  @media(max-width: 768px){
+     .glide__track ul,  .glide__track img {
+      height: 100%;
+    }
+
+    .glide__track img {
+        object-fit: cover
+    }
+  }
+
     .collection-wrapper{
         max-width: 1300px;
         margin-top: 20px;

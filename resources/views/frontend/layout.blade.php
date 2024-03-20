@@ -54,7 +54,7 @@
             <div class="contacts-top-menu hidden shown-sm">
 
 
-              <button type="button" class="contacts-icon js-open-contacts"></button>
+              <button type="button" class="contacts-icon js-open-contacts"><a href="tel:+7(967)307-01-00"></a></button>
 
 
               <div class="contacts-top-menu-block cell-12 hidden">
@@ -79,7 +79,7 @@
               </div>
             </div>
 
-            <div class="hidden shown-sm">
+            <div class="hidden hidden-sm">
               <button type="button" class="top-panel-open-search button js-open-search-panel shown-sm"></button>
             </div>
 

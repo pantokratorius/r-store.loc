@@ -7906,7 +7906,8 @@ body {
 @media screen and (max-width: 768px) {
     .top-panel {
         padding: 0;
-        flex-wrap: nowrap
+        flex-wrap: nowrap;
+        height: 100%;
     }
 }
 
@@ -7952,7 +7953,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .top-menu-wrapper {
-        margin: 0;
+        // margin: 0;
         padding: 0
     }
 }
@@ -8070,7 +8071,7 @@ body {
 }
 
 .contacts-icon:before {
-    font-size: 1.35rem
+    font-size: 2.35rem
 }
 
 .contacts-icon.is-active {
@@ -8226,7 +8227,13 @@ body {
     -webkit-transition: color .15s ease-out .15s;
     transition: color .15s ease-out .15s;
     -webkit-transition: background-color .15s ease-out .15s;
-    transition: background-color .15s ease-out .15s
+    transition: background-color .15s ease-out .15s;
+
+    @media(max-width: 768px){
+        height: 451.35rempx;
+        width: 60px;
+    }
+
 }
 
 // .top-panel-open-sidebar:before {
@@ -8325,7 +8332,7 @@ body {
 }
 
 .top-panel-open-search:before {
-    font-size: 1.2rem
+    font-size: 1.8rem
 }
 
 .header-wrapper {
@@ -9295,7 +9302,13 @@ body {
 
 @media screen and (min-width: 769px) {
     .top-panel-wrapper {
-        display: none
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .top-panel-wrapper {
+        height: 60px;
     }
 }
 
@@ -12226,7 +12239,7 @@ body {
 }
 
 .shopcart-widget-icon {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
     position: relative;
     vertical-align: middle;
     padding: 1rem .9rem;
@@ -12279,7 +12292,13 @@ body {
     justify-content: center;
     border: 1px solid white;
     color: #fff;
-    background-color: #eb839f
+    background-color: #eb839f;
+
+    @media(max-width: 768px){
+        margin-top: -30px;
+    }
+
+
 }
 
 .compares-widget-count.is-top-panel {
