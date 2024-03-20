@@ -181,7 +181,7 @@ if(typeof tim !== 'undefined') clearTimeout(tim)
 </script>
 @endpush
 
-@push()
+@push('styles')
   <style>
     [class*=cell-] {
     @media(max-width: 768px){
