@@ -5,14 +5,19 @@
     "src": "resources/css/admin.scss"
   },
   "resources/css/app.css": {
-    "file": "assets/app-ob8cJZJR.css",
+    "file": "assets/app-w40geAFS.js",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/app.scss": {
-    "file": "assets/app-K95MyoxK.css",
+    "file": "assets/app-NOA8BtNl.css",
     "isEntry": true,
     "src": "resources/css/app.scss"
+  },
+  "resources/css/glide.scss": {
+    "file": "assets/glide-tHbMG9gD.css",
+    "isEntry": true,
+    "src": "resources/css/glide.scss"
   },
   "resources/js/admin.js": {
     "file": "assets/admin-A1uBu_8L.js",
@@ -23,5 +28,10 @@
     "file": "assets/app-vXVOWCpF.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/glide.js": {
+    "file": "assets/glide-azKcRTxg.js",
+    "isEntry": true,
+    "src": "resources/js/glide.js"
   }
 }
