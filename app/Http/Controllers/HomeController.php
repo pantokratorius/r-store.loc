@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Arispati\EmojiRemover\EmojiRemover;
 use Illuminate\Support\Str;
 use App\Services\DataService;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
