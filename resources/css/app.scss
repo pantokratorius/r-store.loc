@@ -12271,14 +12271,19 @@ body {
 }
 
 .shopcart-widget-icon {
-    font-size: 2.1rem;
+    font-size: 1.5rem;
     position: relative;
     vertical-align: middle;
     padding: 1rem .9rem;
     margin-right: .3rem;
     display: inline-block;
     text-align: center;
-    line-height: 1rem
+    line-height: 1rem;
+
+    @media(max-width: 768px){
+        font-size: 2.1rem;
+    }
+
 }
 
 .shopcart-widget-icon:before {

@@ -3588,4 +3588,5 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
 .nav-link.dropdown-toggle.nav-link-lg.nav-link-user {
   display: flex;
+  align-items: center;
 }
