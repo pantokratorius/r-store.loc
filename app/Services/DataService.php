@@ -94,11 +94,25 @@ class DataService {
             'Gold' => 'золотой',
             'Silver' => 'серебристый',
         ];
-        
-        
+
+
+        $names = ['MacBook', 'ipad'];
+
+
+        foreach($names as $k => $v){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
+                $replace['Gray'] = '"серый космос"';
+                $replace['WF'] = 'Wi-Fi';
+                $replace['LTE'] = 'Wi-Fi+LTE';
+                $replace['.'] = ',';
+                $name = strtr($name, $replace);
+            }
+        }
+
+
         // -------------------  Apple Watch --------------
         $names = ['WatchSE'];
-        
+
         foreach($names as $k => $v){
             if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $replace['Black'] = '"черный космос"';
@@ -107,7 +121,7 @@ class DataService {
             }
         }
         // -------------------  Apple Watch --------------
-        
+
 
 
         $replace = array_map(function($a){return 'ГБ, '.$a;}, $replace);

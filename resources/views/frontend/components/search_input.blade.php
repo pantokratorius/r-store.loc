@@ -91,7 +91,7 @@
 
         if(e.target.value.length > 2){
             tim = setTimeout(() => {
-                $('.collection-wrapper').html('<span class="loader"></span>')
+                $('.collection-wrapper').html('<span class="loader" style="margin:0 auto"></span>')
 
                 $.get( `/search/${e.target.value}`, function( data ) {
                     if(data){
@@ -113,9 +113,9 @@
 
       return false;
     })
-    
 
-    function closeSearch(e){ 
+
+    function closeSearch(e){
 
 		var div = $( ".search_input" );
 
