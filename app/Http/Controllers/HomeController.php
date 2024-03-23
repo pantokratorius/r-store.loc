@@ -44,7 +44,7 @@ class HomeController extends Controller
 
 
         $dat = $transfer[$category];
-        foreach ($transfer as $k => $v) { 
+        foreach ($transfer as $k => $v) {
             $name = trim(EmojiRemover::filter($v['real_name']));
             $cats[$k] = $name;
         }
@@ -74,11 +74,11 @@ class HomeController extends Controller
 
         $category = Str::replace('-', '/', $category);
         $item = Str::replace('-', '', $item);
-        
+
         $data =  $dataService->getAllData();
-        
+
         $group = $data[$category];
-        
+
         foreach ($group as $k => $v) {
             if (is_array($v))
                 $mass[EmojiRemover::filter($k)] = $v;
@@ -122,62 +122,67 @@ class HomeController extends Controller
         return view('frontend.item', compact('res', 'cats', 'bread', 'active'));
     }
 
-    public function search($query, DataService $dataService){
-        $transfer = $dataService->getAllData();
+    public function search($query, DataService $dataService, Request $request){
+        if($request->ajax()){
+            $transfer = $dataService->getAllData();
 
-        // dd($transfer);
-        $c = 0; $dat = [];
-        foreach($transfer as $k=>$v){
-            if(is_array($v)){
-                foreach($v as $key=>$val){
-                    if(is_array($val) && stripos($val['real_item_name'], $query) !== false ){
-                        $dat[$c] = $val;
-                        $dat[$c]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/', ' '], ['-', ''], $v['real_name'])));
-                        $dat[$c]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $val['real_name']));;
-                        $c++;
+            // dd($transfer);
+            $c = 0; $dat = [];
+            foreach($transfer as $k=>$v){
+                    if(is_array($v)){
+                        foreach($v as $key=>$val){
+                            if(is_array($val)) {
+                            $val['real_item_name'] = trim( str_replace(' ', '', $val['real_item_name'] ) );
+                            $query = trim( str_replace(' ', '', $query) );
+                            if( stripos($val['real_item_name'], $query) !== false ){
+                                $dat[$c] = $val;
+                                $dat[$c]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/', ' '], ['-', ''], $v['real_name'])));
+                                $dat[$c]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $val['real_name']));;
+                                $c++;
+                            }
+                        }
+                        }
                     }
-
                 }
+
+                // dd($dat);
+
+                foreach ($transfer as $k => $v) {
+                $name = EmojiRemover::filter($v['real_name']);
+                $cats[$k] = $name;
+            }
+
+            $image_keys = [] ;
+            foreach($dat as $k=>$v){
+                    $image_keys[] = $v['real_name'];
+            }
+
+            $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
+
+            // dd($image_keys);
+
+            // foreach($dat as $k => $v){
+                //     $dat[$k]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $k)));
+                //     $dat[$k]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $k));
+                // }
+                // dd($dat);
+                $res = $dat; //dd($dat);
+
+                $cats = array_reverse($cats);
+
+
+
+
+
+                $view=view('frontend.search', compact('res', 'cats',  'images'));
+                $view=$view->render();
+                echo $view;
             }
         }
 
-        // dd($dat);
 
-        foreach ($transfer as $k => $v) {
-            $name = EmojiRemover::filter($v['real_name']);
-            $cats[$k] = $name;
-        }
-
-        $image_keys = [] ;
-        foreach($dat as $k=>$v){
-                $image_keys[] = $v['real_name'];
-        }
-
-        $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
-
-// dd($image_keys);
-
-        // foreach($dat as $k => $v){
-        //     $dat[$k]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $k)));
-        //     $dat[$k]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $k));
-        // }
-        // dd($dat);
-        $res = $dat; //dd($dat);
-
-        $cats = array_reverse($cats);
-
-
-
-
-
-            $view=view('frontend.search', compact('res', 'cats',  'images'));
-            $view=$view->render();
-            echo $view;
-    }
-
-
-    public function searchitem($query, DataService $dataService){
-        $transfer = $dataService->getAllData();
+        public function searchitem($query, DataService $dataService){
+            $transfer = $dataService->getAllData();
 
         // dd($transfer);
         $c = 0; $dat = [];
