@@ -132,9 +132,7 @@ class HomeController extends Controller
                     if(is_array($v)){
                         foreach($v as $key=>$val){
                             if(is_array($val)) {
-                            $val['real_item_name'] = trim( str_replace(' ', '', $val['real_item_name'] ) );
-                            $query = trim( str_replace(' ', '', $query) );
-                            if( stripos($val['real_item_name'], $query) !== false ){
+                            if( stripos(trim( str_replace(' ', '', $val['real_item_name'] ) ), trim( str_replace(' ', '', $query) )) !== false ){
                                 $dat[$c] = $val;
                                 $dat[$c]['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/', ' '], ['-', ''], $v['real_name'])));
                                 $dat[$c]['real_name'] = EmojiRemover::filter(str_replace(['/', ' '], ['-', ''], $val['real_name']));;
