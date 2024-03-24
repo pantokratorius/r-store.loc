@@ -66,7 +66,7 @@
             margin-left: 15px;
         }
 
-        ul:not(.mobile-sidebar-menu) li:first-child {
+        ul:not(.mobile-sidebar-menu):not(.sidebar-menu) li:first-child {
             font-weight: bold;
             /* font-size: 120%; */
             list-style: none;
