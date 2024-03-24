@@ -62,7 +62,7 @@
 
 @push('styles')
     <style>
-        ul:not(.main-menu) li:not(:first-child) {
+        ul:not(.main-menu):not(.sidebar-menu) li:not(:first-child) {
             margin-left: 15px;
         }
 

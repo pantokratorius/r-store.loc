@@ -18,10 +18,10 @@
         .title {
             font-family: 'Roboto', sans-serif;
             font-weight: 100;
-            font-size: 40px;   
-            cursor: pointer;        
+            font-size: 40px;
+            cursor: pointer;
         }
-        
+
         .message {
             font-family: 'Open+Sans', sans-serif;
             font-size: 25px;
@@ -56,7 +56,7 @@
         /* Large Devices, Wide Screens */
         @media only screen and (min-width : 1200px) {
             body {
-                padding-top: 15%;                
+                padding-top: 15%;
             }
         }
 
@@ -73,6 +73,6 @@
             location="/"
         })
     </script>
-    
+
 </body>
 </html>

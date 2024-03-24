@@ -146,9 +146,9 @@ class HomeController extends Controller
                 // dd($dat);
 
                 foreach ($transfer as $k => $v) {
-                $name = EmojiRemover::filter($v['real_name']);
-                $cats[$k] = $name;
-            }
+                    $name = EmojiRemover::filter($v['real_name']);
+                    $cats[$k] = $name;
+                }
 
             $image_keys = [] ;
             foreach($dat as $k=>$v){
