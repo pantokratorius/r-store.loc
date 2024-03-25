@@ -89,6 +89,9 @@ class HomeController extends Controller
                 $mass[EmojiRemover::filter($k)] = $v;
         }
 
+        if(!isset($mass[$item]))
+            abort(404);
+
         $result = $mass[$item];
 
         $res = $result;
