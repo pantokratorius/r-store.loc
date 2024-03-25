@@ -49,6 +49,9 @@ class CartController extends Controller
         $id = $category . '$$' . $item;
         $data =  $dataservice->getAllData();
 
+        if(!isset($data[$category]))
+            abort(404);
+
         $group = $data[$category];
 
         $result = $group[$item];
