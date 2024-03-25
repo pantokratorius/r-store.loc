@@ -77,6 +77,9 @@ class HomeController extends Controller
 
         $data =  $dataService->getAllData();
 
+        if(!isset($data[$category]))
+            abort(404);
+
         $group = $data[$category];
 
         foreach ($group as $k => $v) {
