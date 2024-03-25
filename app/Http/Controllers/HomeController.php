@@ -42,6 +42,8 @@ class HomeController extends Controller
 
         $transfer = $dataService->getAllData();
 
+        if(!isset($transfer[$category]))
+            abort(404);
 
         $dat = $transfer[$category];
         foreach ($transfer as $k => $v) {
