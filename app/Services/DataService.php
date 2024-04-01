@@ -38,8 +38,8 @@ class DataService {
                 if($key != 'real_name'){
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
                     foreach($names_my as $kk => $nam){ //dump([$nam, $k]);
-                        if(stripos($k, $nam) !==false && stripos($val['real_name'], $nam) === false){
-                            $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
+                        if(stripos($k, $nam) !==false){
+                            $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? str_replace( explode(' ', $fullName[$kk]) ,'', $fullName[$kk]) : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
                             break;
                         }
                         else {
@@ -58,8 +58,8 @@ class DataService {
                         $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
 
                         foreach($names_my as $kk => $nam){//dump([$nam, $k]);
-                            if(stripos($k, $nam) !==false && stripos($val['real_name'], $nam) === false){
-                                $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
+                            if(stripos($k, $nam) !==false){             // && stripos($val['real_name'], $nam) === false
+                                $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? str_replace( explode(' ', $fullName[$kk]) ,'', $fullName[$kk]) : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
                                 break;
                             }
                             else {
@@ -196,7 +196,7 @@ class DataService {
                     elseif($key == 'name'  ){
                         $cart[$k][$key] =  $val;
                         foreach($names_my as $nam){ //dd($k, $nam);
-                            if(stripos($k, $nam) !==false && stripos($val['real_name'], $nam) === false){
+                            if(stripos($k, $nam) !==false){
                                 $cart[$k]['real_item_name'] = $this->getName($nam. ' '. $val);
                                 break;
                             }
