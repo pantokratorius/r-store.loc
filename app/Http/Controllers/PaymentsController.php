@@ -18,6 +18,7 @@ class PaymentsController extends Controller
                     $name = EmojiRemover::filter($v['real_name']);
                     $cats[$k] = $name;
                 }
+        $cats = array_reverse($cats);
         return view('frontend.payments', compact('cats'));
     }
 }
