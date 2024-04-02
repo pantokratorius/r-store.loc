@@ -58,7 +58,7 @@ class DataService {
                         $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
 
                         foreach($names_my as $kk => $nam){//dump([$nam, $k]);
-                            if(stripos($k, $nam) !==false){
+                            if(stripos($k, $nam) !==false){             // && stripos($val['real_name'], $nam) === false
                                 $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
                                 break;
                             }

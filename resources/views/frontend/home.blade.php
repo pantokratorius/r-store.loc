@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 @section('page_title')
-    R-Store
+    Купить технику Apple в Новороссийске по лучшим ценам
 @endsection
 @section('page_description')
     Техника Apple в наличии по лучшим ценам в г. Новороссийск
