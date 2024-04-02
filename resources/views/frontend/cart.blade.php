@@ -1,5 +1,15 @@
 @extends('frontend.layout')
 
+@section('page_title')
+Корзина
+@endsection
+@section('page_description')
+Корзина
+@endsection
+@section('page_keywords')
+Корзина
+@endsection
+
 
 @section('content')
 

@@ -3,7 +3,7 @@
 <head>
   <!-- meta -->
   <meta charset="UTF-8" />
-  <title>@yield('page_title') - Купить технику Apple в Новороссийске по лучшим ценам</title>
+  <title>@yield('page_title') - магазин R-store</title>
   <meta name="description" content="@yield('page_description')" />
   <meta name="keywords" content="@yield('page_keywords')" />
   <meta name="yandex-verification" content="91591ccbbaf0c843" />
