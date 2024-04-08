@@ -47,8 +47,13 @@
 
           <div class="swiper-wrapper" data-slider-container="" style="transition-duration: 0ms;"><div data-slider-slide="" class="swiper-slide swiper-slide-active is-active">
 
-            <a class="slide-inner image-container" data-fancybox="gallery" href="https://static.insales-cdn.com/images/products/1/7352/757046456/iPhone15ProMax_Star_Small.jpg" title="iPhone 15 Pro Max, 256 ГБ, " Титановый""="" data-caption="iPhone 15 Pro Max, 256 ГБ, " data-slide-number="1">
-              <img sizes="" class="slide-image swiper-lazy swiper-lazy-loaded" data-slider-lazy="" srcset="" src="https://static.insales-cdn.com/images/products/1/7352/757046456/large_iPhone15ProMax_Star_Small.jpg">
+            <a class="slide-inner image-container" data-fancybox="gallery" href="@if(isset($res['image']) ) @else {{url('/images/noimage.png')}} @endif" title=""  data-slide-number="1">
+              <img @if(isset($res['image']) )
+          src="{{ asset('images/products/' . $res['image']) }}" alt="{{$res['real_item_name']}}" title="{{$res['real_item_name']}}"
+          @else
+          src="{{url('/images/noimage.png')}}" alt="Apple product" title="" style="max-width: 100px; object-fit: contain"
+       @endif
+       class="slide-image">
             </a>
           </div>
 
