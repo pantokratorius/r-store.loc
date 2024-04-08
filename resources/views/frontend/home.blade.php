@@ -28,11 +28,11 @@
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15 Про" alt="Слайдер Блок 15 Про">
         </a>
       </li>
-      <li class="glide__slide">
+      {{-- <li class="glide__slide">
         <a href=" {{ route('category', $cat ) }} ">
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner2.jpg') }}" title="Слайдер Макбук" alt="Слайдер Блок 15">
         </a>
-      </li>
+      </li> --}}
 
       <li class="glide__slide">
         <a href=" {{ route('category', 'iPhone15') }} ">
