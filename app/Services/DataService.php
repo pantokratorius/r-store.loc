@@ -13,6 +13,8 @@ class DataService {
 
         $names_my = ['Iphone', 'Watch'];
         $fullName = [1 => 'Apple Watch'];
+        $names_my = ['aaaaaaaaa'];
+        $fullName = [];
 
 
         $data =  DB::table('data')->pluck('data');
@@ -57,7 +59,7 @@ class DataService {
                     if($key != 'real_name'){
                         $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
 
-                        foreach($names_my as $kk => $nam){//dump([$nam, $k]);
+                        foreach($names_my as $kk => $nam){//dump($names_my);
                             if(stripos($k, $nam) !==false){             // && stripos($val['real_name'], $nam) === false
                                 $transfer[$k][$key]['real_item_name'] = $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) . ' ' .EmojiRemover::filter( $val['real_name']));
                                 break;
@@ -94,7 +96,7 @@ class DataService {
             'Gold' => 'золотой',
             'Silver' => 'серебристый',
         ];
-
+        $replace =  array_change_key_case($replace);
 
         $names = ['MacBook', 'ipad'];
 
@@ -122,7 +124,7 @@ class DataService {
         }
         // -------------------  Apple Watch --------------
 
-
+        
 
         $replace = array_map(function($a){return 'ГБ, '.$a;}, $replace);
 
@@ -136,7 +138,6 @@ class DataService {
                 $name = strtr($name, $replace);
             }
         }
-
         if(stripos(str_replace(' ', '', $name), '15Pro') !== false){
             $replace = [
                     'Red' => 'красный',
@@ -151,6 +152,7 @@ class DataService {
                     'Natural' => 'Титановый',
                     'Black' => 'черный'
                 ];
+                $replace =  array_change_key_case($replace);
                 $replace = array_map(function($a){return 'ГБ, Титановый '.$a;}, $replace);
                 $replace['Natural'] = 'Титановый';
                 $name = strtr($name, $replace);

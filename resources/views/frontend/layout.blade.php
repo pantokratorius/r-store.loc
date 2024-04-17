@@ -274,7 +274,7 @@
                   </a>
                 </li>
                 <li class="breadcrumb-item">
-                  <span class="breadcrumb-page">{{ $bread }}</span>
+                  <span class="breadcrumb-page">{{  ucfirst( strtolower( $bread) ) }}</span>
                 </li>
 
               </ul>
