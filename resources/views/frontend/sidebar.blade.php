@@ -15,7 +15,7 @@
 
                       <a href="{{route('category', str_replace('/', '-', $k) ) }}" class="sidebar-menu-link menu-link level-1
                       @isset($active) @if($active == $k)  active  @endif  @endisset " >
-                              {{ $v }}
+                              {{ ucfirst( strtolower($v) ) }}
                       </a>
                     </div>
                   </li>
