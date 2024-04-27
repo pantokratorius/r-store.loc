@@ -13,8 +13,8 @@ class DataService {
 
         $names_my = ['Iphone', 'Watch'];
         $fullName = [1 => 'Apple Watch'];
-        $names_my = ['aaaaaaaaa'];
-        $fullName = [];
+        // $names_my = ['aaaaaaaaa'];
+        // $fullName = [];
 
 
         $data =  DB::table('data')->pluck('data');
