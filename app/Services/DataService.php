@@ -17,9 +17,9 @@ class DataService {
         // $fullName = [];
 
 
-        $data =  DB::table('data')->pluck('data');
+        $data =  DB::table('data_new')->pluck('data');
         if(!empty($data[0])) $data = json_decode ($data[0], 1);
-        $nacenka = DB::table('nacenka')->pluck('data');
+        $nacenka = DB::table('nacenka_new')->pluck('data');
         if(!empty($nacenka[0])) $nacenka = json_decode ($nacenka[0], 1);
         foreach($data as $k=>$v){
             $k = EmojiRemover::filter($k);
