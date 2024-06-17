@@ -57,7 +57,7 @@ class DataService {
                 $key = EmojiRemover::filter($key);
                 $key = str_replace(['/', '-'],'',$key);
                     if($key != 'real_name'){
-                        $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) );    //save([$res[$k],  $val ]);
+                        $transfer[$k][$key]['price'] =  isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber( (int)str_replace('.','',$val['price'] ) + 5000 );    //save([$res[$k],  $val ]);
 
                         foreach($names_my as $kk => $nam){//dump($names_my);
                             if(stripos($k, $nam) !==false){             // && stripos($val['real_name'], $nam) === false
