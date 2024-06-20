@@ -53,9 +53,14 @@ class HomeController extends Controller
         // dump($cats);
         $image_keys = [] ;
         foreach($dat as $k=>$v){
-            if(is_array($v))
-                $image_keys[] = $k;
+            if(is_array($v)){
+                $image_keys[] = EmojiRemover::filter($k);
+                foreach($v as $kk => $vv){
+                    $ims[$k] = EmojiRemover::filter($k);
+                }
+            }
         }
+        // dd($image_keys);
         $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
 
         $bread =  $cats[$category];
@@ -68,7 +73,7 @@ class HomeController extends Controller
         $active = $category;
 
         $cats = array_reverse($cats);
-        return view('frontend.category', compact('res', 'cats', 'bread', 'active', 'images'));
+        return view('frontend.category', compact('res', 'cats', 'bread', 'active', 'images', 'ims'));
     }
 
     public function item($category, $item, DataService $dataService)

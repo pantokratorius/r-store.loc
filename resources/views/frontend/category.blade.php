@@ -28,8 +28,8 @@
                     class="product-card-photo image-container is-square is-cover">
 
 
-                    <img @if(isset($images[$key]))
-                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}"
+                    <img @if(isset($images[$ims[$key]]))
+                        src="{{ asset('images/products/'. $images[$ims[$key]]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}"
                       @else
                         style="max-width: 100px; object-fit: contain" src="{{url('/images/noimage.png')}}" title="" alt="Apple products"
                         class="product-card-image">
