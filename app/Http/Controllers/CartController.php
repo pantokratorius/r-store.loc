@@ -105,7 +105,10 @@ class CartController extends Controller
 
         $group = $data[$category];
 
-        $result = $group[$item];
+foreach($group as $k=>$v){
+    $mass[EmojiRemover::filter($k)] = $v;
+}
+        $result = $mass[$item];
 
         $cart = [];
 
