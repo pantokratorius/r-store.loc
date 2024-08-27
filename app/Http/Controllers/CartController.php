@@ -104,15 +104,22 @@ class CartController extends Controller
             abort(404);
 
         $group = $data[$category];
+        
+        foreach($group as $k => $v){
+            if(is_array( $v))
+            $mass[ str_replace(' ', '',  $v['real_item_name'] ) ]=  $v;
+    }
+    
 
-foreach($group as $k=>$v){
-    $mass[EmojiRemover::filter($k)] = $v;
-}
         $result = $mass[$item];
 
         $cart = [];
 
-            $img = DB::table('images')->where('ref_id', $item)->pluck('image_link');
+
+        $search_image_item = EmojiRemover::filter($item);
+        $search_image_item = str_replace(['Iphone', 'Watch'], '',$search_image_item);
+
+            $img = DB::table('images')->where('ref_id', $search_image_item)->pluck('image_link');
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),

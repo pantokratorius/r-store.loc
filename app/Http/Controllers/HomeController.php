@@ -78,30 +78,37 @@ class HomeController extends Controller
 
     public function item($category, $item, DataService $dataService)
     {
-
         $category = Str::replace('-', '/', $category);
         $item = Str::replace('-', '', $item);
+        
 
         $data =  $dataService->getAllData();
-
-        if(!isset($data[$category]))
-            abort(404);
-
-        $group = $data[$category];
-
-        foreach ($group as $k => $v) {
-            if (is_array($v))
-                $mass[EmojiRemover::filter($k)] = $v;
+        
+        foreach($data as $k => $v){
+            foreach($v as $kk => $vv){
+                if(is_array($vv))
+                    $temp_data[ str_replace(' ', '', $vv['real_item_name'] ) ]= $vv;
+                
+            }
         }
+    // dd($temp_data[$item]);
+        
+        
+        if(!isset($temp_data[$item]))
+        abort(404);
 
-        if(!isset($mass[$item]))
-            abort(404);
+    
 
-        $result = $mass[$item];
+        $result = $temp_data[$item];
 
         $res = $result;
 
-        $image_n_specs = DB::table('images')->where('ref_id', $item)->select('image_link', 'specs')->first();
+        $search_image_item = EmojiRemover::filter($item);
+        $search_image_item = str_replace(['Iphone', 'Watch'], '',$search_image_item);
+
+        $image_n_specs = DB::table('images')->where('ref_id', $search_image_item)->select('image_link', 'specs')->first();
+
+
         if($image_n_specs){
             if($image_n_specs->image_link)
                 $res['image'] = $image_n_specs->image_link;
