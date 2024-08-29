@@ -49,14 +49,25 @@ class CartController extends Controller
         $id = $category . '$$' . $item;
         $data =  $dataservice->getAllData();
 
+
+
         if(!isset($data[$category]))
             abort(404);
 
         $group = $data[$category];
 
-        $result = $group[$item];
+   foreach($group as $k => $v){
+        if(is_array($v)){
+                    $temp_data[ str_replace(' ', '', $v['real_item_name'] ) ]= $v;
+        }
+    }
+
+        $result = $temp_data[$item];
 
         $cart = session()->get('cart', []);
+
+        $search_image_item = EmojiRemover::filter($item);
+        $search_image_item = str_replace(['Iphone', 'Watch'], '',$search_image_item);
 
         if(isset($cart[$id])) {
             if($request->has('minus') && $cart[$id]['quantity'] > 1){
@@ -65,7 +76,7 @@ class CartController extends Controller
                 $cart[$id]['quantity']++;
             }
         } else {
-            $img = DB::table('images')->where('ref_id', $item)->pluck('image_link');
+            $img = DB::table('images')->where('ref_id', $search_image_item)->pluck('image_link');
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
@@ -164,7 +175,14 @@ class CartController extends Controller
 
         $group = $data[$category];
 
-        $result = $group[$item];
+        foreach($group as $k => $v){
+            if(is_array($v)){
+                        $temp_data[ str_replace(' ', '', $v['real_item_name'] ) ]= $v;
+            }
+        }
+
+
+        $result = $temp_data[$item];
 
         $cart = session()->get('cart');
 
