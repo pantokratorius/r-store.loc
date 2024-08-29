@@ -22,11 +22,11 @@
                 <span>{{ $v['quantity'] }}</span> x <span>{{ $v['price'] }}&nbsp;руб</span>
               </td>
         </tr>
+        @endforeach
         <tr>
             <td style="text-align: right" colspan="2"><b>Общая сумма: </b></td>
             <td><b>{{ $data['total_price'] }}</b></td>
         </tr>
-            @endforeach
         </table>
         @endif
     @endforeach
