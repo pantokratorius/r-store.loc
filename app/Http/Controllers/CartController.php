@@ -58,7 +58,7 @@ class CartController extends Controller
 
    foreach($group as $k => $v){
         if(is_array($v)){
-                    $temp_data[ str_replace(' ', '', $v['real_item_name'] ) ]= $v;
+                    $temp_data[ str_replace([' ', '-', '/'], '', $v['real_item_name'] ) ]= $v;
         }
     }
 
@@ -118,7 +118,7 @@ class CartController extends Controller
         
         foreach($group as $k => $v){
             if(is_array( $v))
-            $mass[ str_replace(' ', '',  $v['real_item_name'] ) ]=  $v;
+            $mass[ str_replace([' ', '-', '/'], '',  $v['real_item_name'] ) ]=  $v;
     }
     
 
@@ -177,7 +177,7 @@ class CartController extends Controller
 
         foreach($group as $k => $v){
             if(is_array($v)){
-                        $temp_data[ str_replace(' ', '', $v['real_item_name'] ) ]= $v;
+                        $temp_data[ str_replace([' ', '-', '/'], '', $v['real_item_name'] ) ]= $v;
             }
         }
 

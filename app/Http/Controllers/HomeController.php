@@ -87,11 +87,11 @@ class HomeController extends Controller
         foreach($data as $k => $v){
             foreach($v as $kk => $vv){
                 if(is_array($vv))
-                    $temp_data[ str_replace(' ', '', $vv['real_item_name'] ) ]= $vv;
+                    $temp_data[ str_replace([' ', '-', '/'], '', $vv['real_item_name'] ) ]= $vv;
                 
             }
         }
-    // dd($temp_data[$item]);
+    // dd($temp_data,$item);
         
         
         if(!isset($temp_data[$item]))
