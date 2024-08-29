@@ -52,7 +52,7 @@
 
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [$res['real_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
+                        <a href="{{route('addcart', [$res['real_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_item_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
                         </a>
                       </div><!-- /.buy -->
 
