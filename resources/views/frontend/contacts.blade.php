@@ -12,7 +12,7 @@
 
 @section('content')
 
-<div class="page cell-12 cell-8-md cell-12-sm">
+<div class="page cell-12">
 
     <div class="breadcrumb-wrapper">
       <ul class="breadcrumb">
@@ -34,7 +34,7 @@
 
       <div class="editor">
     <h2><a href="3">г. Новороссийск, проспект Ленина д.13</a></h2>
-    <div style="display: flex; justify-content: space-between; margin: 50px 0; width: 50%">
+    <div class="info">
       <div>
     <p><span style="font-size: 14pt;"><strong>Режим работы:</strong></span></p>
     <ul>
