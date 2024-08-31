@@ -10,7 +10,7 @@
     "src": "resources/css/app.css"
   },
   "resources/css/app.scss": {
-    "file": "assets/app-bpuF-6xt.css",
+    "file": "assets/app-zUvCjK19.css",
     "isEntry": true,
     "src": "resources/css/app.scss"
   },
@@ -18,6 +18,10 @@
     "file": "assets/glide-tHbMG9gD.css",
     "isEntry": true,
     "src": "resources/css/glide.scss"
+  },
+  "resources/fonts/NotoColorEmoji.ttf": {
+    "file": "assets/NotoColorEmoji-qcuN25zN.ttf",
+    "src": "resources/fonts/NotoColorEmoji.ttf"
   },
   "resources/js/admin.js": {
     "file": "assets/admin-A1uBu_8L.js",

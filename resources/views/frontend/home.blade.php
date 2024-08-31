@@ -24,7 +24,7 @@
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       <li class="glide__slide">
-        <a href=" {{ route('category', 'iPhone15Pro') }} ">
+        <a href=" {{ route('category', 'Iphone15') }} ">
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15 Про" alt="Слайдер Блок 15 Про">
         </a>
       </li>
@@ -35,7 +35,7 @@
       </li> --}}
 
       <li class="glide__slide">
-        <a href=" {{ route('category', 'iPhone15') }} ">
+        <a href=" {{ route('category', 'Iphone15') }} ">
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner1.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
         </a>
       </li>

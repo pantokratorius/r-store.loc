@@ -15,7 +15,6 @@
 @section('content')
 <div class="products-list is-collection row">
 
-
  @foreach($res as $key=>$val)
     @if(is_array($val))
 
@@ -24,12 +23,12 @@
               <div class="product-card ">
                 <div class="product-card-inner">
 
-                    <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ] )}}"
+                    <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_item_name']))) ] )}}"
                     class="product-card-photo image-container is-square is-cover">
 
 
-                    <img @if(isset($images[$key]))
-                        src="{{ asset('images/products/'. $images[$key]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}"
+                    <img @if(isset($images[$ims[$key]]))
+                        src="{{ asset('images/products/'. $images[$ims[$key]]) }}" title="{{trim($val['real_item_name'])}}" alt="{{trim($val['real_name'])}}"
                       @else
                         style="max-width: 100px; object-fit: contain" src="{{url('/images/noimage.png')}}" title="" alt="Apple products"
                         class="product-card-image">
@@ -53,7 +52,7 @@
 
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [$res['real_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
+                        <a href="{{route('addcart', [$res['real_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_item_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
                         </a>
                       </div><!-- /.buy -->
 

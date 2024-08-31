@@ -102,11 +102,11 @@
 
     {{-- <button class="product-button button is-primary  js-variant-shown" type="submit" data-item-add="" style="display: block;"> --}}
 
-      <a href="{{route('addcart', [str_replace('/', '-', $active ),   str_replace('/', '', preg_replace('!\s++!u', '-', trim($res['real_name']))) ] ) }}" class="product-button button is-primary  js-variant-shown cart_button" style="display: block;">
+      <a href="{{route('addcart', [str_replace('/', '-', $active ),   str_replace('/', '', preg_replace('!\s++!u', '-', trim($res['real_item_name']))) ] ) }}" class="product-button button is-primary  js-variant-shown cart_button" style="display: block;">
         В корзину
       </a>
 
-      <a href="{{route('oneclick', [str_replace('/', '-', $active ),   str_replace('/', '', preg_replace('!\s++!u', '-', trim($res['real_name']))) ] ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
+      <a href="{{route('oneclick', [str_replace('/', '-', $active ),   str_replace('/', '', preg_replace('!\s++!u', '-', trim($res['real_item_name']))) ] ) }}" class="product-button button is-primary  js-variant-shown" style="display: block;">
         Купить в один клик
       </a>
     {{-- </button> --}}

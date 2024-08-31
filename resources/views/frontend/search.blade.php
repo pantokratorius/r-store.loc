@@ -51,7 +51,7 @@
                       <!-- Если больше 1 модификации -->
 
                       <div class="buy text-right-xl more-info">
-                        <a href="{{route('addcart', [$val['real_category_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
+                        <a href="{{route('addcart', [$val['real_category_name'],   str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_item_name']))) ])}}" class="button button-buy is-primary" type="submit" data-item-add="">
                         </a>
                       </div><!-- /.buy -->
 
@@ -61,7 +61,7 @@
                     </form><!-- /.product-control -->
                   </div>
 
-                  <a href="{{route('item', [$val['real_category_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="product-link">
+                  <a href="{{route('item', [$val['real_category_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_item_name']))) ])}}" class="product-link">
                        {{$val['real_item_name']}}
                   </a>
 
@@ -93,12 +93,12 @@
 
   @endif
 
-{{-- @endsection
+{{-- @endsection --}}
 
 @push('scripts')
 <script>
 
-    $('.button-buy').click(function(e){
+    $('body').on('click', '.button-buy', function(e){ 
         e.preventDefault()
 
         $.get( $(this).attr('href'), function( data ) {
@@ -119,4 +119,4 @@
     })
 
 </script>
-@endpush --}}
+@endpush 
