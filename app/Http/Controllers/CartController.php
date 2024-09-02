@@ -84,7 +84,7 @@ class CartController extends Controller
                 "category" => $raw_category,
                 "item" => $raw_item,
             ];
-            if(!empty($img))
+            if(count($img))
                 $cart[$id]['image'] = $img[0];
         }
 
