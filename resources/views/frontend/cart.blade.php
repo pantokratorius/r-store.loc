@@ -36,7 +36,7 @@
 <div class="item-image-wrapper ">
   <div class="item-image-inner">
     <span class="item-image-link image-container is-square is-cover">
-      <img title="{{ $v['real_item_name'] }}" alt="{{ $v['real_item_name'] }}" src="@if(!empty($v['image'])) {{ asset('images/products/'. $v['image']) }} @else https://static.insales-cdn.com/images/products/1/3682/757050978/large_iPhone15ProMax_Blue_Small.jpg @endif" class="item-image">
+      <img title="{{ $v['real_item_name'] }}" alt="{{ $v['real_item_name'] }}" src="@if(!empty($v['image'])) {{ asset('images/products/'. $v['image']) }} @else {{url('/images/noimage.png')}} @endif" class="item-image">
     </span>
   </div>
 </div>

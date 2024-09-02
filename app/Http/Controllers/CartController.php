@@ -76,7 +76,7 @@ class CartController extends Controller
                 $cart[$id]['quantity']++;
             }
         } else {
-            $img = DB::table('images')->where('ref_id', $search_image_item)->pluck('image_link');
+            $img = DB::table('images')->where('ref_id', $search_image_item)->pluck('image_link');  
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
@@ -84,7 +84,7 @@ class CartController extends Controller
                 "category" => $raw_category,
                 "item" => $raw_item,
             ];
-            if($img)
+            if(!empty($img))
                 $cart[$id]['image'] = $img[0];
         }
 
@@ -138,7 +138,7 @@ class CartController extends Controller
                 "category" => $raw_category,
                 "item" => $raw_item,
             ];
-            if($img)
+            if(count($img))
                 $cart[$id]['image'] = $img[0];
 
             $cart[$id]['price_uncash'] = $dataservice->formatNumber( $cart[$id]['price'] * Common::$uncash );

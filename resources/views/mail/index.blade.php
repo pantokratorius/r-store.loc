@@ -14,7 +14,7 @@
             <tr>
                 <td>
                    <img style="max-width: 150px"
-                      src="{{ asset('images/products/' . $v['image']) }}" alt="{{$v['real_item_name']}}" title="{{$v['real_item_name']}}"
+                      src="@if(!empty($v['image'])) {{ asset('images/products/'. $v['image']) }} @else {{url('/images/noimage.png')}} @endif" alt="{{$v['real_item_name']}}" title="{{$v['real_item_name']}}"
                       />
                 </td>
               <td ><b>{{ $v['real_item_name'] }}</b></td>
