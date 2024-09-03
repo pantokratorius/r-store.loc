@@ -65,7 +65,7 @@ class HomeController extends Controller
         foreach($images as $k=>&$v){
             $images_lower[strtolower($k)] = $v;
         }
-        $images = $images_lower;
+        $images = !empty($images_lower) ? $images_lower : [];
         $bread =  $cats[$category]; 
 
         $res = $dat;
