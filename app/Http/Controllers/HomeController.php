@@ -41,7 +41,7 @@ class HomeController extends Controller
         $category = Str::replace('-', '/', $category);
 
         $transfer = $dataService->getAllData();
-
+// dd($transfer);
         if(!isset($transfer[$category]))
             abort(404);
 
@@ -56,14 +56,17 @@ class HomeController extends Controller
             if(is_array($v)){
                 $image_keys[] = EmojiRemover::filter($k);
                 foreach($v as $kk => $vv){
-                    $ims[$k] = EmojiRemover::filter($k);
+                    $ims[$k] = strtolower(EmojiRemover::filter($k));
                 }
             }
         }
-        // dd($image_keys);
         $images = DB::table('images')->whereIn('ref_id', $image_keys)->pluck('image_link', 'ref_id');
-
-        $bread =  $cats[$category];
+        // dd($images, $image_keys, $ims);
+        foreach($images as $k=>&$v){
+            $images_lower[strtolower($k)] = $v;
+        }
+        $images = $images_lower;
+        $bread =  $cats[$category]; 
 
         $res = $dat;
         $dat['real_category_name'] = EmojiRemover::filter( trim( str_replace(['/'], ['-'], $dat['real_name'])));
