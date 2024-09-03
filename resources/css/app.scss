@@ -4478,7 +4478,7 @@ fieldset[disabled] .textarea-field {
 
 .glide {
     box-shadow: 3px 3px 20px 0 lightgreen;
-    // box-shadow: 3px 3px 5px 5px lightgreen; 
+    // box-shadow: 3px 3px 5px 5px lightgreen;
 }
 
 .collection-wrapper {
@@ -10225,7 +10225,12 @@ body {
     font-size: 1.3rem;
     padding: 0;
     margin: 0;
-    padding: .19rem .8rem .28rem
+    padding: .19rem .8rem .28rem;
+
+@media (max-width: 768px ) {
+    padding: 0.39rem 0.8rem 0.28rem;
+}
+
 }
 
 .buy.text-right-xl .button-buy:before,
@@ -10370,7 +10375,7 @@ body {
         text-align: center;
     }
 
-} 
+}
 
 .product-link:active,
 .product-link:focus,
@@ -10605,7 +10610,13 @@ body {
     flex-wrap: wrap;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
+
+
+    @media (max-width: 768px) {
+        width: 70%;
+    }
+
 }
 
 .product-control>*,
@@ -11041,7 +11052,13 @@ body {
     align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        flex: 0 1 100%;
+
+    }
+
 }
 
 .button-buy:focus,
