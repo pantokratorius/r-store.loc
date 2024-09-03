@@ -4476,6 +4476,11 @@ fieldset[disabled] .textarea-field {
     max-width: 2220px
 }
 
+.glide {
+    box-shadow: 3px 3px 20px 0 lightgreen;
+    // box-shadow: 3px 3px 5px 5px lightgreen; 
+}
+
 .collection-wrapper {
     max-width: 1220px;
     margin: 0 auto;
@@ -8169,6 +8174,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #c7c7c7;
+    border-radius: 40px;
 }
 
 .contacts-top-menu-block {
@@ -8518,9 +8525,15 @@ body {
     background-color: #b0b0b0
 }
 
+
+
 .main-menu-item {
     color: #3b3b3b;
     text-decoration: none
+}
+
+.main-menu-item:hover {
+    text-decoration: underline;
 }
 
 .main-menu-link {
@@ -8588,6 +8601,7 @@ body {
     padding-right: 1rem;
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
+    box-shadow: 3px 3px 10px 0px lightgrey;
 }
 
 .sidebar-menu-item.level-1:last-child {
@@ -8607,7 +8621,7 @@ body {
 }
 
 .sidebar-menu-link:hover {
-    color: #777
+    color: #777;
 }
 
 .sidebar-menu-link.is-active {
@@ -10785,7 +10799,9 @@ body {
 }
 
 .product-card {
-    display: block
+    display: block;
+    box-shadow: 3px 3px 16px 0px rgb(207 207 207);
+    padding: 30px 0;
 }
 
 .product-card-inner {

@@ -18,7 +18,7 @@
  @foreach($res as $key=>$val)
     @if(is_array($val))
 
-            <div class="product-card-wrapper in-collection cell-3 cell-4-md cell-6-xs cell-6-mc">
+            <div class="product-card-wrapper in-collection cell-3 cell-4-md cell-6-sm cell-12-xs cell-12-mc">
 
               <div class="product-card ">
                 <div class="product-card-inner">
