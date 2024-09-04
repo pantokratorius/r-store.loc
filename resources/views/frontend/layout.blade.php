@@ -454,10 +454,10 @@
             </div>
 
 
-            <div class="insales-copyright cell-4  cell-10-xs cell-10-sm text-right ">
-              <a href="" class="insales-copyright-link" target="_blank">
-
-              </a>
+            <div class="copyrights cell-4  cell-10-xs cell-10-sm text-right ">
+              <span class="" >
+                &copy; R-Store 2015
+              </span> 
             </div>
           </div>
           <button class="js-arrow-up">

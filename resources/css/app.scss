@@ -6846,8 +6846,10 @@ textarea {
 
 .footer-block {
     margin-top: 1rem;
-    margin-bottom: 1rem
-}
+    margin-bottom: 1rem;
+
+ }
+
 
 .footer-block a {
     color: #fff;
@@ -9080,13 +9082,13 @@ body {
     justify-content: space-around;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
-}
-
-@media screen and (max-width: 768px) {
-    .footer-bottom-wrapper {
-        margin-top: 1rem
+    align-items: center;
+    
+    @media  (max-width: 768px) {
+        margin-top: 2rem;
+        flex-direction: column;
     }
+    
 }
 
 .social-menu {
