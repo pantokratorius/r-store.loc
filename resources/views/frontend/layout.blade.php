@@ -29,10 +29,13 @@
 @endproduction
 </head>
 
+
 <body class="fhg-body">
         @if (Session::has('success'))
         <div class="ajs-message ajs-success ajs-visible">{{ Session::get('success') }}</div>
       @endif
+
+
   <div class="body-wrapper">
 
 
@@ -478,6 +481,10 @@
 @endif
 
 <script>
+
+$('.glow-on-hover').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 500);
+  })
 
   $('.button_mobile_menu').click(function(){
       $('.mobile_menu').toggle()

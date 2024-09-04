@@ -13,7 +13,7 @@
 
 
 @section('content')
-<div class="products-list is-collection row">
+<div class="products-list is-collection row" style="position: relative">
 
  @foreach($res as $key=>$val)
     @if(is_array($val))
@@ -75,16 +75,18 @@
 
 
             </div>
-
- @endif
-
-@endforeach
-
+            
+            @endif
+            
+            @endforeach
+            
+            <button class="glow-on-hover" type="button">&uarr;</button>
           </div>
 @endsection
-
 @push('scripts')
 <script>
+
+ 
 
     $('.button-buy').click(function(e){
         e.preventDefault()
