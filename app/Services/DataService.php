@@ -88,6 +88,11 @@ class DataService {
     public function getName($name){
 
 // dump($name);
+
+
+$name = strtolower($name);
+
+
         $replace = [
             'Black' => '"тёмная ночь"',
             'Midnight' => '"тёмная ночь"',
@@ -155,7 +160,8 @@ class DataService {
                     'Yellow' => 'желтый',
                     'Gold' => 'золотой',
                     'Silver' => 'серебристый',
-                    'Natural' => 'Титановый',
+                    'Blue' => 'голубой',
+                    'Natural' => 'титановый',
                     'Black' => 'черный'
                 ];
                 $replace =  array_change_key_case($replace);
@@ -166,10 +172,10 @@ class DataService {
 
 
 
-        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12', 'Iphone14'];
+        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12', 'Iphone14', 'Iphone15'];
 
-
-        foreach($names as $k => $v){
+// dump($replace);
+        foreach($names as $k => $v){ //dump((stripos( str_replace(' ', '', $name), $v) !== false) );
             if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $name = strtr($name, $replace);
             }

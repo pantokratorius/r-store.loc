@@ -16,7 +16,7 @@
 <div class="page-headding-wrapper">
   <h1 class="page-headding">
 
-      {{ $res['real_item_name'] }}
+      {{ $res['real_item_name_ru'] }}
 
 
   </h1>
