@@ -90,8 +90,6 @@ class DataService {
 // dump($name);
 
 
-// $name = strtolower($name);
-
 
         $replace = [
             'Black' => '"тёмная ночь"',
@@ -107,13 +105,13 @@ class DataService {
             'Gold' => 'золотой',
             'Silver' => 'серебристый',
         ];
-        $replace =  array_change_key_case($replace);
+        // $replace =  array_change_key_case($replace);
 
         $names = ['MacBook', 'ipad'];
 
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $replace['Gray'] = '"серый космос"';
                 $replace['WF'] = 'Wi-Fi';
                 $replace['LTE'] = 'Wi-Fi+LTE';
@@ -127,7 +125,7 @@ class DataService {
         $names = ['WatchSE'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $replace['Black'] = '"черный космос"';
                 $replace['Purple'] = 'тёмно-фиолетовый';
                 $name = strtr($name, $replace);
@@ -143,7 +141,7 @@ class DataService {
         $names = ['14Pro'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $replace['Black'] = '"черный космос"';
                 $replace['Purple'] = 'тёмно-фиолетовый';
                 $name = strtr($name, $replace);
@@ -164,7 +162,7 @@ class DataService {
                     'Natural' => 'титановый',
                     'Black' => 'черный'
                 ];
-                $replace =  array_change_key_case($replace);
+                // $replace =  array_change_key_case($replace);
                 $replace = array_map(function($a){return 'ГБ, Титановый '.$a;}, $replace);
                 $replace['Natural'] = 'Титановый';
                 $name = strtr($name, $replace);
@@ -172,11 +170,11 @@ class DataService {
 
 
 
-        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12', 'Iphone14', 'Iphone15'];
+        $names = ['13mini', 'Iphone13', '12mini', 'Iphone12', 'Iphone14'];
 
 // dump($replace);
         foreach($names as $k => $v){ //dump((stripos( str_replace(' ', '', $name), $v) !== false) );
-            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
+            if(stripos( str_replace(' ', '', $name), $v) !== false){
                 $name = strtr($name, $replace);
             }
         }
@@ -185,8 +183,8 @@ class DataService {
         $names = ['Iphone11', 'IphoneSE', 'iphone15'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
-                $replace['Black'] = 'черный';
+            if(stripos( str_replace(' ', '', $name), $v) !== false){ 
+                $replace['Black'] = 'черный'; //dd($replace);
                 $name = strtr($name, $replace);
             }
         }
