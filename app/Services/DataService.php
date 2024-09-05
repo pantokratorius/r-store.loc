@@ -41,11 +41,13 @@ class DataService {
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
                     foreach($names_my as $kk => $nam){ //dump([$nam, $k]);
                         if(stripos($k, $nam) !==false){
-                            $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) ) . ' ' .  str_replace($em, '', $val['real_name'] ); 
+                            $transfer[$k][$key]['real_item_name_ru'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam .  str_replace($em, '', $val['real_name'] )) ) ; 
+                            $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' .  (isset($fullName[$kk]) ? $fullName[$kk] : $nam .  str_replace($em, '', $val['real_name'] )) ; 
                             break;
                         }
                         else {
-                            $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( str_replace($em, '', $val['real_name'] ));
+                            $transfer[$k][$key]['real_item_name_ru'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( str_replace($em, '', $val['real_name'] ));
+                            $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' .  str_replace($em, '', $val['real_name'] );
                         }
                     }
                     $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
@@ -62,11 +64,13 @@ class DataService {
 
                         foreach($names_my as $kk => $nam){//dump($names_my);
                             if(stripos($k, $nam) !==false){             // && stripos($val['real_name'], $nam) === false
-                                $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam) ) . ' ' .  str_replace($em, '', $val['real_name'] );
+                                $transfer[$k][$key]['real_item_name_ru'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( (isset($fullName[$kk]) ? $fullName[$kk] : $nam.  str_replace($em, '', $val['real_name'] )) ) ;
+                                $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' .  (isset($fullName[$kk]) ? $fullName[$kk] : $nam.  str_replace($em, '', $val['real_name'] ))  ;
                                 break;
                             }
                             else {
-                                $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( str_replace($em, '', $val['real_name'] ));
+                                $transfer[$k][$key]['real_item_name_ru'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' . $this->getName( str_replace($em, '', $val['real_name'] ));
+                                $transfer[$k][$key]['real_item_name'] = ($em = EmojiRemover::getEmoji( $val['real_name']) ) . ' ' .  str_replace($em, '', $val['real_name'] );
                             }
                         }
                         $transfer[$k][$key]['real_name'] = EmojiRemover::filter( $val['real_name']);
@@ -83,7 +87,7 @@ class DataService {
 
     public function getName($name){
 
-
+// dump($name);
         $replace = [
             'Black' => '"тёмная ночь"',
             'Midnight' => '"тёмная ночь"',

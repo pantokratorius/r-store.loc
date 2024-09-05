@@ -61,7 +61,7 @@
                   </div>
 
                   <a href="{{route('item', [$res['real_name'],  str_replace('/', '', preg_replace('!\s++!u', '-', trim($val['real_name']))) ])}}" class="product-link">
-                       @if(!empty($translate[$key])) {{$translate[$key]}} @else {{$val['real_item_name']}} @endif
+                       @if(!empty($translate[$key])) {{$translate[$key]}} @else {{$val['real_item_name_ru']}} @endif
                   </a>
 
 
