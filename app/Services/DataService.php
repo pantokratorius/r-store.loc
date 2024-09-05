@@ -90,7 +90,7 @@ class DataService {
 // dump($name);
 
 
-$name = strtolower($name);
+// $name = strtolower($name);
 
 
         $replace = [
@@ -113,7 +113,7 @@ $name = strtolower($name);
 
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', $name), $v) !== false){
+            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
                 $replace['Gray'] = '"серый космос"';
                 $replace['WF'] = 'Wi-Fi';
                 $replace['LTE'] = 'Wi-Fi+LTE';
@@ -127,7 +127,7 @@ $name = strtolower($name);
         $names = ['WatchSE'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', $name), $v) !== false){
+            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
                 $replace['Black'] = '"черный космос"';
                 $replace['Purple'] = 'тёмно-фиолетовый';
                 $name = strtr($name, $replace);
@@ -143,7 +143,7 @@ $name = strtolower($name);
         $names = ['14Pro'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', $name), $v) !== false){
+            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
                 $replace['Black'] = '"черный космос"';
                 $replace['Purple'] = 'тёмно-фиолетовый';
                 $name = strtr($name, $replace);
@@ -176,7 +176,7 @@ $name = strtolower($name);
 
 // dump($replace);
         foreach($names as $k => $v){ //dump((stripos( str_replace(' ', '', $name), $v) !== false) );
-            if(stripos( str_replace(' ', '', $name), $v) !== false){
+            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
                 $name = strtr($name, $replace);
             }
         }
@@ -185,7 +185,7 @@ $name = strtolower($name);
         $names = ['Iphone11', 'IphoneSE', 'iphone15'];
 
         foreach($names as $k => $v){
-            if(stripos( str_replace(' ', '', $name), $v) !== false){
+            if(stripos( str_replace(' ', '', strtolower($name)), $v) !== false){
                 $replace['Black'] = 'черный';
                 $name = strtr($name, $replace);
             }
