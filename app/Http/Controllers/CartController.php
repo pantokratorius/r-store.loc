@@ -80,7 +80,7 @@ class CartController extends Controller
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
-                "name" =>  trim( $result['real_name']),
+                "name" =>  trim( $result['real_item_name_ru']),
                 "category" => $raw_category,
                 "item" => $raw_item,
             ];
@@ -134,7 +134,7 @@ class CartController extends Controller
             $cart[$id] = [
                 "quantity" => 1,
                 "price" => str_replace(' ', '', $result['price']),
-                "name" =>  trim( $result['real_name']),
+                "name" =>  trim( $result['real_item_name_ru']),
                 "category" => $raw_category,
                 "item" => $raw_item,
             ];
