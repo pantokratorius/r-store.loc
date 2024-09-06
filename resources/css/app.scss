@@ -8087,7 +8087,8 @@ body {
 @media screen and (max-width: 768px) {
     .top-menu-wrapper {
         // margin: 0;
-        padding: 0
+        padding: 0;
+        border-radius: 3px;
     }
 }
 
@@ -8321,7 +8322,7 @@ body {
 .top-panel-wrapper {
     position: relative;
     z-index: 1;
-    background-color: #000;
+    background-color: #3c3c3c;
     flex: 0 0 auto;
     opacity: .8
 }
@@ -8679,7 +8680,11 @@ body {
     padding-right: 1rem;
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
-    box-shadow: 3px 3px 10px 0px lightgrey;
+    box-shadow: 1px 1px 0px 0px lightgrey;
+}
+
+.sidebar-menu-item.level-1:hover {
+    box-shadow: 2px 2px 0px 0px #a3a3a3;
 }
 
 .sidebar-menu-item.level-1:last-child {
@@ -9858,6 +9863,12 @@ body {
     position: relative
 }
 
+.footer-wrapper {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .js-arrow-up {
     z-index: 999;
     position: fixed;
@@ -10711,7 +10722,8 @@ body {
     .product-cart-control {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center
+        justify-content: center;
+        width: 100%;
     }
 }
 
@@ -12510,6 +12522,16 @@ body {
     margin-left: .25rem;
     color: #969696;
     font-size: 1.25rem
+}
+
+.checkout-button-wrap {
+
+    margin-top: 40px;
+
+    @media(max-width: 768px){
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 .cart-checkout {
@@ -19959,7 +19981,13 @@ a:not([class]):hover,
 @media screen and (max-width: 768px) {
     .co-button--checkout {
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+
+        @media(max-width: 768px){
+            margin-left: inherit;
+            margin-right: inherit;
+        }
+
     }
 }
 
@@ -22472,7 +22500,7 @@ button.swiper-pagination-bullet {
     font-size: 12px;
     border: 1px solid #E7E6DF;
     -webkit-border-radius: 25px;
-    border-radius: 25px;
+    border-radius: 7px;
     transition: .4s;
     margin: 3px;
 }

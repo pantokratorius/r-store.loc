@@ -28,17 +28,17 @@
         </div>
 
       </div>
-      <div class="co-sidebar-wrapper"><button class="co-sidebar-toggler js-co-sidebar-toggler">
+      <div class="co-sidebar-wrapper"><button class="co-sidebar-toggler js-co-sidebar-toggler co-sidebar--hidden@sm">
         <span>
           <span class="co-icon halfling-shopping-cart"></span>
-          <span class="co-sidebar-toggler_title">Ваш заказ</span>
+          <span class="co-sidebar-toggler_title ">Ваш заказ</span>
           <span class="co-icon halfling-menu-down"></span>
         </span>
         <span class="co-basket_total-price co-price--current cart_price"
          data-cart_price_uncash="@if(isset($oneclick))  {{reset($cart)['price_uncash']}} @else {{$cart_price_uncash}} @endif"
          data-cart_price="@if(isset($oneclick))  {{reset($cart)['price']}} @else {{$cart_price}} @endif"><span>@if(isset($oneclick))  {{reset($cart)['price']}} @else {{$cart_price}} @endif</span>&nbsp;руб</span>
       </button>
-      <div class="co-sidebar co-sidebar--hidden@sm js-co-sidebar co-sidebar--fixed">
+      <div class="co-sidebar  js-co-sidebar co-sidebar--fixed">
         <div class="co-basket co-checkout-block--padded">
           <div class="co-basket_item-list">
 
@@ -272,7 +272,9 @@
         </div>
         <div class="co-checkout-block"></div>
         <div class="consent_to_personal_data_checkbox co-checkout-block"></div>
-        <button class="co-button co-button--checkout js-button-checkout_submit" id="create_order" type="submit">Подтвердить заказ</button>
+        <div class="checkout-button-wrap">
+          <button class="co-button co-button--checkout js-button-checkout_submit" id="create_order" type="submit">Подтвердить заказ</button>
+        </div>
         <input type="hidden" name="cart" value="{{ serialize($cart) }}" />
       </form><div id="picker-container"></div>
 

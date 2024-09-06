@@ -25,7 +25,7 @@
     <ul class="glide__slides">
       <li class="glide__slide">
         <a href=" {{ route('category', 'Iphone15') }} ">
-          <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner.jpg') }}" title="Слайдер Блок 15 Про" alt="Слайдер Блок 15 Про">
+          <img style="width: 100%" class="promo-slide-image" src="{{ asset('i.webp') }}" title="Слайдер Блок 15 Про" alt="Слайдер Блок 15 Про">
         </a>
       </li>
       {{-- <li class="glide__slide">
@@ -37,6 +37,11 @@
       <li class="glide__slide">
         <a href=" {{ route('category', 'Iphone15') }} ">
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner1.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
+        </a>
+      </li>
+      <li class="glide__slide">
+        <a href=" {{ route('category', 'Iphone15') }} ">
+          <img style="width: 100%" class="promo-slide-image" src="{{ asset('bann.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
         </a>
       </li>
     </ul>

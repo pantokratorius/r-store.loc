@@ -375,7 +375,7 @@
       </div>
     </div>
 
-    <div class="footer-wrapper">
+    <div class="footer-wrapper" style=" background-image: url('{{asset('assets/img/i2.webp')}}');">
       <div class="container">
 
 
