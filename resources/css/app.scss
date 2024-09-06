@@ -9867,6 +9867,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media(max-width: 768px) {
+        background-size: inherit;
+    }
+
 }
 
 .js-arrow-up {
