@@ -6848,7 +6848,19 @@ textarea {
     margin-top: 1rem;
     margin-bottom: 1rem;
 
+    @media(max-width: 768px) {
+        margin-top: 0rem;
+    }
+
  }
+
+.copyrights {
+
+    @media(max-width: 768px) {
+        margin-bottom: 2rem;
+    }
+
+}
 
 
 .footer-block a {
