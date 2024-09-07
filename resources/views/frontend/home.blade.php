@@ -44,6 +44,11 @@
           <img style="width: 100%" class="promo-slide-image" src="{{ asset('bann1.jpg') }}" title="Слайдер Блок 15" alt="Слайдер Блок 15">
         </a>
       </li>
+      <li class="glide__slide">
+        <a href=" {{ route('category', 'iMac') }} ">
+          <img style="width: 100%" class="promo-slide-image" src="{{ asset('banner22.jpg') }}" title="Слайдер Блок iMac" alt="Слайдер Блок iMac">
+        </a>
+      </li>
     </ul>
   </div>
 </div>
@@ -52,6 +57,7 @@
     <button class="glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
     <button class="glide__bullet" data-glide-dir="=1"></button>
     <button class="glide__bullet" data-glide-dir="=2"></button>
+    <button class="glide__bullet" data-glide-dir="=3"></button>
   </div>
 </div>
 
