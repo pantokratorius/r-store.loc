@@ -273,6 +273,7 @@
         <div class="co-checkout-block"></div>
         <div class="consent_to_personal_data_checkbox co-checkout-block"></div>
         <div class="checkout-button-wrap">
+          <p>Оформляя заказ я согласен на обработку <a href="{{route('personal')}}" target="_blank">персональных данных</a> и прочитал <a href="{{route('agreement')}}"  target="_blank">политику конфиденциальности</a></p>
           <button class="co-button co-button--checkout js-button-checkout_submit" id="create_order" type="submit">Подтвердить заказ</button>
         </div>
         <input type="hidden" name="cart" value="{{ serialize($cart) }}" />

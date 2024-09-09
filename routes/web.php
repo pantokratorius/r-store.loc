@@ -40,6 +40,14 @@ Route::get('contacts', ContactsController::class)->name('contacts');
 Route::get('payments', PaymentsController::class)->name('payments');
 Route::post('checkout', CheckoutController::class)->name('checkout');
 
+Route::get('agreement', function(){
+    return view('frontend.agreement');
+})->name('agreement');
+
+Route::get('personal', function(){
+    return view('frontend.personal');
+})->name('personal');
+
 
 // ------------------------------------------------------------------------
 

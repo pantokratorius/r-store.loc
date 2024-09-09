@@ -405,6 +405,26 @@
                   </a>
                 </div>
               </li>
+              <li class="footer-menu-item menu-item level-1">
+                <div class="footer-menu-item-controls menu-item-controls level-1">
+
+
+                  <a href="{{route('personal')}}" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
+                    data-menu-link-current= @if(Request::path() == 'personal') "yes" @else "no" @endif >
+                    Политика персональных данных
+                  </a>
+                </div>
+              </li>
+              <li class="footer-menu-item menu-item level-1">
+                <div class="footer-menu-item-controls menu-item-controls level-1">
+
+
+                  <a href="{{route('agreement')}}" class="footer-menu-link menu-link level-1" data-menu-link-source="menu"
+                    data-menu-link-current= @if(Request::path() == 'agreement') "yes" @else "no" @endif >
+                    Пользовательское соглашение
+                  </a>
+                </div>
+              </li>
 
 
             </ul>
