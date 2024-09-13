@@ -107,7 +107,7 @@ class HomeController extends Controller
         $res = $result;
 
         $search_image_item = EmojiRemover::filter($item);
-        $search_image_item = str_replace(['Iphone', 'Watch'], '',$search_image_item);
+        $search_image_item = str_replace(['iPhone', 'Watch'], '',$search_image_item);
 
         $image_n_specs = DB::table('images')->where('ref_id', $search_image_item)->select('image_link', 'specs')->first();
 
