@@ -11,7 +11,7 @@ class DataService {
 
     public function getAllData(){
 
-        $names_my = ['Iphone', 'Watch'];
+        $names_my = ['iphone', 'Watch'];
         $fullName = [1 => 'Apple Watch'];
         // $names_my = ['aaaaaaaaa'];
         // $fullName = [];
