@@ -13,7 +13,7 @@ class DataService {
 
         $names_my = ['Iphone', 'Watch'];
         $fullName = [1 => 'Apple Watch'];
-        $replace_arr = ['Sim-eSim', 'iPhone', 'Dual Sim'];
+        $replace_arr = ['Sim-eSim', 'iPhone', 'Dual Sim', 'SimeSim', 'DualSim'];
 
         // $names_my = ['aaaaaaaaa'];
         // $fullName = [];
@@ -40,7 +40,7 @@ class DataService {
                 // $key = EmojiRemover::filter($key);
                 $key = str_replace(['/', '-'],'',$key);
                 if($key != 'real_name'){
-                    
+                    $key = str_replace($replace_arr,'',$key);
                     $val['real_name'] = str_replace($replace_arr, '', $val['real_name']);
 
                     $transfer[$k][$key]['price'] = isset($new_nacenka[$key]) ? self::formatNumber($new_nacenka[$key]) : self::formatNumber(  (int)str_replace('.','',$val['price'])  + $nacenk );
@@ -65,7 +65,7 @@ class DataService {
         }else{
                 foreach ($new_data[$k] as $key => $val) {
                 // $key = EmojiRemover::filter($key);
-                $key = str_replace(['/', '-'],'',$key);
+                $key = str_replace($replace_arr + ['/', '-'],'',$key);
                     if($key != 'real_name'){
 
                         $val['real_name'] = str_replace($replace_arr, '', $val['real_name']);
@@ -159,7 +159,19 @@ class DataService {
         }
         if(stripos(str_replace(' ', '', $name), '15Pro') !== false){
             $replace = [
-                    'Red' => 'красный',
+                    'Red Titanium' => 'красный',
+                    'Pink Titanium' => 'розовый',
+                    'Blue Titanium' => 'синий',
+                    'Green Titanium' => 'зеленый',
+                    'Purple Titanium' => 'фиолетовый',
+                    'White Titanium' => 'белый',
+                    'Yellow Titanium' => 'желтый',
+                    'Gold Titanium' => 'золотой',
+                    'Silver Titanium' => 'серебристый',
+                    'Blue Titanium' => 'голубой',
+                    'Natural Titanium' => 'титановый',
+                    'Black Titanium' => 'черный',
+                    'Red Titanium' => 'красный',
                     'Pink' => 'розовый',
                     'Blue' => 'синий',
                     'Green' => 'зеленый',
@@ -173,7 +185,8 @@ class DataService {
                     'Black' => 'черный'
                 ];
                 // $replace =  array_change_key_case($replace);
-                $replace = array_map(function($a){return 'ГБ, Титановый '.$a;}, $replace);
+                // $replace = array_map(function($a){return 'ГБ, Титановый '.$a;}, $replace);
+                $replace = array_map(function($a){return 'ГБ, '.$a;}, $replace);
                 $replace['Natural'] = 'Титановый';
                 $name = strtr($name, $replace);
             }
